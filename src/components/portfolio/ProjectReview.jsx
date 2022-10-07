@@ -4,25 +4,25 @@ import "slick-carousel/slick/slick-theme.css";
 
 const ProjectReview = ({ children, modalImageIndex = 1 }) => {
     return (
-        <div className="modal_portfolio ">
-            <div className="modal__content">
+        <div className="container w-100">
+
                 {children && (
-                    <div key={children.id} data-aos="fade">
-                        <h2 className="heading mb-2">{children.type}</h2>
-                        <div className="modal__details">
+                    <div key={children.id}>
+                        <h1 className="text-center mb-5">{children.type}</h1>
+                        <div className="row mb-5">
                             {children.modalDetails.map((details, i) => {
                                 return (
-                                    <div key={i} className="row">
-                                        <div className="col-12 col-sm-6 mb-2">
+                                    <div key={i} className="row text-center">
+                                        <div className="col-12 col-sm-6 mb-2 ">
                                             <i className="fa fa-file-text-o pr-2"></i>
-                                            پروژه: &nbsp;
+                                            &nbsp; پروژه: &nbsp;
                                             <span className="ft-wt-600 uppercase">
                                                 {details.project}
                                             </span>
                                         </div>
                                         <div className="col-12 col-sm-6 mb-2">
                                             <i className="fa fa-user-o pr-2"></i>
-                                            آدرس: &nbsp;
+                                            &nbsp; آدرس: &nbsp;
                                             <span className="ft-wt-600 uppercase">
                                                 {details.address}
                                             </span>
@@ -31,15 +31,15 @@ const ProjectReview = ({ children, modalImageIndex = 1 }) => {
                                 );
                             })}
                         </div>
-                        <figure className="modal__img">
-                            <img
+                        <figure className="row">
+                            <img width="100%" height="100%" style={{borderRadius: "1rem"}}
                                 src={children.image[modalImageIndex]}
                                 alt="portfolio project demo"
                             />
                         </figure>
                     </div>
                 )}
-            </div>
+
         </div>
     );
 };
