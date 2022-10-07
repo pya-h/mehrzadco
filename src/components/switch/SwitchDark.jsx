@@ -6,7 +6,7 @@ const SwitchDark = () => {
     const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
-        setIsDark(localStorage.getItem("theme-color").toLowerCase() === "dark");
+        setIsDark(localStorage.getItem("theme-color")?.toLowerCase() !== "light");
     }, []);
 
     const handleLabelClick = () => {

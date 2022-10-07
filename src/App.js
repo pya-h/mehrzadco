@@ -13,7 +13,7 @@ const App = () => {
         AOS.init({
             duration: 1200,
         });
-        const theme = localStorage.getItem("theme-color").toLowerCase();
+        const theme = localStorage.getItem("theme-color")?.toLowerCase();
 
         change.theme(theme);
 
