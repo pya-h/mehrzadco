@@ -25,7 +25,7 @@ const Briefer = () => {
           className="col-lg-4 bg position-fixed d-none d-lg-block"
           style={{
             backgroundImage: `url(${
-              process.env.PUBLIC_URL + brieferContent.image
+              brieferContent.image
             })`,
           }}
         ></div>

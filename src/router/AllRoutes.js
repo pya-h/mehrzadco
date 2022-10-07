@@ -14,6 +14,7 @@ const AllRoutes = () => {
                 <Routes>
                     {/* <Route path="/" element={<Preview />} /> */}
                     <Route path="/" element={<Home />} />
+                    <Route path="/mehrzadco" element={<Home />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </ContextProvider>

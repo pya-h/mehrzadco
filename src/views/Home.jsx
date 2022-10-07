@@ -1,6 +1,6 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import Hero from "../components/hero/Briefer";
+import Hero from "../components/briefer/Briefer";
 import Index from "../components/about/index";
 import Address from "../components/Address";
 import Portfolio from "../components/portfolio/Portfolio";
