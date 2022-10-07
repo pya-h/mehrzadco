@@ -73,13 +73,6 @@ body {
   background-color: #111;
 }
 
-.poppins-font {
-  font-family: "Poppins", sans-serif;
-}
-
-.open-sans-font {
-  font-family: "Open Sans", sans-serif;
-}
 img {
   max-width: 100%;
 }
@@ -687,7 +680,6 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 }
 
 .home .home-details h1:before {
-  content: "";
   position: absolute;
   left: 0;
   top: 29px;

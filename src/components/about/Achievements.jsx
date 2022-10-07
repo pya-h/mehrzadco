@@ -1,7 +1,7 @@
 import React from "react";
 
 const achievementsContent = [
-  { title: "13", subTitle1: "سابقه ی", subTitle2: "فعالیت (سال)" },
+  { title: "13", subTitle1: "سابقه", subTitle2: "(سال)" },
   { title: "200", subTitle1: "پروژه های", subTitle2: "پایان یافته" },
 ];
 

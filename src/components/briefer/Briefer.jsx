@@ -4,6 +4,8 @@ import heroImg from "../../assets/img/portfolio/mehrzad/img_mehrzad_2.jpg";
 import heroImgMobile from "../../assets/img/portfolio/mehrzad/img_mehrzad_2.jpg";
 import cancelImg from "../../assets/img/cancel.svg";
 import Index from "../about/index";
+import RoadMap from "../roadmap";
+import dataServices from "./dataServices";
 
 const brieferContent = {
   image: heroImg,
@@ -29,7 +31,7 @@ const Briefer = () => {
             })`,
           }}
         ></div>
-        <div className="col-12 col-lg-8 offset-lg-4 home-details  text-center text-lg-start">
+        <div className="col-12 col-lg-8 offset-lg-4 home-details text-center text-lg-start">
           <div>
             <img
               src={brieferContent.mobileImage}
@@ -64,17 +66,8 @@ const Briefer = () => {
           </button>
           {/* End close icon */}  
 
-          <div className="box_inner about">
-            <div data-aos="fade-up" data-aos-duration="1200">
-              <div className="title-section text-left text-sm-center">
-                <h1>
-                  درباره <span>ما</span>
-                </h1>
-                <span className="title-bg">About Us</span>
-              </div>
-              {/* End title */}
-              <Index />
-            </div>
+          <div className="box_inner about" dir="ltr">
+            <RoadMap data={dataServices} />
           </div>
         </div>
         {/* End modal box news */}

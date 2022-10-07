@@ -6,6 +6,7 @@ import ProjectReview from "./ProjectReview";
 
 const Portfolio = () => {
     const [selectedProjectID, setSelectedProjectID] = useState(-1);
+    const [imageIndex, setImageIndex] = useState(0);
     const [project, setProject] = useState(null);
 
     useEffect(() => {
@@ -22,7 +23,7 @@ const Portfolio = () => {
     }, [selectedProjectID]);
 
     return project ? (
-        <ProjectReview>{project}</ProjectReview>
+        <ProjectReview imageIndex={imageIndex}>{project}</ProjectReview>
     ) : (
         <div className="portfolio-main">
             <Tabs>
@@ -37,7 +38,12 @@ const Portfolio = () => {
                             <div className="tab-container">
                                 {porto.image.map((item, index) => (
                                     <ProjectList
-                                        select={setSelectedProjectID}
+                                        select={(id, index) => {
+                                            if (id >= 0) {
+                                                setSelectedProjectID(id);
+                                                setImageIndex(index);
+                                            }
+                                        }}
                                         index={index}
                                     >
                                         {porto}

@@ -8,7 +8,7 @@ const ProjectList = ({children, select, index}) =>
     >
         <div
             className="tab-content"
-            onClick={() => select(children.id)}
+            onClick={() => select(children.id, index)}
         >
             <img src={children.image[index]} alt="مشکل در بار گذاری تصویر" />
             <h3>
