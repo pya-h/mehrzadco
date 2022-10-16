@@ -6,16 +6,15 @@ RoadMap.propTypes = {
     data: PropTypes.array,
 };
 
-function RoadMap(props) {
-    const { data } = props;
+function RoadMap({children, title, subtitle}) {
 
     const [dataBlock] = useState({
-        subtitle: "ROADMAP",
-        title: "cybox Timeline",
+        subtitle,
+        title,
     });
 
     return (
-        <section className="tf-section tf-roadmap">
+        <section className="tf-section tf-roadmap" style={{marginBottom: "30rem"}}>
             <div className="overlay"></div>
             <div className="container">
                 <div className="row">
@@ -26,12 +25,12 @@ function RoadMap(props) {
                             data-aos-duration="800"
                         >
                             <p className="h8 sub-title">{dataBlock.subtitle}</p>
-                            <h4 className="title">{dataBlock.title}</h4>
+                            <h4 clasFsName="title">{dataBlock.title}</h4>
                         </div>
                     </div>
-                    <div className="col-md-12">
+                    <div dir="ltr" className="col-md-12">
                         <div className="roadmap scrol">
-                            {data.map((item) => (
+                            {children.map((item) => (
                                 <RoadMapItem key={item.id} item={item} />
                             ))}
                         </div>

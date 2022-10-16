@@ -1,14 +1,14 @@
 
 $txt-color: #B9B9BF;
 $white: #fff;
-$color-hover: #14C2A3;
+$color-hover: #ffb400;
 $color-st2 :#D6D0E8;
-$font-main: 'Chakra Petch', sans-serif;
-$font-main2: 'IBM Plex Mono', monospace;
+$font-main: 'Vazir-Bold', sans-serif;
+$font-main2: 'Vazir-Bold', monospace;
 $bg-main: #100D1E;
 $header-height: 100px;
 $bgr-body :#0c1226;
-$bg-2 :#14C2A3;
+$bg-2 :#ffb400;
 $bg-3 :#141A31;
 $bg-4 :rgba(34,183,143,0.1);
 $border-width: 2px;
@@ -27,7 +27,7 @@ $center: center;
 
 $padding-right:18px;
 
-$box-shadow: 0 0px 32px 0 rgba(34, 183, 143, 0.5);
+$box-shadow: 0 0px 32px 0 rgba(255, 251, 0, 0.5);
 
 $boder-bt: 1px solid rgba(255,255,255,0.2);
 $bg-gradient: linear-gradient(to bottom, #22B78F 10%, #E9E9E9 100%);
@@ -170,7 +170,7 @@ $desktop-1900 : 1900px;
 }
 
 @mixin font-14{
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Vazir-Bold', sans-serif;
     font-size: 14px;
     line-height: 22px;
     font-weight: 700;
@@ -240,17 +240,15 @@ $desktop-1900 : 1900px;
     }
 }
 
-
-
 .tf-section.tf-roadmap {
-    background: url('../../img/roadmap/bg1roadmap.png') no-repeat;
+    // background: url('../../img/roadmap/bg1roadmap.png');
     padding-bottom: 0;
 
     &.style2 {
         background: #0c1226;
     }
     &.style3 {
-        background: url('../../img/roadmap/bg-5.jpg') center center fixed no-repeat;
+        background: url('../../img/roadmap/bg-5.jpg') center center fixed;
         background-size: cover;
     }
 }
@@ -279,12 +277,12 @@ $desktop-1900 : 1900px;
     &::before {
         width: 6px;
         height: 124%;
-        background: $bg-2;
+        background: $color-main2;
         position: absolute;
         top: 46%;
         left: 49.8%;
         content: "";
-        z-index: 1;
+        z-index: -1;
     }
     
     .rm-box {
@@ -327,11 +325,12 @@ $desktop-1900 : 1900px;
         }     
         .corner-box {
             position: relative;
-            background: #0e2431;
+            background: $color-main2;
+            color: #ffb400;
             padding: 18px;
             &.active,
             &:hover {
-                box-shadow: 0 0px 32px 0 rgb(34 183 143 / 50%);
+                box-shadow: 0 0px 32px 0 #ffb400;
             }
             h5 {
                 margin-bottom: 18px;
@@ -347,14 +346,14 @@ $desktop-1900 : 1900px;
             }
 
             &.normal {
-                background: #13182b;
+                background: $color-main2;
                 &::before,
                 &::after {
-                    background: #13182b;
+                    background: $color-main2;
                 }
             }
         }
-
+ 
         ul {
             li {
                 padding-left: 26px;
@@ -394,8 +393,7 @@ $desktop-1900 : 1900px;
         }
     }
     &.scrol {
-        height: 937px;
-        overflow-y: auto;
+        height: 1000px;
         &::-webkit-scrollbar { 
             display: none; 
         }
@@ -594,11 +592,11 @@ $desktop-1900 : 1900px;
                         display: block;
                     }
                     .corner-box {
-                        // background: url('./../../img/roadmap4.png') center center no-repeat;
+                        // background: url('./../../img/roadmap4.png') center center;
                         background-size: cover;
                         &::before,
                         &::after {
-                            // background: url('./../../img/roadmap4.png') center center no-repeat;
+                            // background: url('./../../img/roadmap4.png') center center;
                             background-size: cover;
                         }
                         &::before {
@@ -620,11 +618,11 @@ $desktop-1900 : 1900px;
                             background: $color-main2;
                         }
                         .corner-box {
-                            // background: url('./../../img/roadmap5.png') center center no-repeat;
+                            // background: url('./../../img/roadmap5.png') center center;
                             background-size: cover;
                             &::before,
                             &::after {
-                                // background: url('./../../img/roadmap5.png') center center no-repeat;
+                                // background: url('./../../img/roadmap5.png') center center;
                                 background-size: cover;
                             }
                         }
@@ -673,7 +671,7 @@ $desktop-1900 : 1900px;
 }
 
 .page-roadmap .tf-roadmap {
-    background: url('../../img/roadmap/bg-roadmap.png') no-repeat;
+    background: url('../../img/roadmap/bg-roadmap.png');
     background-position: bottom center;
     background-size: cover;
 

@@ -13,10 +13,10 @@ const NotFound = () => {
       >
         <div className="content">
           <h1 data-aos="fade-up" data-aos-duration="1200">
-            404!
+            !404!
           </h1>
           <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="50">
-            The page you are looking for could not be found.
+            چنین صفحه ای یافت نشد!
           </p>
 
           <div
@@ -25,12 +25,10 @@ const NotFound = () => {
             data-aos-duration="1200"
             data-aos-delay="100"
           >
-            <Link to="/">BACK TO HOME</Link>
+            <Link to="/">بازگشت به صفحه اصلی</Link>
           </div>
-          {/* End purchase_button */}
         </div>
       </div>
-      {/* End .hero */}
     </div>
   );
 };

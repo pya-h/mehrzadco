@@ -1,4 +1,4 @@
-const dataServices = [
+const javadMehrzadEducation = [
     {
         id: 1,
         time: 'Q2 2022',
@@ -96,9 +96,10 @@ const dataServices = [
         ],
         positon: 'left'
     },
+], faridMehrzadEducation = [
     {
-        id: 6,
-        time: 'Q1 2022',
+        id: 1,
+        time: 'Q2 2022',
         list: [
             {
                 text: 'Aenean tempor'
@@ -113,10 +114,31 @@ const dataServices = [
                 text: 'Risus eu metus'
             },
         ],
-        positon: 'right'
+        positon: 'left',
+        style: 'normal'
     },
     {
-        id: 7,
+        id: 2,
+        time: 'Q1 2022',
+        list: [
+            {
+                text: 'Release website and logo'
+            },
+            {
+                text: 'Grow community'
+            },
+            {
+                text: 'Launch the project'
+            },
+            {
+                text: 'Social media setup'
+            },
+        ],
+        positon: 'right',
+        style: 'normal'
+    },
+    {
+        id: 3,
         time: 'Q4 2022',
         list: [
             {
@@ -135,7 +157,7 @@ const dataServices = [
         positon: 'left'
     },
     {
-        id: 8,
+        id: 4,
         time: 'Q3 2022',
         list: [
             {
@@ -154,7 +176,7 @@ const dataServices = [
         positon: 'right'
     },
     {
-        id: 9,
+        id: 5,
         time: 'Q2 2022',
         list: [
             {
@@ -172,25 +194,7 @@ const dataServices = [
         ],
         positon: 'left'
     },
-    {
-        id: 10,
-        time: 'Q1 2022',
-        list: [
-            {
-                text: 'Aenean tempor'
-            },
-            {
-                text: 'Fusce arcu maecenas'
-            },
-            {
-                text: 'Malesuada felis sem elementum'
-            },
-            {
-                text: 'Risus eu metus'
-            },
-        ],
-        positon: 'right'
-    },
 ]
 
-export default dataServices;
+
+export default {javadMehrzad: javadMehrzadEducation, faridMehrzad: faridMehrzadEducation};

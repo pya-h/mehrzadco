@@ -3,9 +3,7 @@ import Modal from "react-modal";
 import heroImg from "../../assets/img/portfolio/mehrzad/img_mehrzad_2.jpg";
 import heroImgMobile from "../../assets/img/portfolio/mehrzad/img_mehrzad_2.jpg";
 import cancelImg from "../../assets/img/cancel.svg";
-import Index from "../about/index";
-import RoadMap from "../roadmap";
-import dataServices from "./dataServices";
+import OurServices from "./OurServices";
 
 const brieferContent = {
   image: heroImg,
@@ -26,9 +24,8 @@ const Briefer = () => {
         <div
           className="col-lg-4 bg position-fixed d-none d-lg-block"
           style={{
-            backgroundImage: `url(${
-              brieferContent.image
-            })`,
+            backgroundImage: `url(${brieferContent.image
+              })`,
           }}
         ></div>
         <div className="col-12 col-lg-8 offset-lg-4 home-details text-center text-lg-start">
@@ -45,13 +42,11 @@ const Briefer = () => {
             <button className="button" onClick={toggleModalOne}>
               <span className="button-text">{brieferContent.button}</span>
               <span className="button-icon fa fa-arrow-right"></span>
-            </button> 
+            </button>
           </div>
         </div>
       </div>
-      {/* End home-details-container */}
 
-      {/* Start Modal for About More */}
       <Modal
         isOpen={isOpen}
         onRequestClose={toggleModalOne}
@@ -64,15 +59,23 @@ const Briefer = () => {
           <button className="close-modal" onClick={toggleModalOne}>
             <img src={cancelImg} alt="close icon" />
           </button>
-          {/* End close icon */}  
 
-          <div className="box_inner about" dir="ltr">
-            <RoadMap data={dataServices} />
+          <div className="box_inner about p-5">
+            <div className="row">
+              <div className="col-12">
+                <h3 className="text-uppercase pb-5 mb-0 text-left text-sm-center custom-title ft-wt-600">
+                  خدمات ما
+                </h3>
+              </div>
+              <div className="text-center m-15px-tb">
+                <div className="resume-box">
+                  <OurServices />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        {/* End modal box news */}
       </Modal>
-      {/* End  Modal for About More */}
     </>
   );
 };

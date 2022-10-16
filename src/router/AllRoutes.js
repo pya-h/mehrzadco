@@ -5,6 +5,7 @@ import NotFound from "../views/NotFound";
 import { Routes, Route } from "react-router-dom";
 import ContextProvider from "../Context/ContextProvider";
 import ScrollTopBehaviour from "../components/ScrollTopBehaviour";
+import OurServices from "../components/briefer/OurServices";
 
 const AllRoutes = () => {
     return (

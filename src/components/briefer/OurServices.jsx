@@ -1,6 +1,6 @@
 import React from "react";
 
-const educationContent = [
+const servicesContent = [
   {
     year: "2015",
     degree: "ENGINEERING DEGREE",
@@ -24,24 +24,24 @@ const educationContent = [
   },
 ];
 
-const Education = () => {
+const OurServices = () => {
   return (
-    <ul>
-      {educationContent.map((val, i) => (
+    <ul dir="rtl">
+      {servicesContent.map((val, i) => (
         <li key={i}>
           <div className="icon">
             <i className="fa fa-briefcase"></i>
           </div>
-          <span className="time open-sans-font text-uppercase">{val.year}</span>
+          <span className="time text-uppercase">{val.year}</span>
           <h5 className="poppins-font text-uppercase">
             {val.degree}
-            <span className="place open-sans-font">{val.institute}</span>
+            <span className="place">{val.institute}</span>
           </h5>
-          <p className="open-sans-font">{val.details}</p>
+          <p>{val.details}</p>
         </li>
       ))}
     </ul>
   );
 };
 
-export default Education;
+export default OurServices;
