@@ -90,7 +90,7 @@ const Blog = () => {
                       className="img-fluid"
                       alt="Blog"
                     />
-                    <div className="blog-excerpt open-sans-font pb-5">
+                    <div className="blog-excerpt pb-5">
                       <p>{singleData?.description1}</p>
                       <div className="quotebox">
                         <div className="icon">

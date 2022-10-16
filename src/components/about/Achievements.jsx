@@ -11,8 +11,8 @@ const Achievements = () => {
       {achievementsContent.map((val, i) => (
         <div className="col-6" key={i}>
           <div className="box-stats with-margin">
-            <h3 className="poppins-font position-relative">{val.title}</h3>
-            <h1 className="open-sans-font m-0 position-relative text-uppercase">
+            <h3 className="position-relative">{val.title}</h3>
+            <h1 className="m-0 position-relative text-uppercase">
               {val.subTitle1} <span className="d-block">{val.subTitle2}</span>
             </h1>
           </div>

@@ -1,11 +1,9 @@
 import React from "react";
-import Preview from "../views/Preview";
 import Home from "../views/Home";
 import NotFound from "../views/NotFound";
 import { Routes, Route } from "react-router-dom";
 import ContextProvider from "../Context/ContextProvider";
 import ScrollTopBehaviour from "../components/ScrollTopBehaviour";
-import OurServices from "../components/briefer/OurServices";
 
 const AllRoutes = () => {
     return (

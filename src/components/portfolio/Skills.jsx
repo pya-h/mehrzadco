@@ -23,7 +23,7 @@ const Skills = () => {
               <div className="fill"></div>
             </div>
           </div>
-          <h6 className="text-uppercase open-sans-font text-center mt-2 mt-sm-4">
+          <h6 className="text-uppercase text-center mt-2 mt-sm-4">
             {val.skillName}
           </h6>
         </div>

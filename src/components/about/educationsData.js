@@ -197,4 +197,6 @@ const javadMehrzadEducation = [
 ]
 
 
-export default {javadMehrzad: javadMehrzadEducation, faridMehrzad: faridMehrzadEducation};
+const educations = {javadMehrzad: javadMehrzadEducation, faridMehrzad: faridMehrzadEducation};
+
+export default educations;
