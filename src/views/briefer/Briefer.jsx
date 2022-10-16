@@ -91,7 +91,7 @@ const Briefer = () => {
                                     خدمات ما
                                 </h3>
                             </div>
-                            <div className="text-center m-15px-tb">
+                            <div className="text-center m-15 px-tb">
                                 <div className="resume-box">
                                     <OurServices />
                                 </div>

@@ -23,7 +23,7 @@ const Portfolio = () => {
     }, [selectedProjectID]);
 
     return project ? (
-        <ProjectReview imageIndex={imageIndex}>{project}</ProjectReview>
+        <ProjectReview imageIndex={imageIndex} onBtnBackClick={() => {setProject(null); setSelectedProjectID(-1)}}>{project}</ProjectReview>
     ) : (
         <div className="portfolio-main">
             <Tabs>

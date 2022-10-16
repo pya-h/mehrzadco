@@ -1,6 +1,6 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import Hero from "../views/briefer/Briefer";
+import Briefer from "../views/briefer/Briefer";
 import Index from "../views/about/index";
 import Address from "../views/contact/Address";
 import Portfolio from "../views/portfolio/Portfolio";
@@ -49,7 +49,7 @@ const Home = () => {
                             data-aos-duration="1200"
                         >
                             <div className="color-block d-none d-lg-block"></div>
-                            <Hero />
+                            <Briefer />
                         </div>
                     </TabPanel>
 

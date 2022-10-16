@@ -13,6 +13,7 @@ const PortfolioData = [
       {
         project: "ساختمان مهرزاد",
         address: "گیلان، تالش، خیابان تیلار",
+        status: "پایان یافته"
       },
     ],
   },
@@ -26,6 +27,8 @@ const PortfolioData = [
       {
         project: "دیگران",
         address: "گیلان، تالش، خیابان تیلار",
+        status: "پایان یافته"
+
       },
     ],
   },
