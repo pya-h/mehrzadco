@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mehrzadco/static/css/main.06bf07a2.css",
-    "main.js": "/mehrzadco/static/js/main.9d8920b3.js",
+    "main.css": "/mehrzadco/static/css/main.66929a49.css",
+    "main.js": "/mehrzadco/static/js/main.7f7e8270.js",
     "static/js/27.df763461.chunk.js": "/mehrzadco/static/js/27.df763461.chunk.js",
     "static/media/img_mehrzad_0.jpg": "/mehrzadco/static/media/img_mehrzad_0.96f3ebbb4e82f3c087d7.jpg",
     "static/media/img_mehrzad_1.jpg": "/mehrzadco/static/media/img_mehrzad_1.27022ceb61f9162b440b.jpg",
@@ -15,8 +15,6 @@
     "static/media/Vazir-Bold.ttf": "/mehrzadco/static/media/Vazir-Bold.6dcbe3535167ae27d4f9.ttf",
     "static/media/fontawesome-webfont.woff?v=4.7.0": "/mehrzadco/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/mehrzadco/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
-    "static/media/rtl.jpg": "/mehrzadco/static/media/rtl.fc623d3befe9a7acb1ac.jpg",
-    "static/media/dark.jpg": "/mehrzadco/static/media/dark.c1cda9e0d5088e62fa77.jpg",
     "static/media/Vazir-Bold.woff": "/mehrzadco/static/media/Vazir-Bold.8a6538859ac709ea69b2.woff",
     "static/media/Vazir-Bold.woff2": "/mehrzadco/static/media/Vazir-Bold.7ad7995a149144eb4f58.woff2",
     "static/media/bg-5.jpg": "/mehrzadco/static/media/bg-5.a8b3b5991c859d7d8bca.jpg",
@@ -29,7 +27,7 @@
     "index.html": "/mehrzadco/index.html"
   },
   "entrypoints": [
-    "static/css/main.06bf07a2.css",
-    "static/js/main.9d8920b3.js"
+    "static/css/main.66929a49.css",
+    "static/js/main.7f7e8270.js"
   ]
 }
