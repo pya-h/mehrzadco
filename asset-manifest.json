@@ -1,14 +1,13 @@
 {
   "files": {
-    "main.css": "/mehrzadco/static/css/main.6378ebfc.css",
-    "main.js": "/mehrzadco/static/js/main.6a08fe74.js",
+    "main.css": "/mehrzadco/static/css/main.06bf07a2.css",
+    "main.js": "/mehrzadco/static/js/main.9d8920b3.js",
     "static/js/27.df763461.chunk.js": "/mehrzadco/static/js/27.df763461.chunk.js",
     "static/media/img_mehrzad_0.jpg": "/mehrzadco/static/media/img_mehrzad_0.96f3ebbb4e82f3c087d7.jpg",
     "static/media/img_mehrzad_1.jpg": "/mehrzadco/static/media/img_mehrzad_1.27022ceb61f9162b440b.jpg",
     "static/media/bg-roadmap.png": "/mehrzadco/static/media/bg-roadmap.3b102034e972661f7adc.png",
     "static/media/img_mehrzad_2.jpg": "/mehrzadco/static/media/img_mehrzad_2.8b737a13de71c2288f8d.jpg",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/mehrzadco/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
-    "static/media/bg1roadmap.png": "/mehrzadco/static/media/bg1roadmap.b9ea9603755390924e65.png",
     "static/media/fontawesome-webfont.eot": "/mehrzadco/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/mehrzadco/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
     "static/media/404.jpg": "/mehrzadco/static/media/404.19e523cdb4d4a12db938.jpg",
@@ -30,7 +29,7 @@
     "index.html": "/mehrzadco/index.html"
   },
   "entrypoints": [
-    "static/css/main.6378ebfc.css",
-    "static/js/main.6a08fe74.js"
+    "static/css/main.06bf07a2.css",
+    "static/js/main.9d8920b3.js"
   ]
 }
