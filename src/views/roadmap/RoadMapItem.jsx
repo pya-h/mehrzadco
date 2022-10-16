@@ -8,16 +8,16 @@ RoadMapItem.propTypes = {
 function RoadMapItem(props) {
     const {item} = props;
     return (
-        <div key={item.id} className={`rm-box ${item.positon}`} data-aos="zoom-in" data-aos-duration="1200">
+        <div  dir="rtl" key={item.id} className={`rm-box ${item.positon}`} data-aos="zoom-in" data-aos-duration="1200">
             <div style={{borderRadius: "20px"}} className={`corner-box ${item.style}`}>
-                <h5>{item.time}</h5>
-                <ul>
+                <h3>{item.title}</h3>
+                <div className="row">
                     {
-                        item.list.map((li,idx) => (
-                            <li key={idx}>{li.text}</li>
+                        item.details?.map((li,idx) => (
+                            <p key={idx} className="px-5 pt-3">{li.text}</p>
                         ))
                     }
-                </ul>
+                </div>
             </div>
         </div>
     );

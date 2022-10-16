@@ -1,13 +1,14 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import Hero from "../components/briefer/Briefer";
-import Index from "../components/about/index";
-import Address from "../components/Address";
-import Portfolio from "../components/portfolio/Portfolio";
-import Blog from "../components/blog/Blog";
-import Contact from "../components/Contact";
-import Social from "../components/Social";
-import SwitchDark from "../components/switch/SwitchDark";
+import Hero from "../views/briefer/Briefer";
+import Index from "../views/about/index";
+import Address from "../views/contact/Address";
+import Portfolio from "../views/portfolio/Portfolio";
+import Blog from "../views/blog/Blog";
+import Contact from "../views/contact/Contact";
+import Social from "../views/contact/Social";
+import SwitchDark from "./SwitchDark";
+import Logo from "./Logo";
 
 const menuItem = [
     { icon: "fa-home", menuName: "خانه" },
@@ -22,7 +23,7 @@ const Home = () => {
     return (
         <div className="yellow">
             <SwitchDark />
-
+            <Logo />
             <Tabs>
                 <div className="header">
                     <TabList className=" icon-menu revealator-slideup revealator-once revealator-delay1">

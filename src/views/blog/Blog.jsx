@@ -1,14 +1,14 @@
 import React from "react";
 import Modal from "react-modal";
 import cancelImg from "../../assets/img/cancel.svg";
-import UseData from "../../Hooks/UseData";
+import GetContext from "../../context/GetContext";
 import blogQuote from "../../assets/img/blog/quote.svg";
 
 Modal.setAppElement("#root");
 
 const Blog = () => {
   const { singleData, isOpen, setIsOpen, blogsData, handleBlogsData } =
-    UseData();
+    GetContext();
   const handleModle = (id) => {
     handleBlogsData(id);
   };

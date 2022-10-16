@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from "react";
-import lightImage from "../../assets/img/sun.png";
-import { change } from "../../tools";
+import React from "react";
+import lightImage from "../assets/img/sun.png";
+import GetContext from "../context/GetContext";
+import { change } from "../tools";
 
 const SwitchDark = () => {
-    const [isDark, setIsDark] = useState(false);
-
-    useEffect(() => {
-        setIsDark(localStorage.getItem("theme-color")?.toLowerCase() !== "light");
-    }, []);
-
+    const {isDark, setIsDark} = GetContext();
     const handleLabelClick = () => {
         if (isDark) {
             change.theme("light");

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import ScrollToTop from "./components/ScrollToTop";
-import AllRoutes from "./router/AllRoutes";
+import ScrollToTop from "./common/ScrollToTop";
+import AllRoutes from "./common/MainRoutes";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import AnimatedCursor from "react-animated-cursor";
 import { ToastContainer } from "react-toastify";
-import { change } from "./tools";
+import ContextProvider from "./context/ContextProvider";
 
 const App = () => {
     // this for animation
@@ -13,16 +13,11 @@ const App = () => {
         AOS.init({
             duration: 1200,
         });
-        const theme = localStorage.getItem("theme-color")?.toLowerCase();
 
-        change.theme(theme);
-
-        const lang = localStorage.getItem("lang")?.toLowerCase();
-        change.language(lang);
     }, []);
 
     return (
-        <>
+        <ContextProvider>
             <AnimatedCursor
                 innerSize={8}
                 outerSize={44}
@@ -36,7 +31,7 @@ const App = () => {
             {/* End contact */}
             <ToastContainer />
             {/* Same as */}
-        </>
+        </ContextProvider>
     );
 };
 

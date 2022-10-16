@@ -1,9 +1,8 @@
 import React from "react";
 import Achievements from "./Achievements";
 import PersonalInfo from "./PersonalInfo";
-import heroImgMobile from "../../assets/img/hero/img-mobile.jpg";
 import RoadMap from "../roadmap";
-import educations from "./educationsData";
+import ourServices from "./ourServices";
 
 const index = () => {
   return (
@@ -17,14 +16,6 @@ const index = () => {
                 <h3 className="text-uppercase custom-title mb-0 ft-wt-600">
                   مشخصات پرسنل
                 </h3>
-              </div>
-
-              <div className="col-12 d-block d-sm-none">
-                <img
-                  src={heroImgMobile}
-                  className="img-fluid main-img-mobile"
-                  alt="about avatar"
-                />
               </div>
 
               <div className="col-12">
@@ -41,7 +32,7 @@ const index = () => {
         <hr className="separator" />
         <div className="row">
 
-          <RoadMap title="خدمات">{educations.javadMehrzad}</RoadMap>
+          <RoadMap title="خدمات">{ourServices}</RoadMap>
         </div>
       </div>
     </section>

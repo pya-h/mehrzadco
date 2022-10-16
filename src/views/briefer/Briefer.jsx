@@ -57,7 +57,7 @@ const Briefer = () => {
                             style={{ opacity }}
                             src={brieferContent.mobileImages[imageIndex]}
                             className="img-fluid main-img-mobile d-sm-block d-lg-none fade-out-in"
-                            alt="hero man"
+                            alt="slideshow"
                         />
                         <h1 className="text-center">{brieferContent.title}</h1>
                         <p>{brieferContent.descriptions}</p>
