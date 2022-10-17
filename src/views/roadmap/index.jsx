@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import RoadMapItem from "./RoadMapItem";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 
 RoadMap.propTypes = {
     data: PropTypes.array,
 };
 
 function RoadMap({children, title, subtitle}) {
-    const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+    // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
     const [dataBlock] = useState({
         subtitle,
         title,
     });
 
     return (
-        <section className="tf-section tf-roadmap" style={isPortrait ? {marginBottom: "30rem"} : null}>
+        <section className="tf-section tf-roadmap" >
             <div className="overlay"></div>
             <div className="container">
                 <div className="row">
