@@ -3,18 +3,18 @@ import Modal from "react-modal";
 import cancelImg from "../../assets/img/cancel.svg";
 import OurServices from "./OurServices";
 import "./briefer.css";
-
+import SlideShow from "../slideshow";
 const Briefer = () => {
-    
     const [isOpen, setIsOpen] = useState(false);
-    const [imageIndex, setImageIndex] = useState(2);
+    const [imageIndex, setImageIndex] = useState(0);
     const [opacity, setOpacity] = useState(1);
+
     const slideShowImages = [
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_0.jpg"),
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_1.jpg"),
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_2.jpg"),
     ];
-    
+
     const brieferContent = {
         title: "شرکت مهندسی و ساخت مهرزاد",
         descriptions: `شرکت مهندسی و ساخت مهرزاد در سال 1388 توسط مهندس جواد مهرزاد و مهندس فرید مهرزاد تاسیس شد.`,
@@ -39,17 +39,13 @@ const Briefer = () => {
     }
 
     useEffect(() => {
-        setTimeout(() => setOpacity(1), 200)
+        setTimeout(() => setOpacity(1), 200);
     }, [opacity]);
+
     return (
         <>
             <div className="row home-details-container align-items-center">
-                <div
-                    className="col-lg-4 bg position-fixed d-none d-lg-block fade-in-out "
-                    style={{
-                        backgroundImage: `url(${slideShowImages[imageIndex]})`,
-                    }}
-                />
+                <SlideShow startIndex={2}>{slideShowImages}</SlideShow>
                 <div className="col-12 col-lg-8 offset-lg-4 home-details text-center text-lg-start">
                     <div>
                         <img

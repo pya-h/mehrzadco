@@ -1,6 +1,6 @@
 import React from "react";
 
-const SocialShare = [
+const socialLinks = [
   {
     iconName: "fa fa-instagram",
     link: "https://www.instagram.com/mehrzad_constrction_group",
@@ -16,7 +16,7 @@ const SocialShare = [
 const Social = () => {
   return (
     <ul className="social list-unstyled pt-1 mb-5">
-      {SocialShare.map((val, i) => (
+      {socialLinks.map((val, i) => (
         <li key={i}>
           <a href={val.link} target="_blank" rel="noreferrer">
             <i className={val.iconName}></i>
