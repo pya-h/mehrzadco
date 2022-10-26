@@ -7,7 +7,7 @@ import SlideShow from "../slideshow";
 import { useMediaQuery } from "react-responsive";
 const Briefer = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const modeSmall = useMediaQuery({ query: "(max-width: 650px)" });
+    const modeSmall = useMediaQuery({ query: "(max-width: 768px)" });
     const modeMedium =
         useMediaQuery({ query: "(max-width: 1200px)" }) && !modeSmall;
     const modeLarge = useMediaQuery({ query: "(min-width: 1200px)" });
@@ -31,7 +31,7 @@ const Briefer = () => {
 
     return (
         <>
-            <div
+            <div style={modeMedium ? {height: "90vh" } : {}}
                 className="row home-details-container align-items-center"
             >
                 {modeLarge && (
@@ -47,10 +47,8 @@ const Briefer = () => {
                     <h1
                         className="col-12 text-center"
                         style={{
-                            marginTop: modeMedium
+                            marginTop: !modeLarge
                                 ? "5rem"
-                                : modeSmall
-                                ? "1rem"
                                 : "0",
                             fontSize: modeSmall
                                 ? "36px"
@@ -102,7 +100,7 @@ const Briefer = () => {
                 isOpen={isOpen}
                 onRequestClose={toggleModalBriefServices}
                 contentLabel="تخصص ها"
-                className="custom-modal dark hero"
+                className={`custom-modal dark hero ${modeSmall ? "w-100 mx-auto px-1" : modeMedium ? "w-75 mx-auto px-3" : ""}`}
                 overlayClassName="custom-overlay dark"
                 closeTimeoutMS={500}
             >
@@ -114,14 +112,14 @@ const Briefer = () => {
                         <img src={cancelImg} alt="close icon" />
                     </button>
 
-                    <div className="box_inner about p-5">
+                    <div className="box_inner about p-lg-5 p-md-3 m-1">
                         <div className="row">
                             <div className="col-12">
                                 <h3 className="text-uppercase pb-5 mb-0 text-left text-sm-center custom-title ft-wt-600">
                                     تخصص ها
                                 </h3>
                             </div>
-                            <div className="text-center m-15 px-tb">
+                            <div className="text-center mt-1">
                                 <div className="resume-box">
                                     <OurServices />
                                 </div>

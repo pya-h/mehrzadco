@@ -1389,7 +1389,7 @@ body.light .contact .custom-span-contact a {
   }
 
   body.home {
-    overflow: hidden;
+    overflow: auto;
   }
 }
 
@@ -1398,6 +1398,7 @@ body.light .contact .custom-span-contact a {
 @media (max-width: 991px) {
   body.home {
     padding: 25px;
+
   }
 
   body.home .main-container {
@@ -1835,7 +1836,6 @@ body.light .contact .custom-span-contact a {
 
   &::after {
     position: absolute;
-    content: "";
     top: 0px;
     left: 0px;
     background-color: #222;
@@ -2036,7 +2036,6 @@ button:focus {
     flex-direction: column;
     overflow: hidden;
     &::before {
-      content: "";
       position: absolute;
       background: var(--main-primary-color);
       width: 100%;
