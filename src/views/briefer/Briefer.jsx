@@ -9,8 +9,8 @@ const Briefer = () => {
     const [isOpen, setIsOpen] = useState(false);
     const modeSmall = useMediaQuery({ query: "(max-width: 650px)" });
     const modeMedium =
-        useMediaQuery({ query: "(max-width: 1500px)" }) && !modeSmall;
-    const modeLarge = useMediaQuery({ query: "(min-width: 1500px)" });
+        useMediaQuery({ query: "(max-width: 1200px)" }) && !modeSmall;
+    const modeLarge = useMediaQuery({ query: "(min-width: 1200px)" });
 
     const slideShowImages = [
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_0.jpg"),
