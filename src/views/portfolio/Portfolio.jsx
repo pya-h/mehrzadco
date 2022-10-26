@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import PortfolioData from "./portfolioData";
+import PortfolioData from "../../rawdata/portfolioData";
 import ProjectList from "./ProjectList";
 import ProjectReview from "./ProjectReview";
 

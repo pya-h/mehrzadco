@@ -22,32 +22,12 @@
   transform: translate(-50%, -50%);
   border: none;
   background: #252525;
-  overflow: initial;
   border-radius: 10px;
   outline: none;
   .box_inner {
-    height: 75vh;
-    width: 750px;
+    height: 80vh;
     overflow-y: auto;
 
-    @media (max-width: 1400px) {
-      width: 900px;
-    }
-    @media (max-width: 992px) {
-      width: 700px;
-    }
-    // @media (max-width: 768px) {
-    //   width: 560px;
-    // }
-    @media (max-width: 599px) {
-      width: 460px;
-    }
-    @media (max-width: 490px) {
-      width: 360px;
-    }
-    @media (max-width: 420px) {
-      width: 320px;
-    }
     &.blog-post {
       padding: 0 50px;
       @media (max-width: 767px) {
@@ -147,32 +127,11 @@ body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   .box_inner {
     &.about {
       border-radius: 5px;
-      @media (min-width: 1600px) {
-        width: 1190px;
-      }
-      @media (max-width: 1600px) {
-        width: 1070px;
-      }
-      @media (max-width: 1400px) {
-        width: 900px;
-      }
-      @media (max-width: 992px) {
-        width: 700px;
-      }
-      @media (max-width: 599px) {
-        width: 460px;
-      }
-      @media (max-width: 490px) {
-        width: 360px;
-      }
-      @media (max-width: 420px) {
-        width: 320px;
-      }
+
       border: 2px solid #222;
     }
     &.portfolio {
       @media (min-width: 1600px) {
-        width: 660px;
         height: auto;
       }
       @media (max-width: 1499px) {

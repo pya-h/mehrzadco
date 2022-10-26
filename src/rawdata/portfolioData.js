@@ -1,6 +1,6 @@
-import Image1 from "../../assets/img/portfolio/mehrzad/img_mehrzad_0.jpg";
-import Image2 from "../../assets/img/portfolio/mehrzad/img_mehrzad_1.jpg";
-import Image3 from "../../assets/img/portfolio/mehrzad/img_mehrzad_2.jpg";
+import Image1 from "../assets/img/portfolio/mehrzad/img_mehrzad_0.jpg";
+import Image2 from "../assets/img/portfolio/mehrzad/img_mehrzad_1.jpg";
+import Image3 from "../assets/img/portfolio/mehrzad/img_mehrzad_2.jpg";
 
 const PortfolioData = [
   {

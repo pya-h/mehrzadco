@@ -21,7 +21,7 @@ function RoadMap({children, title, subtitle}) {
                 <div className="row">
                     <div className="col-md-12">
                         <div
-                            className="tf-title mb-30"
+                            className="tf-title text-center mb-30"
                             data-aos="fade-up"
                             data-aos-duration="800"
                         >

@@ -1,7 +1,8 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Briefer from "../views/briefer/Briefer";
-import Index from "../views/about/index";
+import AboutUs from "../views/about";
+import OurServices from "../views/services";
 import Address from "../views/contact/Address";
 import Portfolio from "../views/portfolio/Portfolio";
 import Blog from "../views/blog/Blog";
@@ -12,14 +13,14 @@ import Logo from "./Logo";
 
 const menuItem = [
     { icon: "fa-home", menuName: "خانه" },
-    { icon: "fa-user", menuName: "درباره" },
+    { icon: "fa-spinner", menuName: "خدمات" },
     { icon: "fa-briefcase", menuName: "پورتفولیو" },
-    { icon: "fa-envelope-open", menuName: "تماس" },
     { icon: "fa-comments", menuName: "بلاگ" },
+    { icon: "fa-user", menuName: "درباره" },
+    { icon: "fa-envelope-open", menuName: "تماس" },
 ];
 
 const Home = () => {
-
     return (
         <div className="yellow">
             <SwitchDark />
@@ -57,11 +58,11 @@ const Home = () => {
                         <div data-aos="fade-up" data-aos-duration="1200">
                             <div className="title-section text-left text-sm-center">
                                 <h1>
-                                    درباره <span>ما</span>
+                                    خدمات <span>ما</span>
                                 </h1>
                                 <span className="title-bg">About Us</span>
                             </div>
-                            <Index />
+                            <OurServices />
                         </div>
                     </TabPanel>
 
@@ -75,6 +76,37 @@ const Home = () => {
                             <span className="title-bg">Portfolio</span>
                         </div>
                         <Portfolio />
+                    </TabPanel>
+
+                    <TabPanel className="blog">
+                        <div
+                            className="title-section text-left text-sm-center "
+                            data-aos="fade-up"
+                            data-aos-duration="1200"
+                        >
+                            <h1>بلاگ</h1>
+                            <span className="title-bg">Blog</span>
+                        </div>
+                        <div
+                            className="container"
+                            data-aos="fade-up"
+                            data-aos-duration="1200"
+                        >
+                            <div className="row pb-50">
+                                <Blog />
+                            </div>
+                        </div>
+                    </TabPanel>
+                    <TabPanel className="about">
+                        <div data-aos="fade-up" data-aos-duration="1200">
+                            <div className="title-section text-left text-sm-center">
+                                <h1>
+                                    درباره <span>ما</span>
+                                </h1>
+                                <span className="title-bg">About Us</span>
+                            </div>
+                            <AboutUs />
+                        </div>
                     </TabPanel>
 
                     <TabPanel className="contact">
@@ -111,26 +143,6 @@ const Home = () => {
                                 <div className="col-12 col-lg-8">
                                     <Contact />
                                 </div>
-                            </div>
-                        </div>
-                    </TabPanel>
-
-                    <TabPanel className="blog">
-                        <div
-                            className="title-section text-left text-sm-center "
-                            data-aos="fade-up"
-                            data-aos-duration="1200"
-                        >
-                            <h1>بلاگ</h1>
-                            <span className="title-bg">Blog</span>
-                        </div>
-                        <div
-                            className="container"
-                            data-aos="fade-up"
-                            data-aos-duration="1200"
-                        >
-                            <div className="row pb-50">
-                                <Blog />
                             </div>
                         </div>
                     </TabPanel>

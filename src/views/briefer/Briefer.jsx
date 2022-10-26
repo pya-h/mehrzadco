@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../assets/img/cancel.svg";
-import OurServices from "./OurServices";
+import OurServices from "./OurServicesInBrief";
 import "./briefer.css";
 import SlideShow from "../slideshow";
+import { useMediaQuery } from "react-responsive";
 const Briefer = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [imageIndex, setImageIndex] = useState(0);
-    const [opacity, setOpacity] = useState(1);
+    const modeSmall = useMediaQuery({ query: "(max-width: 650px)" });
+    const modeMedium =
+        useMediaQuery({ query: "(max-width: 1500px)" }) && !modeSmall;
+    const modeLarge = useMediaQuery({ query: "(min-width: 1500px)" });
 
     const slideShowImages = [
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_0.jpg"),
@@ -17,46 +20,75 @@ const Briefer = () => {
 
     const brieferContent = {
         title: "شرکت مهندسی و ساخت مهرزاد",
-        descriptions: `شرکت مهندسی و ساخت مهرزاد در سال 1388 توسط مهندس جواد مهرزاد و مهندس فرید مهرزاد تاسیس شد.`,
-        button: "معرفی خدمات",
+        descriptions: `شرکت مهندسی و ساخت مهرزاد از متخصصین رشته های مختلف ساختمانی تشکیل شده است از مهم ترین افراد این تیم حرفه ای می توان به مهندسان معماری، عمران، برق، مکانیک، نقشه بردار و درنهایت مهندس کنترل پروژه اشاره کرد.
+        در این مقاله بخش های مختلف شرکت مهندسی و ساخت مهرزاد را بررسی میکنیم همچنین درباره هر کدام از بخش های این دفتر توضیح مختصری خواهیم داد.`,
+        button: "بیشتر ...",
     };
 
-    useEffect(() => {
-        const timerID = setInterval(() => {
-            setOpacity(0);
-            setImageIndex((i) => {
-                return (i + 1) % slideShowImages.length;
-            });
-        }, [10000]);
-
-        return () => {
-            clearInterval(timerID);
-        };
-    }, [slideShowImages.length]);
-
-    function toggleModalOne() {
+    function toggleModalBriefServices() {
         setIsOpen(!isOpen);
     }
 
-    useEffect(() => {
-        setTimeout(() => setOpacity(1), 200);
-    }, [opacity]);
-
     return (
         <>
-            <div className="row home-details-container align-items-center">
-                <SlideShow startIndex={2}>{slideShowImages}</SlideShow>
-                <div className="col-12 col-lg-8 offset-lg-4 home-details text-center text-lg-start">
-                    <div>
-                        <img
-                            style={{ opacity }}
-                            src={slideShowImages[imageIndex]}
-                            className="img-fluid main-img-mobile d-sm-block d-lg-none fade-out-in"
-                            alt="slideshow"
-                        />
-                        <h1 className="text-center">{brieferContent.title}</h1>
-                        <p>{brieferContent.descriptions}</p>
-                        <button className="button" onClick={toggleModalOne}>
+            <div
+                className="row home-details-container align-items-center"
+            >
+                {modeLarge && (
+                    <SlideShow startIndex={2} outerClass="position-fixed">
+                        {slideShowImages}
+                    </SlideShow>
+                )}
+                <div
+                    className={`${
+                        modeLarge ? "col-8 offset-lg-4" : ""
+                    } home-details text-center text-lg-start`}
+                >
+                    <h1
+                        className="col-12 text-center"
+                        style={{
+                            marginTop: modeMedium
+                                ? "5rem"
+                                : modeSmall
+                                ? "1rem"
+                                : "0",
+                            fontSize: modeSmall
+                                ? "36px"
+                                : modeMedium
+                                ? "44px"
+                                : "55px",
+                        }}
+                    >
+                        {brieferContent.title}
+                    </h1>
+                    <div className="my-5">
+                        {!modeLarge && (
+                            // <img
+                            //     style={{ opacity, borderRadius: "15px", height: !modeSmall ? "60vh" : "50vh", width: !modeSmall ? "60vh" : "50vh" }}
+                            //     src={slideShowImages[imageIndex]}
+                            //     className="img-fluid main-img-mobile d-block fade-out-in"
+                            //     alt="slideshow"
+                            // />
+                            <SlideShow
+                                className="img-fluid main-img-mobile d-block"
+                                startIndex={2}
+                                style={{
+                                    borderRadius: "15px",
+                                    height: !modeSmall ? "60vh" : "50vh",
+                                    width: !modeSmall ? "60vh" : "49vh",
+                                }}
+                            >
+                                {slideShowImages}
+                            </SlideShow>
+                        )}
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            {brieferContent.descriptions}
+                        </p>
+                        <button
+                            className="button"
+                            onClick={toggleModalBriefServices}
+                        >
                             <span className="button-text">
                                 {brieferContent.button}
                             </span>
@@ -68,14 +100,17 @@ const Briefer = () => {
 
             <Modal
                 isOpen={isOpen}
-                onRequestClose={toggleModalOne}
-                contentLabel="My dialog"
+                onRequestClose={toggleModalBriefServices}
+                contentLabel="تخصص ها"
                 className="custom-modal dark hero"
                 overlayClassName="custom-overlay dark"
                 closeTimeoutMS={500}
             >
                 <div>
-                    <button className="close-modal" onClick={toggleModalOne}>
+                    <button
+                        className="close-modal"
+                        onClick={toggleModalBriefServices}
+                    >
                         <img src={cancelImg} alt="close icon" />
                     </button>
 
@@ -83,7 +118,7 @@ const Briefer = () => {
                         <div className="row">
                             <div className="col-12">
                                 <h3 className="text-uppercase pb-5 mb-0 text-left text-sm-center custom-title ft-wt-600">
-                                    خدمات ما
+                                    تخصص ها
                                 </h3>
                             </div>
                             <div className="text-center m-15 px-tb">

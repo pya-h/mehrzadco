@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import './slideshow.css';
 
-const SlideShow = ({ children, startIndex = 0 }) => {
+const SlideShow = ({ children, startIndex = 0, style = {}, className = "", outerClass = "", innerClass = "", delay = 10000 }) => {
     const [imageIndex, setImageIndex] = useState(startIndex);
     const [showAnimation, setShowAnimation] = useState(false);
 
@@ -12,24 +12,23 @@ const SlideShow = ({ children, startIndex = 0 }) => {
             setImageIndex((i) => {
                 return (i + 1) % children.length;
             });
-        }, [10000]);
+        }, [delay]);
 
         return () => {
             clearInterval(timerID);
         };
-    }, [children.length]);
+    }, [children.length, delay]);
     return (
         <div
-            className="col-lg-4 bg position-fixed d-none d-lg-block"
-            style={{
+            className={`col-lg-4 bg d-block p-0 mx-auto ${outerClass} ${className}`}
+            style={{ ...style,
                 backgroundImage: `url(${children[imageIndex]})`,
             }}
         >
             {showAnimation && (
                 <div
-                    className="sliding-background bg"
-                    style={{
-                        borderRadius: "10px",
+                    className={`sliding-background bg m-0 p-0 ${innerClass} ${className}`}
+                    style={{ ...style,
                         backgroundImage: `url(${
                             children[
                                 imageIndex > 0

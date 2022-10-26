@@ -285,7 +285,7 @@ $desktop-1900 : 1900px;
     
     .rm-box {
         position: relative;
-        margin-bottom: 115px;
+        margin-bottom: 300px;
         width: 403px;
         &::after,
         &::before {
@@ -391,7 +391,7 @@ $desktop-1900 : 1900px;
         }
     }
     &.scrol {
-        height: 1000px;
+        height: 100%;
         &::-webkit-scrollbar { 
             display: none; 
         }
