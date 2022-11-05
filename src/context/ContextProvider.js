@@ -14,9 +14,10 @@ const ContextProvider = ({ children }) => {
         );
     }, []);
 
-    window.onload = () => {
-        setTabIndex(sessionStorage.getItem("tabIndex") || 0)
-    };
+    useEffect(() => {
+        const tb = sessionStorage.getItem("tabIndex");
+        setTabIndex(tb >= 0 ? tb : 0);
+    }, []);
 
     window.onunload = () => {
         sessionStorage.setItem("tabIndex", tabIndex);
