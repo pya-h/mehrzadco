@@ -1,9 +1,11 @@
 import React from "react";
 import Achievements from "./Achievements";
 import RoadMap from "../roadmap";
-import { generalServices } from "../../rawdata/services";
+import GetContext from "../../context/GetContext";
 
 const OurServices = () => {
+    const { ServicesData } = GetContext();
+
     return (
         <section className="main-content ">
             <div className="container">
@@ -13,7 +15,9 @@ const OurServices = () => {
 
                 <hr className="separator" />
                 <div className="row">
-                    <RoadMap title="خدمات">{generalServices}</RoadMap>
+                    <RoadMap title="خدمات">
+                        {ServicesData?.generalServices}
+                    </RoadMap>
                 </div>
             </div>
         </section>

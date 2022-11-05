@@ -139,4 +139,6 @@ const generalServices = [
         icon: <i class="fa fa-handshake-o text-dark" style={{fontSize: "25px"}} aria-hidden="true"></i>
     },
 ];
-export { fieldExpertise, generalServices };
+const ServicesData = { fieldExpertise, generalServices };
+
+export default ServicesData;

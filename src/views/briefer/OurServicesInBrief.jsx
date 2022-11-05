@@ -1,10 +1,11 @@
 import React from "react";
-import { fieldExpertise } from "../../rawdata/services";
+import GetContext from "../../context/GetContext";
 
 const OurServicesInBrief = () => {
+    const { ServicesData } = GetContext();
     return (
         <ul dir="rtl">
-            {fieldExpertise.map((item, i) => (
+            {ServicesData?.fieldExpertise.map((item, i) => (
                 <li style={{ textAlign: "right" }} key={i}>
                     <div className="icon">{item.icon}</div>
                     <div>

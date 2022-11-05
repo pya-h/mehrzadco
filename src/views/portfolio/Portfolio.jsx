@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import PortfolioData from "../../rawdata/portfolioData";
+import GetContext from "../../context/GetContext";
 import ProjectList from "./ProjectList";
 import ProjectReview from "./ProjectReview";
 
 const Portfolio = () => {
+    const {PortfolioData} = GetContext();
     const [selectedProjectID, setSelectedProjectID] = useState(-1);
     const [imageIndex, setImageIndex] = useState(0);
     const [project, setProject] = useState(null);
@@ -20,7 +21,7 @@ const Portfolio = () => {
             console.log(ex);
             setProject(null);
         }
-    }, [selectedProjectID]);
+    }, [selectedProjectID, PortfolioData]);
 
     return project ? (
         <ProjectReview imageIndex={imageIndex} onBtnBackClick={() => {setProject(null); setSelectedProjectID(-1)}}>{project}</ProjectReview>

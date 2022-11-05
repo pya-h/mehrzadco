@@ -10,6 +10,7 @@ import Contact from "../views/contact/Contact";
 import Social from "../views/contact/Social";
 import SwitchDark from "./SwitchDark";
 import Logo from "./Logo";
+import GetContext from "../context/GetContext";
 
 const menuItem = [
     { icon: "fa-home", menuName: "خانه" },
@@ -21,15 +22,22 @@ const menuItem = [
 ];
 
 const Home = () => {
+    const { tabIndex, setTabIndex } = GetContext();
+
     return (
         <div className="yellow">
             <SwitchDark />
             <Logo />
-            <Tabs>
+            {Boolean(tabIndex >= 0) && <Tabs defaultIndex={tabIndex}>
                 <div className="header">
                     <TabList className=" icon-menu revealator-slideup revealator-once revealator-delay1">
                         {menuItem.map((item, i) => (
-                            <Tab className="icon-box" key={i}>
+                            <Tab
+                                className="icon-box"
+                                key={i}
+                                // onClick={() => sessionStorage.setItem("tabIndex", i) }
+                                onClick={() => setTabIndex(i)}
+                            >
                                 <i className={`fa ${item.icon}`}></i>
                                 <h2
                                     style={{ fontWeight: "bold" }}
@@ -43,10 +51,9 @@ const Home = () => {
                 </div>
 
                 <div className="tab-panel_list">
-                    <TabPanel className="home ">
+                    <TabPanel className="home">
                         <div
                             className="container-fluid main-container container-home"
-                            
                             data-aos="fade-up"
                             data-aos-duration="1200"
                         >
@@ -148,7 +155,7 @@ const Home = () => {
                         </div>
                     </TabPanel>
                 </div>
-            </Tabs>
+            </Tabs> }
         </div>
     );
 };

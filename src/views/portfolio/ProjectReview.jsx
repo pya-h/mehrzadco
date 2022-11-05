@@ -45,13 +45,13 @@ const ProjectReview = ({ children, imageIndex = 0, onBtnBackClick }) => {
                     </div>
                     <div className="row">
                         <figure style={{ borderRadius: "15px" }}>
-                            <img
+                            <a href={children.image[imageIndex]} download><img
                                 width="100%"
                                 style={{ borderRadius: "15px" }}
                                 height="100%"
                                 src={children.image[imageIndex]}
                                 alt="portfolio project demo"
-                            />
+                            /></a>
                         </figure>
                     </div>
                 </div>
