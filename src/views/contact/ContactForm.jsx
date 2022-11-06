@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Contact = () => {
+const ContactForm = () => {
     const form = useRef();
 
     const sendEmail = (e) => {
@@ -77,7 +77,7 @@ const Contact = () => {
 
                 <div className="col-12 col-md-12">
                     <div className="form-group">
-                        <input
+                        <input  
                             type="text"
                             name="subject"
                             placeholder="موضوع"
@@ -92,6 +92,7 @@ const Contact = () => {
                         <textarea
                             name="message"
                             placeholder="متن پیام"
+                            style={{height: "16rem"}}
                             required
                         ></textarea>
                     </div>
@@ -110,4 +111,4 @@ const Contact = () => {
     );
 };
 
-export default Contact;
+export default ContactForm;

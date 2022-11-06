@@ -389,6 +389,18 @@ body.light .header ul.icon-menu li.icon-box:hover i {
   transform: translateX(0);
 }
 
+@keyframes bouncing-anim {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-50px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
 .button-icon {
   position: absolute;
   right: -1px;
@@ -1083,15 +1095,22 @@ body.light .header ul.icon-menu li.icon-box:hover i {
 body.light .contact .custom-span-contact a {
   color: #666;
 }
+
 .contact ul.social {
-  margin-left: -5px;
-  padding-top: 15px !important;
+  position: fixed;
+  bottom: 0;
+  right: 5%;
 }
 
 .contact ul.social li {
   display: inline-block;
 }
 
+@media screen and (max-width: 992px) {
+  .contact ul.social {
+      bottom: 4%;
+  }
+}
 .contact ul.social li a {
   display: inline-block;
   height: 40px;

@@ -33,9 +33,10 @@ body.light.blog .page-item.active .page-link,
 .title-section hr,
 .portfolio .slideshow .carousel-indicators li.active,
 .button:before,
-.button-icon {
+.button-icon, .back-button-icon {
   background-color: var(--main-primary-color);
 }
+
 @media screen and (max-width: 991px) {
   .header ul.icon-menu li.icon-box.react-tabs__tab--selected,
   .header ul.icon-menu li.icon-box:hover,

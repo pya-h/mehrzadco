@@ -4,14 +4,11 @@ import cancelImg from "../../assets/img/cancel.svg";
 import OurServices from "./OurServicesInBrief";
 import "./briefer.css";
 import SlideShow from "../slideshow";
-import { useMediaQuery } from "react-responsive";
+import GetContext from "../../context/GetContext";
+
 const Briefer = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const modeSmall = useMediaQuery({ query: "(max-width: 768px)" });
-    const modeMedium =
-        useMediaQuery({ query: "(max-width: 1200px)" }) && !modeSmall;
-    const modeLarge = useMediaQuery({ query: "(min-width: 1200px)" });
-
+    const {mode} = GetContext();
     const slideShowImages = [
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_0.jpg"),
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_1.jpg"),
@@ -31,28 +28,28 @@ const Briefer = () => {
 
     return (
         <>
-            <div style={modeMedium ? {height: "90vh" } : {}}
+            <div style={mode.medium ? {height: "90vh" } : {}}
                 className="row home-details-container align-items-center"
             >
-                {modeLarge && (
+                {mode.large && (
                     <SlideShow startIndex={2} outerClass="position-fixed">
                         {slideShowImages}
                     </SlideShow>
                 )}
                 <div
                     className={`${
-                        modeLarge ? "col-8 offset-lg-4" : ""
+                        mode.large ? "col-8 offset-lg-4" : ""
                     } home-details text-center text-lg-start`}
                 >
                     <h1
                         className="col-12 text-center"
                         style={{
-                            marginTop: !modeLarge
+                            marginTop: !mode.large
                                 ? "5rem"
                                 : "0",
-                            fontSize: modeSmall
+                            fontSize: mode.small
                                 ? "36px"
-                                : modeMedium
+                                : mode.medium
                                 ? "44px"
                                 : "55px",
                         }}
@@ -60,9 +57,9 @@ const Briefer = () => {
                         {brieferContent.title}
                     </h1>
                     <div className="my-5">
-                        {!modeLarge && (
+                        {!mode.large && (
                             // <img
-                            //     style={{ opacity, borderRadius: "15px", height: !modeSmall ? "60vh" : "50vh", width: !modeSmall ? "60vh" : "50vh" }}
+                            //     style={{ opacity, borderRadius: "15px", height: !mode.small ? "60vh" : "50vh", width: !mode.small ? "60vh" : "50vh" }}
                             //     src={slideShowImages[imageIndex]}
                             //     className="img-fluid main-img-mobile d-block fade-out-in"
                             //     alt="slideshow"
@@ -72,8 +69,8 @@ const Briefer = () => {
                                 startIndex={2}
                                 style={{
                                     borderRadius: "15px",
-                                    height: !modeSmall ? "60vh" : "50vh",
-                                    width: !modeSmall ? "60vh" : "49vh",
+                                    height: !mode.small ? "60vh" : "50vh",
+                                    width: !mode.small ? "60vh" : "49vh",
                                 }}
                             >
                                 {slideShowImages}
@@ -100,7 +97,7 @@ const Briefer = () => {
                 isOpen={isOpen}
                 onRequestClose={toggleModalBriefServices}
                 contentLabel="تخصص ها"
-                className={`custom-modal dark hero ${modeSmall ? "w-100 mx-auto px-1" : modeMedium ? "w-75 mx-auto px-3" : ""}`}
+                className={`custom-modal dark hero ${mode.small ? "w-100 mx-auto px-1" : mode.medium ? "w-75 mx-auto px-3" : ""}`}
                 overlayClassName="custom-overlay dark"
                 closeTimeoutMS={500}
             >

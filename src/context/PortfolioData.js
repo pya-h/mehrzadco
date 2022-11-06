@@ -2,33 +2,42 @@ import Image1 from "../assets/img/portfolio/mehrzad/img_mehrzad_0.jpg";
 import Image2 from "../assets/img/portfolio/mehrzad/img_mehrzad_1.jpg";
 import Image3 from "../assets/img/portfolio/mehrzad/img_mehrzad_2.jpg";
 
+const meterageUnit = { en: "Square Meters", fa: "مترمربع" };
+
 const PortfolioData = [
   {
     id: 419,
-    type: "ساختمان مهرزاد",
+    title: { fa: "ساختمان مهرزاد", en: "Mehrzad Building" },
     image: [Image1, Image2, Image3],
-    tag: ["ProjectMehrzad"],
+    tag: ["MehrzadBuilding"],
     delayAnimation: "0",
-    modalDetails: [
+    details: [
       {
-        project: "ساختمان مهرزاد",
+        project: { fa: "ساختمان مهرزاد", en: "Mehrzad Building" },
         address: "گیلان، تالش، خیابان تیلار",
-        status: "پایان یافته"
+        endDate: 1400,
+        meterage: {
+          value: 235,
+          unit: meterageUnit
+        }
       },
     ],
   },
   {
-    id: 2,
-    type: "دیگران",
+    id: 420,
+    title: { fa: "دیگران", en: "Others" },
     image: [Image1, Image2, Image3],
     tag: ["OthersProject"],
     delayAnimation: "0",
-    modalDetails: [
+    details: [
       {
-        project: "دیگران",
+        project: { fa: "دیگران", en: "Others" },
         address: "گیلان، تالش، خیابان تیلار",
-        status: "پایان یافته"
-
+        endDate: 1400,
+        meterage: {
+          value: 235,
+          unit: meterageUnit
+        }
       },
     ],
   },

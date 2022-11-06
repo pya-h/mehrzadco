@@ -12,7 +12,7 @@ const ProjectList = ({children, select, index}) =>
         >
             <img src={children.image[index]} alt="مشکل در بار گذاری تصویر" />
             <h3>
-                <span className="content-title">{children.type}</span>
+                <span className="content-title">{children.title?.fa}</span>
             </h3>
         </div>
     </div>;

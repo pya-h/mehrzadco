@@ -25,6 +25,7 @@ const AllRoutes = () => {
                 <Route path="/mehrzadco" element={<Home />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
+
         </Fragment>
     );
 };
