@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 
-const VideoPlayer = ({ customVideo = children.length === 0, children, controls = true }) => {
+const VideoPlayer = ({ children = [], customVideo = !children || children.length === 0, controls = true }) => {
     const [idxVideo, setVideoIndex] = useState(0);
     const [src, setSrc] = useState(children.length > 0 ? children[idxVideo] : null);
     const refFileInput = useRef();
