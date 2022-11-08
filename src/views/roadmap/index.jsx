@@ -19,7 +19,7 @@ function RoadMap({children, title, subtitle}) {
             <div className="overlay"></div>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-12">
+                    {/* <div className="col-md-12">
                         <div
                             className="tf-title text-center mb-30"
                             data-aos="fade-up"
@@ -28,7 +28,7 @@ function RoadMap({children, title, subtitle}) {
                             <p className="h8 sub-title">{dataBlock.subtitle}</p>
                             <h4 clasFsName="title">{dataBlock.title}</h4>
                         </div>
-                    </div>
+                    </div> */}
                     <div dir="ltr" className="col-md-12">
                         <div className="roadmap scrol">
                             {children.map((item) => (

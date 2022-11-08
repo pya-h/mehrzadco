@@ -1,7 +1,7 @@
 import React from "react";
 import lightImage from "../assets/img/sun.png";
 import GetContext from "../context/GetContext";
-import { change } from "../tools";
+import { change } from "./tools";
 
 const SwitchDark = () => {
     const {isDark, setIsDark} = GetContext();

@@ -2,6 +2,8 @@ import iconSupevision from '../assets/img/about/civil.png';
 import iconArchitects from '../assets/img/about/architect.png';
 import iconPeymankari from '../assets/img/about/peymankari.png';
 
+import AboutVideo from '../assets/vids/about.mp4'
+
 const fieldExpertise = [
     {
         id: 1,
@@ -136,9 +138,11 @@ const generalServices = [
             { text: `در ساخت مشارکت میکنیم` },
         ],
         positon: 'right',
-        icon: <i class="fa fa-handshake-o text-dark" style={{fontSize: "25px"}} aria-hidden="true"></i>
+        icon: <i class="fa fa-handshake-o text-dark" style={{ fontSize: "25px" }} aria-hidden="true"></i>
     },
 ];
-const ServicesData = { fieldExpertise, generalServices };
+
+
+const ServicesData = { fieldExpertise, generalServices, videos: [AboutVideo,] };
 
 export default ServicesData;

@@ -1,0 +1,341 @@
+
+.contact-field:hover {
+    animation: x-bounce-animation 1s linear infinite;
+}
+
+
+/*** Contact ***/
+.contact .main-content {
+    padding-bottom: 85px;
+  }
+  /* Left Side */
+  
+  .contact .custom-span-contact {
+    font-weight: 600;
+    padding-left: 50px;
+    line-height: 25px;
+    padding-top: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .contact .custom-span-contact i {
+    left: 0;
+    top: 10px;
+    font-size: 33px;
+  }
+  
+  .contact .custom-span-contact i.fa-phone-square {
+    font-size: 39px;
+    top: 7px;
+  }
+  
+  .contact .custom-span-contact span {
+    text-transform: uppercase;
+    opacity: 0.8;
+    font-weight: 400;
+    padding-bottom: 0;
+  }
+  .contact .custom-span-contact a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer !important;
+  }
+  body.light .contact .custom-span-contact a {
+    color: #666;
+  }
+  
+  .contact ul.social {
+    position: fixed;
+    bottom: 0;
+    right: 5%;
+  }
+  
+  .contact ul.social li {
+    display: inline-block;
+  }
+  
+  @media screen and (max-width: 992px) {
+    .contact ul.social {
+        bottom: 4%;
+    }
+  }
+  .contact ul.social li a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    line-height: 42px;
+    text-align: center;
+    color: #fff;
+    transition: 0.3s;
+    font-size: 17px;
+    margin: 0 6px;
+    background: #2b2a2a;
+    border-radius: 50%;
+  }
+  /* Form */
+  .contact .contactform input[type="text"],
+  .contact .contactform input[type="email"] {
+    border: 1px solid #111;
+    width: 100%;
+    background: #252525;
+    color: #fff;
+    padding: 11px 26px;
+    border-radius: 30px;
+    outline: none !important;
+    transition: 0.3s;
+  }
+  .contact .contactform .form-group {
+    margin-bottom: 30px;
+  }
+  .contact {
+    .container {
+      padding-bottom: 60px;
+    }
+    @media screen and (min-width: 1920px) {
+      .container {
+        padding-bottom: 214px;
+      }
+    }
+    .contactform textarea {
+      border: 1px solid #111;
+      background: #252525;
+      color: #fff;
+      width: 100%;
+      padding: 12px 26px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 30px;
+      outline: none !important;
+      transition: 0.3s;
+    }
+  }
+  
+  .contact .contactform .form-message {
+    margin: 24px 0;
+  }
+  .contactform {
+    padding-left: 30px;
+    @media screen and (max-width: 991px) {
+      padding-left: 0;
+    }
+  }
+  .contact .contactform .output_message {
+    display: block;
+    color: #fff;
+    height: 46px;
+    line-height: 46px;
+    border-radius: 30px;
+  }
+  
+  .contact .contactform .output_message.success {
+    background: #28a745;
+  }
+  
+  .contact .contactform .output_message.success:before {
+    font-family: FontAwesome;
+    content: "\f14a";
+    padding-right: 10px;
+  }
+  
+  .contact .contactform .output_message.error {
+    background: #dc3545;
+  }
+  
+  .contact .contactform .output_message.error:before {
+    font-family: FontAwesome;
+    content: "\f071";
+    padding-right: 10px;
+  }
+body.light .contact .contactform input[type="text"],
+body.light .contact .contactform input[type="email"],
+body.light .contact .contactform textarea {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #666;
+}
+body.light .contact .contactform input[type="text"]:focus,
+body.light .contact .contactform input[type="email"]:focus,
+body.light .contact .contactform textarea:focus {
+  background-color: #fff;
+  border: 1px solid var(--main-primary-color);
+  color: #666;
+}
+
+body.light .contact ul.social li a {
+  color: #666;
+  background: #eee;
+}
+
+body.light .contact ul.social li a:hover {
+  background: var(--main-primary-color);
+  color: #fff;
+}
+
+body.light .contact .contactform input[type="text"],
+body.light .contact .contactform input[type="email"],
+body.light .contact .contactform textarea {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #666;
+}
+body.light .contact .contactform input[type="text"]:focus,
+body.light .contact .contactform input[type="email"]:focus,
+body.light .contact .contactform textarea:focus {
+    background-color: #fff;
+    border: 1px solid var(--main-primary-color);
+    color: #666;
+}
+
+body.light .contact ul.social li a {
+    color: #666;
+    background: #eee;
+}
+
+body.light .contact ul.social li a:hover {
+    background: var(--main-primary-color);
+    color: #fff;
+}
+
+
+/*** Contact ***/
+.contact .main-content {
+    padding-bottom: 85px;
+}
+/* Left Side */
+
+.contact .custom-span-contact {
+    font-weight: 600;
+    padding-left: 50px;
+    line-height: 25px;
+    padding-top: 5px;
+    margin-bottom: 20px;
+}
+
+.contact .custom-span-contact i {
+    left: 0;
+    top: 10px;
+    font-size: 33px;
+}
+
+.contact .custom-span-contact i.fa-phone-square {
+    font-size: 39px;
+    top: 7px;
+}
+
+.contact .custom-span-contact span {
+    text-transform: uppercase;
+    opacity: 0.8;
+    font-weight: 400;
+    padding-bottom: 0;
+}
+.contact .custom-span-contact a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer !important;
+}
+body.light .contact .custom-span-contact a {
+    color: #666;
+}
+
+.contact ul.social {
+    position: fixed;
+    bottom: 0;
+    right: 5%;
+}
+
+.contact ul.social li {
+    display: inline-block;
+}
+
+@media screen and (max-width: 992px) {
+    .contact ul.social {
+        bottom: 4%;
+    }
+}
+.contact ul.social li a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    line-height: 42px;
+    text-align: center;
+    color: #fff;
+    transition: 0.3s;
+    font-size: 17px;
+    margin: 0 6px;
+    background: #2b2a2a;
+    border-radius: 50%;
+}
+/* Form */
+.contact .contactform input[type="text"],
+.contact .contactform input[type="email"] {
+    border: 1px solid #111;
+    width: 100%;
+    background: #252525;
+    color: #fff;
+    padding: 11px 26px;
+    border-radius: 30px;
+    outline: none !important;
+    transition: 0.3s;
+}
+.contact .contactform .form-group {
+    margin-bottom: 30px;
+}
+.contact {
+    .container {
+        padding-bottom: 60px;
+    }
+    @media screen and (min-width: 1920px) {
+        .container {
+            padding-bottom: 214px;
+        }
+    }
+    .contactform textarea {
+        border: 1px solid #111;
+        background: #252525;
+        color: #fff;
+        width: 100%;
+        padding: 12px 26px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 30px;
+        outline: none !important;
+        transition: 0.3s;
+    }
+}
+
+.contact .contactform .form-message {
+    margin: 24px 0;
+}
+.contactform {
+    padding-left: 30px;
+    @media screen and (max-width: 991px) {
+        padding-left: 0;
+    }
+}
+.contact .contactform .output_message {
+    display: block;
+    color: #fff;
+    height: 46px;
+    line-height: 46px;
+    border-radius: 30px;
+}
+
+.contact .contactform .output_message.success {
+    background: #28a745;
+}
+
+.contact .contactform .output_message.success:before {
+    font-family: FontAwesome;
+    content: "\f14a";
+    padding-right: 10px;
+}
+
+.contact .contactform .output_message.error {
+    background: #dc3545;
+}
+
+.contact .contactform .output_message.error:before {
+    font-family: FontAwesome;
+    content: "\f071";
+    padding-right: 10px;
+}

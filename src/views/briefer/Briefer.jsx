@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../assets/img/cancel.svg";
-import OurServices from "./OurServicesInBrief";
-import "./briefer.css";
-import SlideShow from "../slideshow";
+import DataList from "../gadgets/DataList";
+import SlideShow from "../gadgets/SlideShow";
 import GetContext from "../../context/GetContext";
 
 const Briefer = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const {mode} = GetContext();
+    const { mode, ServicesData } = GetContext();
     const slideShowImages = [
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_0.jpg"),
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_1.jpg"),
@@ -28,7 +27,8 @@ const Briefer = () => {
 
     return (
         <>
-            <div style={mode.medium ? {height: "90vh" } : {}}
+            <div
+                style={mode.medium ? { height: "90vh" } : {}}
                 className="row home-details-container align-items-center"
             >
                 {mode.large && (
@@ -44,9 +44,7 @@ const Briefer = () => {
                     <h1
                         className="col-12 text-center"
                         style={{
-                            marginTop: !mode.large
-                                ? "5rem"
-                                : "0",
+                            marginTop: !mode.large ? "5rem" : "0",
                             fontSize: mode.small
                                 ? "36px"
                                 : mode.medium
@@ -58,12 +56,6 @@ const Briefer = () => {
                     </h1>
                     <div className="my-5">
                         {!mode.large && (
-                            // <img
-                            //     style={{ opacity, borderRadius: "15px", height: !mode.small ? "60vh" : "50vh", width: !mode.small ? "60vh" : "50vh" }}
-                            //     src={slideShowImages[imageIndex]}
-                            //     className="img-fluid main-img-mobile d-block fade-out-in"
-                            //     alt="slideshow"
-                            // />
                             <SlideShow
                                 className="img-fluid main-img-mobile d-block"
                                 startIndex={2}
@@ -77,11 +69,11 @@ const Briefer = () => {
                             </SlideShow>
                         )}
                         <p>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             {brieferContent.descriptions}
                         </p>
                         <button
-                            className="button"
+                            className="button btn-more"
                             onClick={toggleModalBriefServices}
                         >
                             <span className="button-text">
@@ -97,7 +89,13 @@ const Briefer = () => {
                 isOpen={isOpen}
                 onRequestClose={toggleModalBriefServices}
                 contentLabel="تخصص ها"
-                className={`custom-modal dark hero ${mode.small ? "w-100 mx-auto px-1" : mode.medium ? "w-75 mx-auto px-3" : ""}`}
+                className={`custom-modal dark hero ${
+                    mode.small
+                        ? "w-100 mx-auto px-1"
+                        : mode.medium
+                        ? "w-75 mx-auto px-3"
+                        : ""
+                }`}
                 overlayClassName="custom-overlay dark"
                 closeTimeoutMS={500}
             >
@@ -118,7 +116,9 @@ const Briefer = () => {
                             </div>
                             <div className="text-center mt-1">
                                 <div className="resume-box">
-                                    <OurServices />
+                                    <DataList icon={{theme: "warning"}} listIndicator="-">
+                                        {ServicesData?.fieldExpertise}
+                                    </DataList>
                                 </div>
                             </div>
                         </div>

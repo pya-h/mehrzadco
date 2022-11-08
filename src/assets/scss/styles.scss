@@ -1,0 +1,26 @@
+/*----FontAwesome-------*/
+@import url("../fonts/font-awesome/css/font-awesome.min.css");
+@import "bootstrap/dist/css/bootstrap.css";
+
+// Style Scss
+@import "main/modal";
+@import "main/404";
+@import "main/circle";
+@import "main/rtl";
+@import "main/logo";
+@import "main/common";
+
+// skin
+@import "main/skins/yellow";
+
+// exclusives
+@import "exclusive/contact";
+@import "exclusive/briefer";
+@import "exclusive/slideshow";
+@import "exclusive/portfolio";
+@import "exclusive/roadmap";
+@import "exclusive/blog";
+@import "exclusive/about";
+
+
+@import "shared";

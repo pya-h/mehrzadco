@@ -29,7 +29,7 @@ const Home = () => {
             <SwitchDark />
             <Logo />
             {Boolean(tabIndex >= 0) && (
-                <Tabs defaultIndex={tabIndex} >
+                <Tabs defaultIndex={tabIndex}>
                     <div className="header">
                         <TabList className=" icon-menu revealator-slideup revealator-once revealator-delay1">
                             {menuItem.map((item, i) => (
@@ -65,12 +65,16 @@ const Home = () => {
 
                         <TabPanel className="about">
                             <div data-aos="fade-up" data-aos-duration="1200">
-                                <div className="title-section text-left text-sm-center">
-                                    <h1>
-                                        خدمات <span>ما</span>
-                                    </h1>
-                                    <span className="title-bg">About Us</span>
-                                </div>
+                                <center>
+                                    <div className="title-section text-left text-sm-center">
+                                        <h1>
+                                            خدمات <span>ما</span>
+                                        </h1>
+                                        <span className="title-bg">
+                                            About Us
+                                        </span>
+                                    </div>
+                                </center>
                                 <OurServices />
                             </div>
                         </TabPanel>
@@ -80,14 +84,14 @@ const Home = () => {
                         </TabPanel>
 
                         <TabPanel className="blog">
-                            <div
+                            <center
                                 className="title-section text-left text-sm-center "
                                 data-aos="fade-up"
                                 data-aos-duration="1200"
                             >
                                 <h1>بلاگ</h1>
                                 <span className="title-bg">Blog</span>
-                            </div>
+                            </center>
                             <div
                                 className="container"
                                 data-aos="fade-up"
@@ -100,26 +104,34 @@ const Home = () => {
                         </TabPanel>
                         <TabPanel className="about">
                             <div data-aos="fade-up" data-aos-duration="1200">
-                                <div className="title-section text-left text-sm-center">
-                                    <h1>
-                                        درباره <span>ما</span>
-                                    </h1>
-                                    <span className="title-bg">About Us</span>
-                                </div>
+                                <center>
+                                    <div className="title-section text-left text-sm-center">
+                                        <h1>
+                                            درباره <span>ما</span>
+                                        </h1>
+                                        <span className="title-bg">
+                                            About Us
+                                        </span>
+                                    </div>
+                                </center>
                                 <AboutUs />
                             </div>
                         </TabPanel>
 
-                        <TabPanel className={`contact ${!mode.large ? "pb-4" : ""}`}>
+                        <TabPanel
+                            className={`contact ${!mode.large ? "pb-4" : ""}`}
+                        >
                             <div
                                 className="title-section text-left text-sm-center"
                                 data-aos="fade-up"
                                 data-aos-duration="1200"
                             >
-                                <h1>
-                                    تماس <span>با ما</span>
-                                </h1>
-                                <span className="title-bg">Contact Us</span>
+                                <center>
+                                    <h1>
+                                        تماس <span>با ما</span>
+                                    </h1>
+                                    <span className="title-bg">Contact Us</span>
+                                </center>
                             </div>
                             <div
                                 className="container"
@@ -128,11 +140,11 @@ const Home = () => {
                             >
                                 <div className="row">
                                     <div className="col-1"></div>
-                                    <div className="col-11 col-lg-4 my-3 mx-auto">
+                                    <div className="col-11 col-lg-4 my-3">
                                         <ContactInfo />
                                     </div>
 
-                                    <div className="col-11 col-lg-7 mx-auto">
+                                    <div className="col-11 col-lg-7">
                                         <ContactForm />
                                     </div>
                                 </div>

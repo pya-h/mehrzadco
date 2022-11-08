@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import GetContext from "../../context/GetContext";
 import StaffInfo from "./StaffInfo";
 
 const AboutUs = () => {
+    const { AboutData } = GetContext();
+
+    useEffect(() => {}, [])
     return (
         <section className="main-content">
             <div className="container">
@@ -18,9 +22,9 @@ const AboutUs = () => {
                                 به خود می‌بالیم که با عنایت ایزد منان، تلاش روز
                                 افزون و بهره‌گیری از دانش روز دنیا، خود را در
                                 عرصه صنعت ساختمان مطرح نموده‌ایم. تلفیقی از
-                                تجارب ارزشمند و تفکر معماران مطرح درکنار
-                                سرمایه انسانی متعهد، از پایه های توانمندی گروه
-                                مهندسی و ساخت مهرزاد محسوب می‌شود. همواره تلاش می‌کنیم با
+                                تجارب ارزشمند و تفکر معماران مطرح درکنار سرمایه
+                                انسانی متعهد، از پایه های توانمندی گروه مهندسی و
+                                ساخت مهرزاد محسوب می‌شود. همواره تلاش می‌کنیم با
                                 تکیه بر دانش فنی، برخورداری از سوابق درخشان در
                                 صنعت ساختمان و قدم برداشتن همگام با معماری بین
                                 المللی، زمینه‌ساز این مهم باشیم.
@@ -29,14 +33,15 @@ const AboutUs = () => {
                             <div className="row">
                                 <div className="row">
                                     <h4 className="text-warning text-uppercase custom-title mb-0 ft-wt-600">
-                                        با ما آشنا شوید ...
+                                        همراه ما باشید...
                                     </h4>
                                 </div>
                             </div>
 
                             <div className="row">
-                                <StaffInfo />
+                                <StaffInfo>{AboutData.staff}</StaffInfo>
                             </div>
+
                         </div>
                     </div>
                 </div>

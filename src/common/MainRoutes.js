@@ -3,7 +3,7 @@ import Home from "./Home";
 import NotFound from "./NotFound";
 import { Routes, Route } from "react-router-dom";
 import ScrollTopBehaviour from "./ScrollTopBehaviour";
-import { change } from "../tools";
+import { change } from "./tools";
 
 const AllRoutes = () => {
 

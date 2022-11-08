@@ -3,6 +3,7 @@ import AllBlogData from "./AllBlogData";
 import ServicesData from "./ServicesData";
 import PortfolioData from "./PortfolioData";
 import { useMediaQuery } from "react-responsive";
+import US from "./US";
 
 export const MyContext = createContext();
 
@@ -10,7 +11,7 @@ const ContextProvider = ({ children }) => {
     const [isDark, setIsDark] = useState(false);
     const [tabIndex, setTabIndex] = useState(-1);
     const modeSmall = useMediaQuery({ query: "(max-width: 768px)" });
-    
+
     useEffect(() => {
         setIsDark(
             localStorage.getItem("theme-color")?.toLowerCase() !== "light"
@@ -29,13 +30,14 @@ const ContextProvider = ({ children }) => {
 
     return <MyContext.Provider value={{
         ...AllBlogData(), isDark, setIsDark,
-            tabIndex, setTabIndex,
-            PortfolioData, ServicesData,
-            mode: {
-                small: modeSmall,
-                medium: useMediaQuery({ query: "(max-width: 1200px)" }) && !modeSmall,
-                large: useMediaQuery({ query: "(min-width: 1200px) " })
-            }
+        tabIndex, setTabIndex,
+        PortfolioData, ServicesData,
+        ...US,
+        mode: {
+            small: modeSmall,
+            medium: useMediaQuery({ query: "(max-width: 1200px)" }) && !modeSmall,
+            large: useMediaQuery({ query: "(min-width: 1200px) " })
+        }
     }}>
         {children}
     </MyContext.Provider>;

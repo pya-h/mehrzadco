@@ -1,0 +1,177 @@
+
+/*** Blog ***/
+
+.blog .main-content {
+    padding-bottom: 85px;
+  }
+  
+  /* Latest Posts */
+  
+  .blog .post-container {
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  
+  .blog .post-content {
+    background-color: #252525;
+    padding: 20px 25px 25px 25px;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .blog .post-content .entry-header h3 {
+    line-height: 26px;
+    cursor: pointer;
+  }
+  
+  .blog .post-content .entry-header h3 a {
+    text-decoration: none;
+    transition: 0.5s;
+  }
+  
+  .blog .post-thumb {
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    @media screen and (min-width: 1300px) {
+      background: #555;
+      min-height: 227px;
+    }
+    @media screen and (max-width: 450px) {
+      min-height: 218px;
+    }
+  }
+  
+  .blog .post-thumb {
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .blog .post-container:hover img {
+    transform: scale(1.2);
+  }
+  
+  .blog .post-thumb img {
+    border-radius: 5px 5px 0 0;
+    transition: 0.3s;
+  }
+  
+  .blog .post-content .entry-content p {
+    margin: 15px 0 5px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .blog .post-content .entry-header h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  .blog .post-container {
+    &:hover {
+      h3 {
+        color: var(--main-primary-color);
+      }
+    }
+  }
+  
+  /* pagination */
+  
+  .blog .pagination {
+    margin-bottom: 30px;
+  }
+  
+  .blog .page-link {
+    color: #fff;
+    background-color: #252525;
+    border: 1px solid #252525;
+    padding: 0;
+    margin: 0 10px;
+    border-radius: 50% !important;
+    width: 43px;
+    height: 43px;
+    line-height: 43px;
+    text-align: center;
+    transition: 0.3s;
+  }
+  
+  .blog .page-link:focus,
+  .blog .page-link:active {
+    box-shadow: none !important;
+  }
+  
+  .blog .page-link:hover {
+    color: #fff !important;
+  }
+  
+  /* Blog Post */
+  
+  .blog-post article h1 {
+    font-weight: 600;
+    margin: 15px 0 25px;
+  }
+  
+  .blog-post article img {
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .blog-post {
+    .meta {
+      color: #eee;
+      font-size: 13px;
+    }
+    .img-fluid {
+      @media (min-width: 1350px) {
+        background: #ddd;
+        min-height: 396px;
+      }
+      @media (max-width: 450px) {
+        min-height: 173px;
+      }
+    }
+  }
+  
+  .blog-post .meta span {
+    padding-right: 15px;
+  }
+  
+  .blog-post .meta i {
+    padding-right: 3px;
+  }
+  
+  /* [ RESPONSIVE DESIGN STYLES ] */
+  
+  
+body.light .blog .post-content .entry-header h3,
+body.light .blog .entry-content p {
+    color: #454545;
+}
+body.light .blog .post-content .entry-header h3 {
+    transition: 0.3s;
+}
+body.light .blog .post-container:hover {
+    h3 {
+        color: var(--main-primary-color);
+    }
+}
+body.light .blog .page-link {
+    color: #666;
+    background-color: #eee;
+    border: 1px solid #eee;
+}
+
+body.light .blog-post .meta {
+    color: #888;
+}
+
+body.light .blog .page-item.active .page-link {
+    color: #fff;
+}
+
+.blog-post .meta i {
+    color: var(--main-primary-color);
+}
+
+body.light .blog .post-content {
+    background-color: #f5f8fc;
+}
