@@ -2,7 +2,7 @@ import iconSupevision from '../assets/img/about/civil.png';
 import iconArchitects from '../assets/img/about/architect.png';
 import iconPeymankari from '../assets/img/about/peymankari.png';
 
-import AboutVideo from '../assets/vids/about.mp4'
+// import AboutVideo from '../assets/vids/about.mp4'
 
 const fieldExpertise = [
     {
@@ -143,6 +143,6 @@ const generalServices = [
 ];
 
 
-const ServicesData = { fieldExpertise, generalServices, videos: [AboutVideo,] };
+const ServicesData = { fieldExpertise, generalServices, videos: [] };
 
 export default ServicesData;
