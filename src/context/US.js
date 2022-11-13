@@ -1,13 +1,25 @@
-
 const AboutData = {
     staff: [
-        { label: "نام", value: "جواد مهرزاد" },
-        { label: "نام", value: "فرید مهرزاد" },
-        { label: "شماره تماس", value: "09113384825" },
-        { label: "شماره تماس", value: "09112858020" },
-        { label: "ایمیل", value: "javad.m.navi@gmail.com" },
-        { label: "ایمیل", value: "farid.mehrzad.68@gmail.com" },
-    ]
+        [
+            { label: "نام", value: "جواد مهرزاد" },
+            { label: "شماره تماس", value: "09113384825" },
+            { label: "ایمیل", value: "javad.m.navi@gmail.com" },
+            { label: "سمت", value: "مهندس عمران" },
+
+        ],
+        [
+            { label: "نام", value: "فرید مهرزاد" },
+            { label: "شماره تماس", value: "09112858020" },
+            { label: "ایمیل", value: "farid.mehrzad.68@gmail.com" },
+            { label: "سمت", value: "مهندس عمران" },
+        ],
+        [
+            { label: "نام", value: "پدرام مکان پرست" },
+            { label: "شماره تماس", value: "09118839554" },
+            { label: "ایمیل", value: "p4ya.py@gmail.com" },
+            { label: "سمت", value: "برنامه نویس و طراح سایت" },
+        ],
+    ],
 };
 
 const ContactData = [
@@ -45,37 +57,67 @@ const ContactData = [
 const whyus = [
     {
         id: 1,
-        title: 'بی حد و مرز',
+        title: "بی حد و مرز",
         details: [
-            { text: "در سازه‌های مهندسی ما، هیچ حد و مرزی برای متریال به کار رفته و استحکام بنا، وجود ندارد." },
+            {
+                text:
+                    "در سازه‌های مهندسی ما، هیچ حد و مرزی برای متریال به کار رفته و استحکام بنا، وجود ندارد.",
+            },
         ],
-        icon: <i class="fa fa-bolt text-light mt-2" style={{ fontSize: "25px" }} aria-hidden="true"></i>,
+        icon: (
+            <i
+                class="fa fa-bolt text-light mt-2"
+                style={{ fontSize: "25px" }}
+                aria-hidden="true"
+            ></i>
+        ),
 
-        positon: 'left',
-        style: 'normal'
+        positon: "left",
+        style: "normal",
     },
     {
         id: 2,
-        title: 'دانش روز دنیا',
+        title: "دانش روز دنیا",
         details: [
-            { text: "پارسا سازه صدر، همگام با دانش روز دنیا و به کار گیری گروه متخصصین، سازه‌هایی اصولی خلق می‌کند" },
+            {
+                text:
+                    "پارسا سازه صدر، همگام با دانش روز دنیا و به کار گیری گروه متخصصین، سازه‌هایی اصولی خلق می‌کند",
+            },
         ],
-        icon: <i class="fa fa-bolt text-light mt-2" style={{ fontSize: "25px" }} aria-hidden="true"></i>,
+        icon: (
+            <i
+                class="fa fa-bolt text-light mt-2"
+                style={{ fontSize: "25px" }}
+                aria-hidden="true"
+            ></i>
+        ),
 
-        positon: 'right',
-        style: 'normal'
+        positon: "right",
+        style: "normal",
     },
     {
         id: 3,
-        title: 'تلفیق هنر و معماری',
+        title: "تلفیق هنر و معماری",
         details: [
-            { text: "جلوه‌های بصری و هنر بکار گرفته شده در سازه‌های اجرایی، چشمان هر بیننده‌ای را مسحور خود می‌کند" },
-            { text: "جلوه‌های بصری و هنر بکار گرفته شده در سازه‌های اجرایی، چشمان هر بیننده‌ای را مسحور خود می‌کند و ما این توانایی را داریم که مرزهای زیبایی را جابجا کنیم." }
+            {
+                text:
+                    "جلوه‌های بصری و هنر بکار گرفته شده در سازه‌های اجرایی، چشمان هر بیننده‌ای را مسحور خود می‌کند",
+            },
+            {
+                text:
+                    "جلوه‌های بصری و هنر بکار گرفته شده در سازه‌های اجرایی، چشمان هر بیننده‌ای را مسحور خود می‌کند و ما این توانایی را داریم که مرزهای زیبایی را جابجا کنیم.",
+            },
         ],
-        icon: <i class="fa fa-bolt text-light mt-2" style={{ fontSize: "25px" }} aria-hidden="true"></i>,
-        positon: 'left'
+        icon: (
+            <i
+                class="fa fa-bolt text-light mt-2"
+                style={{ fontSize: "25px" }}
+                aria-hidden="true"
+            ></i>
+        ),
+        positon: "left",
     },
 ];
-const US = { ContactData, AboutData, whyus }
+const US = { ContactData, AboutData, whyus };
 
 export default US;
