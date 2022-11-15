@@ -7,7 +7,7 @@ import GetContext from "../../context/GetContext";
 
 const Briefer = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { mode, ServicesData } = GetContext();
+    const { Screen, ServicesData } = GetContext();
     const slideShowImages = [
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_0.jpg"),
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_1.jpg"),
@@ -28,26 +28,26 @@ const Briefer = () => {
     return (
         <>
             <div
-                style={mode.medium ? { height: "90vh" } : {}}
+                style={Screen.medium ? { height: "90vh" } : {}}
                 className="row home-details-container align-items-center"
             >
-                {mode.large && (
+                {Screen.large && (
                     <SlideShow startIndex={2} outerClass="position-fixed">
                         {slideShowImages}
                     </SlideShow>
                 )}
                 <div
                     className={`${
-                        mode.large ? "col-8 offset-lg-4" : ""
+                        Screen.large ? "col-8 offset-lg-4" : ""
                     } home-details text-center text-lg-start`}
                 >
                     <h1
                         className="col-12 text-center"
                         style={{
-                            marginTop: !mode.large ? "5rem" : "0",
-                            fontSize: mode.small
+                            marginTop: !Screen.large ? "5rem" : "0",
+                            fontSize: Screen.small
                                 ? "36px"
-                                : mode.medium
+                                : Screen.medium
                                 ? "44px"
                                 : "55px",
                         }}
@@ -55,14 +55,14 @@ const Briefer = () => {
                         {brieferContent.title}
                     </h1>
                     <div className="my-5">
-                        {!mode.large && (
+                        {!Screen.large && (
                             <SlideShow
                                 className="img-fluid main-img-mobile d-block"
                                 startIndex={2}
                                 style={{
                                     borderRadius: "15px",
-                                    height: !mode.small ? "60vh" : "50vh",
-                                    width: !mode.small ? "60vh" : "49vh",
+                                    height: !Screen.small ? "60vh" : "50vh",
+                                    width: !Screen.small ? "60vh" : "49vh",
                                 }}
                             >
                                 {slideShowImages}
@@ -90,9 +90,9 @@ const Briefer = () => {
                 onRequestClose={toggleModalBriefServices}
                 contentLabel="تخصص ها"
                 className={`custom-modal dark hero ${
-                    mode.small
+                    Screen.small
                         ? "w-100 mx-auto px-1"
-                        : mode.medium
+                        : Screen.medium
                         ? "w-75 mx-auto px-3"
                         : ""
                 }`}

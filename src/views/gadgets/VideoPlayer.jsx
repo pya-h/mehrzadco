@@ -27,11 +27,9 @@ const VideoPlayer = ({ children = [], customVideo = !children || children.length
     return (
         <Fragment>
             <video className="video-about"
-                src={src}
-                controls={controls}
-                width="100%"
-            >
-
+                    src={src}
+                    controls={controls}
+                    width="100%">
             </video>
 
             {customVideo && (

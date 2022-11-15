@@ -1,26 +1,72 @@
 const AboutData = {
     staff: [
         [
-            { label: "نام", value: "جواد مهرزاد" },
-            { label: "شماره تماس", value: "09113384825" },
-            { label: "ایمیل", value: "javad.m.navi@gmail.com" },
-            { label: "سمت", value: "مهندس عمران" },
+            { /*label: "نام",*/
+             value: "جواد مهرزاد" },
+            // { /*label: "ایمیل",*/
+            //  value: "javad.m.navi@gmail.com" },
+            { /*label: "رشته",*/
+             value: "کارشناس ارشد سازه" },
 
         ],
         [
-            { label: "نام", value: "فرید مهرزاد" },
-            { label: "شماره تماس", value: "09112858020" },
-            { label: "ایمیل", value: "farid.mehrzad.68@gmail.com" },
-            { label: "سمت", value: "مهندس عمران" },
+            { /*label: "نام",*/
+             value: "فرید مهرزاد" },
+            // { /*label: "ایمیل",*/
+            //  value: "farid.mehrzad.68@gmail.com" },
+            { /*label: "رشته",*/
+             value: "مهندس عمران" },
         ],
         [
-            { label: "نام", value: "پدرام مکان پرست" },
-            { label: "شماره تماس", value: "09118839554" },
-            { label: "ایمیل", value: "p4ya.py@gmail.com" },
-            { label: "سمت", value: "برنامه نویس و طراح سایت" },
+            { /*label: "نام",*/
+             value: "پدرام مکان پرست" },
+            // { /*label: "ایمیل",*/
+            //  value: "p4ya.py@gmail.com" },
+            { /*label: "رشته",*/
+             value: "مهندس برق-کنترل" },
+        ],
+        [
+            { /*label: "نام",*/
+             value: "مهندس مجبتی هشترودی" },
+            // { /*label: "ایمیل",*/
+            //  value: "x@gmail.com" },
+            { /*label: "رشته",*/
+             value: "مهندس عمران" },
+        ],
+        [
+            { /*label: "نام",*/
+             value: "مهندس فاطمه فیض اللهی" },
+            // { /*label: "ایمیل",*/
+            //  value: "fatemeh.feizollahi3167@gmail.com" },
+            { /*label: "رشته",*/
+             value: "مهندس معمار" },
+        ],
+        [
+            { /*label: "نام",*/
+             value: "ناصر جعفری" },
+            // { /*label: "ایمیل",*/
+            //  value: "x@gmail.com" },
+            { /*label: "رشته",*/
+             value: "مهندس مکانیک" },
         ],
     ],
 };
+
+
+const Socials = [
+    {
+        iconName: "fa fa-instagram",
+        link: "https://www.instagram.com/mehrzadco",
+    },
+    // { iconName: "fa fa-whatsapp", link: "https://wa.me/9112858020" },
+    {
+        iconName: "fa fa-youtube",
+        link: "https://www.youtube.com/",
+    },
+    { iconName: "fa fa-telegram", link: "https://telegram.me/pya_js" },
+    { iconName: "fa fa-github", link: "https://github.com/pya-h" },
+
+];
 
 const ContactData = [
     {
@@ -66,7 +112,7 @@ const whyus = [
         ],
         icon: (
             <i
-                class="fa fa-bolt text-light mt-2"
+                class="fa fa-opencart text-light mt-2"
                 style={{ fontSize: "25px" }}
                 aria-hidden="true"
             ></i>
@@ -81,12 +127,12 @@ const whyus = [
         details: [
             {
                 text:
-                    "پارسا سازه صدر، همگام با دانش روز دنیا و به کار گیری گروه متخصصین، سازه‌هایی اصولی خلق می‌کند",
+                    "شرکت مهندسی و ساخت مهرزاد ، همگام با دانش روز دنیا و به کار گیری گروه متخصصین، سازه‌هایی اصولی خلق می‌کند",
             },
         ],
         icon: (
             <i
-                class="fa fa-bolt text-light mt-2"
+                class="fa fa-rss text-light mt-2"
                 style={{ fontSize: "25px" }}
                 aria-hidden="true"
             ></i>
@@ -99,10 +145,6 @@ const whyus = [
         id: 3,
         title: "تلفیق هنر و معماری",
         details: [
-            {
-                text:
-                    "جلوه‌های بصری و هنر بکار گرفته شده در سازه‌های اجرایی، چشمان هر بیننده‌ای را مسحور خود می‌کند",
-            },
             {
                 text:
                     "جلوه‌های بصری و هنر بکار گرفته شده در سازه‌های اجرایی، چشمان هر بیننده‌ای را مسحور خود می‌کند و ما این توانایی را داریم که مرزهای زیبایی را جابجا کنیم.",
@@ -118,6 +160,6 @@ const whyus = [
         positon: "left",
     },
 ];
-const US = { ContactData, AboutData, whyus };
+const US = { ContactData, AboutData, Socials, whyus };
 
 export default US;

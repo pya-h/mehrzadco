@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import GetContext from "../../context/GetContext";
 import StaffInfo from "./StaffInfo";
 import avatar from "./img_avatar.png";
@@ -56,7 +56,7 @@ const AboutUs = () => {
                                                 className="overlay-image img-fluid"
                                                 />
 
-                                            <div class="overlay mt-5 pt-3">
+                                            <div class="overlay mt-3">
                                                 <StaffInfo class="overlay-data ">
                                                     {staff}
                                                 </StaffInfo>

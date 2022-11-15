@@ -7,16 +7,15 @@ import blogQuote from "../../assets/img/blog/quote.svg";
 Modal.setAppElement("#root");
 
 const Blog = () => {
-    const { singleData, isOpen, setIsOpen, blogsData, handleBlogsData } =
-        GetContext();
+    const { blog, isOpen, setIsOpen, blogsData, openBlog } = GetContext();
     const handleModle = (id) => {
-        handleBlogsData(id);
+        openBlog(id);
     };
     return (
-        <>
+        <div className="container">
             <div className="row">
                 {blogsData.map((item) => (
-                    <div
+                    <div 
                         key={item.id}
                         className="col-12 col-md-6 col-lg-6 col-xl-4 mb-30"
                     >
@@ -30,22 +29,28 @@ const Blog = () => {
                                         src={item?.img}
                                         className="img-fluid"
                                         alt="item.title"
+                                        width="100%"
+                                        style={{maxHeight: "14rem"}}
                                     />
                                 </div>
                             </div>
-                            {/* End .thumb */}
                             <div className="post-content">
                                 <div className="entry-header">
                                     <h3>{item?.title}</h3>
                                 </div>
                                 <div className="entry-content open-sans-font">
-                                    <p>{item?.description1.slice(0, 100)}</p>
+                                    {item?.descriptions instanceof Array && (
+                                        <p>
+                                            {item?.descriptions[0].slice(
+                                                0,
+                                                120
+                                            )}...
+                                        </p>
+                                    )}
                                 </div>
                             </div>
-                            {/* End .post-content */}
                         </article>
 
-                        {/* Start ModalOneBlogContent */}
                         <Modal
                             isOpen={isOpen}
                             onRequestClose={() => setIsOpen(false)}
@@ -61,71 +66,67 @@ const Blog = () => {
                                 >
                                     <img src={cancelImg} alt="close icon" />
                                 </button>
-                                {/* End close icon */}
 
                                 <div className="box_inner blog-post">
-                                    {/* Article Starts */}
-                                    <article>
+                                    <article >
                                         <div className="title-section text-left text-sm-center">
-                                            <h1>
-                                                Post <span>Details</span>
-                                            </h1>
+                                            <h1>{blog?.title}</h1>
                                             <span className="title-bg">
-                                                posts
+                                                پست ها
                                             </span>
                                         </div>
-                                        {/* Meta Starts */}
 
                                         <div className="meta open-sans-font">
                                             <span>
                                                 <i className="fa fa-user"></i>
-                                                {singleData.commentor}
+                                                {blog.commentor}
                                             </span>
                                             <span className="date">
                                                 <i className="fa fa-calendar"></i>
-                                                {singleData.date}
+                                                {blog.date}
                                             </span>
                                             <span>
                                                 <i className="fa fa-tags"></i>
-                                                {singleData.tag}
+                                                {blog.tag}
                                             </span>
                                         </div>
-                                        {/* Meta Ends */}
-                                        {/* Article Content Starts */}
 
-                                        <h1>{singleData?.title}</h1>
-                                        <img
-                                            src={singleData?.img}
-                                            className="img-fluid"
-                                            alt="Blog"
-                                        />
-                                        <div className="blog-excerpt pb-5">
-                                            <p>{singleData?.description1}</p>
-                                            <div className="quotebox">
-                                                <div className="icon">
-                                                    <img
-                                                        src={blogQuote}
-                                                        alt="blog quote"
-                                                    />
-                                                </div>
-                                                <p>
-                                                    {singleData?.description2}
-                                                </p>
-                                            </div>
-                                            <p>{singleData?.description3}</p>
-                                            <p>{singleData?.description4}</p>
+                                        <div className="mx-auto text-center my-5">
+                                            <img
+                                                src={blog?.img}
+                                                className="img-fluid mx-auto"
+                                                alt="Blog"
+                                            />
                                         </div>
-                                        {/* Article Content Ends */}
+                                        {/* <div className="quotebox">
+                                            <div className="icon">
+                                                <img
+                                                    src={blogQuote}
+                                                    alt="blog quote"
+                                                />
+                                            </div>
+                                            <p>
+                                                {blog?.description2}
+                                            </p>
+                                        </div> */}
+                                        <div className="blog-excerpt pb-5">
+                                            {blog.descriptions instanceof
+                                                Array &&
+                                                blog.descriptions.map((d) => (
+                                                    <p>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        {d}
+                                                    </p>
+                                                ))}
+                                        </div>
                                     </article>
-                                    {/* Article Ends */}
                                 </div>
                             </div>
                         </Modal>
-                        {/* End  ModalOneBlogContent */}
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     );
 };
 

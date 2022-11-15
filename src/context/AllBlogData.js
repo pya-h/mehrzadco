@@ -1,126 +1,60 @@
 import { useState } from "react";
-import img1 from "../assets/img/blog/blog-post-1.jpg";
-import img2 from "../assets/img/blog/blog-post-2.jpg";
-import img3 from "../assets/img/blog/blog-post-3.jpg";
-import img4 from "../assets/img/blog/blog-post-4.jpg";
-import img5 from "../assets/img/blog/blog-post-5.jpg";
-import img6 from "../assets/img/blog/blog-post-6.jpg";
+import img1 from "../assets/img/blog/iran-modern-design.jpg";
+import img2 from "../assets/img/blog/nemayeh-classic.jpg";
 
 const AllBlogData = () => {
   const blogsData = [
     {
       id: 1,
       img: img1,
-      title: "How to Own Your Audience by Creating an Email List",
-      commentor: "Rio ",
-      date: "21 April 2022",
-      tag: `wordpress, business, economy, design`,
-      description1:
-        "Tomfoolery crikey bits and bobs brilliant bamboozled down the pub amongst brolly hanky panky, cack bonnet arse over tit burke bugger all mate bodge. cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Suspendisse interdum consectetur libero id faucibu nisl. Lacus vel facilisis volutpat est velit egestas.",
-      description2:
-        "Most photographers find it hard to see interesting pictures in places in which they are most familiar. A trip somewhere new seems always exactly what our photography needed, as shooting away from home consistently inspires us to new artistic heights. ",
-      description3:
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      description4:
-        "Riosum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      title: "تاریخچه نمای مدرن در ایران",
+      commentor: "مهندس جواد مهرزاد",
+      date: "23 آبان 1401",
+      tag: `مهندسی عمران، معماری`,
+      descriptions: [
+        "در دوره قاجار با باز شدن پای اشراف‌زاده‌های ایرانی به اروپا، صنعت ساختمانسازی دستخوش تغییرات عظیمی شد. ایرانی‌هایی که تا آن زمان تنها به خانه‌های تو در تو با سقف‌های هشتی و نمایی نه چندان تزئین شده عادت داشتند، شروع کردند به تقلید از اروپا و ساختمان‌سازی مدرن آنها را به معماری کلاسیک ایرانی پیوند زدن. اما آنچه بیش از همه به چشم آمد، تغییر در نمای ساختمان‌ها بود.",
+
+        "در ایران تا اواخر قرن ۱۹ ارتباط خانه‌ها با نمای بیرون از طریق حیاط مرکزی صورت می‌گرفت و توجه بیشتر به نمای داخلی ساختمان بوده است. برای همین است که شما از دیدن فضای داخلی خانه‌های اشرافی به جا مانده از دوره قاجار بیشتر لذت میبرید تا نمای بیرونی. بعد از قرن ۲۰ با سفر ناصرالدین شاه به فرنگ تصمیم گرفته شد که ایران از نماهای اروپایی الگو برداری کنند.",
+
+        "اولین تغییر این بود که خانه‌ها در حاشیه خیابان‌ها ساخته شدند. خانواده‌های ثروتمند که دیگر نمای ساختمان برایشان اهمیت پیدا کرده بود، حالا سعی می‌کردند چون اروپاییان، خانه‌هایشان را بر خیابان‌ها بسازند. این تغییرات در نمای ساختمان‌های ایرانی باعث شد خانه‌های درون‌گرای ایرانی کم‌کم به بیرون‌گرا تبدیل شوند. یعنی آنچه را تزئین محسوب می‌شد، بیشتر به بیرون از خانه ببرند و حالا  نمای ساختمان اهمیت ویژه‌ای پیدا کرده بود.",
+
+        "نمای هر ساختمان در شکل دهی به مجموعه شهری که در آن واقع شده است خیلی مؤثر است. اگر به نمای یک ساختمان بدون در نظر گرفتن نمای دیگر ساختمان های شهر توجه کنیم می بینیم که یکنواختی نمای شهر در مجموع از بین می رود. نمای هر ساختمان تأثیر مستقیم بر شهری دارد که در آن قرار گرفته و تأثیر آن را در بدنه خیابان ها یا میدان های آن شهر می بینیم. تفاوت بین شهری بودن یا فردی بودن نما در صورتی از بین می رود که ساختمان جزئی از شهر در نظر گرفته شود و ارتباط آن با محیط اطراف خودش چند جانبه باشد."
+      ]
     },
     {
       id: 2,
       img: img2,
-      title: "Top 10 Toolkits for Deep Learning in 2022",
-      commentor: "Santhan ",
-      date: "14 January 2022",
-      tag: `wordpress, business, economy, design`,
-      description1:
-        "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      description2:
-        "If you’ve been waiting for an invitation, this calligraphy is it. Commissioned by Notebook hand-lettered design for a poster. Quote is Notebook Building 8 VP’s Regina Dugan—and mine. ",
-      description3:
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      description4:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      title: "تاریخچه ی نمای کلاسیک",
+      commentor: "مهندس فرید مهرزاد ",
+      date: "23 آبان 1401",
+      tag: `نمای کلاسیک، مهنمدسی عمران، معماری`,
+      descriptions: [
+        "طراحی نما یکی از مهم ترین و البته جذاب ترین حوزه های معماری می باشد که امروز در سراسر جهان از اهمیت ویژه ای برخوردار است و زمان بسیاری برای انجام آن صرف می شود. همان طور که مستحضر هستید، نما اولین نقطه ای از ساختمان است که در نگاه اول نظر مخاطب را به خود جلب می کند و می تواند تاثیر بالایی در دید اولیه افراد نسبت به آن بنا داشته باشد. بسیاری معتقد هستند نما ویترین یک ساختمان است که اگر زیبایی و کارآمدی لازم را نداشته باشد در وهله اول به دید مخاطب ضربه زده، در وهله دوم از ارزش ملک می کاهد و در نهایت نیز زیبایی شهری را تحت تاثیر قرار می دهد. با توجه به سبک های معماری متعددی که وجود دارد، طراحی نما نیز به دنبال این سبک و تحت تاثیر از آنها سبک های خاص خودش را نیز پیدا نموده که از جمله پر کاربرد ترین این سبک های می توان به نمای مدرن و نمای کلاسیک اشاره نمود.",
+
+        "همان طور که می دانیم با گذر زمان و در جهان امروزی به طراحی نما بسیار بیش از گذشته بها داده می شود و هزینه های هنگفتی نیز صرف امور مرتبط با طراحی نما می گردد که با توجه به موارد یاد شده و اهمیت بالای نما در ساختمان ها می توان گفت این صرف هزینه و زمانی که برای انجام این امور گذاشته می شود، توجیه پیدا می نماید. نمایی که از گذشته تا کنون در ایران طرفداران بسیاری داشته و دارد، نمای کلاسیک است چرا که به معماری سنتی نزدیک تر است و لوکس تر بودن آن نسبت به نماهای مدرن باعث گردیده تا علاقمندان و طرفداران خاص خودش را نیز داشته باشد.",
+        "در ایران به دلیل اینکه حوزه نما دچار آشفتگی های فراوانی است، تعریف نمای کلاسیک دستخوش تغییراتی گردیده و هر زمان سخن از نمای کلاسیک به میان می اید در ذهن اکثریت مردم، نمای رومی تداعی می گردد. اما آیا نمای رومی همان نمای کلاسیک است و اینکه آیا این نما یک نمای وارد شده از خارج کشور است یا خیر؟",
+        "در امپراطوری ایران باستان، نوعی از معماری مورد توجه بود که مشابه طراحی ساختمان های امروزی است. به طور مثال آثار به جای مانده از تخت جمشید و دیگر مکان های تاریخی ایران باستان همگی شامل عناصری مانند سرستون، مجسمه های سنگی، ستون های قطور و بلند و کتیبه های سنگی است. این عناصر معماری کلاسیک ایرانی با شاخصه های معماری روم باستان اشتراکات بسیاری دارند. به عبارت دیگر طراحی نما کلاسیک که امروزه با نام نمای رومی شناخته می شود، در راستای تاثیر فرهنگی به وجود آمده که دلیل اصلی آن درگیری های امپراطوری های شرق و غرب در زمان های دور بوده است. ورود نمای کلاسیک به ایران یک زمان مشخص دارد و پس از رواج یافتن شهرسازی مدرن مورد توجه قرار گرفته است چرا که تا قبل از آن طراحی ساختمان ها و معماری ایران طوری بود که از معماری بومی یا اقلیمی پیروی می نمود. آنچه امروز درباره نماهای ساختمان ها آزار دهنده شده است، عدم وجود هویت در طراحی نماهای ساختمان هاست و مهم ترین دغدغه برای طراحان معماری در ایران امروز تلفیق معماری سنتی ایرانی و عناصر آن با علم روز طراحی در عین حفظ عناصر هویتی معماری ایرانی است."
+      ]
     },
-    {
-      id: 3,
-      img: img3,
-      title: "Everything You Need to Know About Web Accessibility",
-      commentor: "steve ",
-      date: "9 January 2020",
-      tag: `wordpress, business, economy, design`,
-      description1:
-        "Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      description2:
-        "Most photographers find it hard to see interesting pictures in places in which they are most familiar. A trip somewhere new seems always exactly what our photography needed, as shooting away from home consistently inspires us to new artistic heights. ",
-      description3:
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      description4:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      id: 4,
-      img: img4,
-      title: "How to Inject Humor & Comedy Into Your Brand",
-      commentor: "Beker ",
-      date: "15 March 2022",
-      tag: `wordpress, business, economy, design`,
-      description1:
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Suspendisse interdum consectetur libero id faucibu nisl. Lacus vel facilisis volutpat est velit egestas",
-      description2:
-        "Most photographers find it hard to see interesting pictures in places in which they are most familiar. A trip somewhere new seems always exactly what our photography needed, as shooting away from home consistently inspires us to new artistic heights. ",
-      description3:
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      description4:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      id: 5,
-      img: img5,
-      title: "Women in Web Design: How To Achieve Success",
-      commentor: "Janntul ",
-      date: "9 January 2021",
-      tag: `wordpress, business, economy, design`,
-      description1:
-        "Jorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      description2:
-        "Most photographers find it hard to see interesting pictures in places in which they are most familiar. A trip somewhere new seems always exactly what our photography needed, as shooting away from home consistently inspires us to new artistic heights. ",
-      description3:
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      description4:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      id: 6,
-      img: img6,
-      title: "Evergreen versus topical content: An overview",
-      commentor: "Hasan ",
-      date: "9 January 2022",
-      tag: `wordpress, business, economy, design`,
-      description1:
-        "Still ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      description2:
-        "Most photographers find it hard to see interesting pictures in places in which they are most familiar. A trip somewhere new seems always exactly what our photography needed, as shooting away from home consistently inspires us to new artistic heights. ",
-      description3:
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.",
-      description4:
-        "Still ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
+
+
   ];
 
-  const [singleData, setSingleData] = useState({});
+  const [blog, setBlog] = useState({});
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleBlogsData = (id) => {
+  const openBlog = (id) => {
     const find = blogsData.find((item) => item?.id === id);
-    setSingleData(find);
+    setBlog(find);
     setIsOpen(true);
   };
 
   return {
-    singleData,
+    blog,
     isOpen,
     setIsOpen,
     blogsData,
-    handleBlogsData,
+    openBlog,
   };
 };
 

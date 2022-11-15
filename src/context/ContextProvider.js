@@ -10,7 +10,8 @@ export const MyContext = createContext();
 const ContextProvider = ({ children }) => {
     const [isDark, setIsDark] = useState(false);
     const [tabIndex, setTabIndex] = useState(-1);
-    const modeSmall = useMediaQuery({ query: "(max-width: 768px)" });
+    const screenSuperSmall = useMediaQuery({ query: "(max-width: 600px)" });
+    const screenSmall = useMediaQuery({ query: "(max-width: 768px)" });
 
     useEffect(() => {
         setIsDark(
@@ -33,9 +34,10 @@ const ContextProvider = ({ children }) => {
         tabIndex, setTabIndex,
         PortfolioData, ServicesData,
         ...US,
-        mode: {
-            small: modeSmall,
-            medium: useMediaQuery({ query: "(max-width: 1200px)" }) && !modeSmall,
+        Screen: {
+            superSmall: screenSuperSmall,
+            small: screenSmall,
+            medium: useMediaQuery({ query: "(max-width: 1200px)" }) && !screenSmall,
             large: useMediaQuery({ query: "(min-width: 1200px) " })
         }
     }}>

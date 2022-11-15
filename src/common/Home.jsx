@@ -22,7 +22,7 @@ const menuItem = [
 ];
 
 const Home = () => {
-    const { tabIndex, setTabIndex, mode } = GetContext();
+    const { tabIndex, setTabIndex, Screen } = GetContext();
 
     return (
         <div className="yellow">
@@ -119,7 +119,7 @@ const Home = () => {
                         </TabPanel>
 
                         <TabPanel
-                            className={`contact ${!mode.large ? "pb-4" : ""}`}
+                            className={`contact ${!Screen.large ? "pb-4" : ""}`}
                         >
                             <div
                                 className="title-section text-left text-sm-center"

@@ -10,15 +10,15 @@ const ContactForm = () => {
         e.preventDefault();
         emailjs
         .sendForm(
-          "service_n4mkhz9",
-          "template_ugoztxr",
+          "service_vw32s8d",
+          "template_1ni9sxl",
           form.current,
-          "user_vYmDSd9PwIuRXUQEDjYwN"
+          "rwX7BIcRpzrtw1f8B"
           )
           .then(
             (result) => {
                   console.log("Sending")
-                    toast.success("Message Sent Successfully!", {
+                    toast.success("پیام شما با موفقیت ارسال شد.", {
                         position: "top-right",
                         autoClose: 2000,
                         hideProgressBar: false,
@@ -30,7 +30,7 @@ const ContactForm = () => {
                     document.getElementById("sendEmailForm").reset();
                 },
                 (error) => {
-                    toast.error("Ops Message Not Sent!", {
+                    toast.error("هنگام ارسال پیام مشکلی بوجود آمد!", {
                         position: "top-right",
                         autoClose: 2000,
                         hideProgressBar: false,
@@ -39,6 +39,7 @@ const ContactForm = () => {
                         draggable: true,
                         progress: undefined,
                     });
+                    console.log(error);
                 }
             );
     };
