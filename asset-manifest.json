@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mehrzadco/static/css/main.f01db926.css",
-    "main.js": "/mehrzadco/static/js/main.35ffd8d2.js",
+    "main.css": "/mehrzadco/static/css/main.52255548.css",
+    "main.js": "/mehrzadco/static/js/main.53186e57.js",
     "static/js/27.df763461.chunk.js": "/mehrzadco/static/js/27.df763461.chunk.js",
     "static/media/img_mehrzad_0.jpg": "/mehrzadco/static/media/img_mehrzad_0.96f3ebbb4e82f3c087d7.jpg",
     "static/media/img_mehrzad_1.jpg": "/mehrzadco/static/media/img_mehrzad_1.27022ceb61f9162b440b.jpg",
@@ -11,10 +11,12 @@
     "static/media/light.png": "/mehrzadco/static/media/light.3932e2e39daf37e4b94e.png",
     "static/media/fontawesome-webfont.eot": "/mehrzadco/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/mehrzadco/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/iran-modern-design.jpg": "/mehrzadco/static/media/iran-modern-design.347dfe31fb1504f677e5.jpg",
     "static/media/404.jpg": "/mehrzadco/static/media/404.19e523cdb4d4a12db938.jpg",
     "static/media/Vazir-Bold.eot": "/mehrzadco/static/media/Vazir-Bold.129cd4a6d46d4371de2e.eot",
     "static/media/Vazir-Bold.ttf": "/mehrzadco/static/media/Vazir-Bold.6dcbe3535167ae27d4f9.ttf",
     "static/media/fontawesome-webfont.woff?v=4.7.0": "/mehrzadco/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/nemayeh-classic.jpg": "/mehrzadco/static/media/nemayeh-classic.dd94026250fd72f80cbc.jpg",
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/mehrzadco/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
     "static/media/Vazir-Bold.woff": "/mehrzadco/static/media/Vazir-Bold.8a6538859ac709ea69b2.woff",
     "static/media/Vazir-Bold.woff2": "/mehrzadco/static/media/Vazir-Bold.7ad7995a149144eb4f58.woff2",
@@ -27,7 +29,7 @@
     "index.html": "/mehrzadco/index.html"
   },
   "entrypoints": [
-    "static/css/main.f01db926.css",
-    "static/js/main.35ffd8d2.js"
+    "static/css/main.52255548.css",
+    "static/js/main.53186e57.js"
   ]
 }
