@@ -1,17 +1,21 @@
 {
   "files": {
-    "main.css": "/mehrzadco/static/css/main.52255548.css",
-    "main.js": "/mehrzadco/static/js/main.53186e57.js",
-    "static/js/27.df763461.chunk.js": "/mehrzadco/static/js/27.df763461.chunk.js",
+    "main.css": "/mehrzadco/static/css/main.08eeb2bf.css",
+    "main.js": "/mehrzadco/static/js/main.f7ede500.js",
+    "static/js/27.9ea1a6ac.chunk.js": "/mehrzadco/static/js/27.9ea1a6ac.chunk.js",
     "static/media/img_mehrzad_0.jpg": "/mehrzadco/static/media/img_mehrzad_0.96f3ebbb4e82f3c087d7.jpg",
     "static/media/img_mehrzad_1.jpg": "/mehrzadco/static/media/img_mehrzad_1.27022ceb61f9162b440b.jpg",
     "static/media/img_mehrzad_2.jpg": "/mehrzadco/static/media/img_mehrzad_2.8b737a13de71c2288f8d.jpg",
+    "static/media/blog3.jpg": "/mehrzadco/static/media/blog3.6644b71afa45cfa3147e.jpg",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/mehrzadco/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/mojtaba_hashtrodi.jpg": "/mehrzadco/static/media/mojtaba_hashtrodi.3885a6c97faef7a5b153.jpg",
     "static/media/dark.png": "/mehrzadco/static/media/dark.2343d596c5c558fd5a36.png",
     "static/media/light.png": "/mehrzadco/static/media/light.3932e2e39daf37e4b94e.png",
     "static/media/fontawesome-webfont.eot": "/mehrzadco/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/mehrzadco/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
-    "static/media/iran-modern-design.jpg": "/mehrzadco/static/media/iran-modern-design.347dfe31fb1504f677e5.jpg",
+    "static/media/iran-modern-design.jpg": "/mehrzadco/static/media/iran-modern-design.a9566786066386329606.jpg",
+    "static/media/farid_mehrzad.jpg": "/mehrzadco/static/media/farid_mehrzad.9cf4db98ba47fadefc16.jpg",
+    "static/media/javad_mehrzad.jpg": "/mehrzadco/static/media/javad_mehrzad.05d272be7c9743f45419.jpg",
     "static/media/404.jpg": "/mehrzadco/static/media/404.19e523cdb4d4a12db938.jpg",
     "static/media/Vazir-Bold.eot": "/mehrzadco/static/media/Vazir-Bold.129cd4a6d46d4371de2e.eot",
     "static/media/Vazir-Bold.ttf": "/mehrzadco/static/media/Vazir-Bold.6dcbe3535167ae27d4f9.ttf",
@@ -19,7 +23,9 @@
     "static/media/nemayeh-classic.jpg": "/mehrzadco/static/media/nemayeh-classic.dd94026250fd72f80cbc.jpg",
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/mehrzadco/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
     "static/media/Vazir-Bold.woff": "/mehrzadco/static/media/Vazir-Bold.8a6538859ac709ea69b2.woff",
+    "static/media/fatemeh_feizollahi.jpg": "/mehrzadco/static/media/fatemeh_feizollahi.2ba5bd66176014cf06eb.jpg",
     "static/media/Vazir-Bold.woff2": "/mehrzadco/static/media/Vazir-Bold.7ad7995a149144eb4f58.woff2",
+    "static/media/naser_jafari.jpg": "/mehrzadco/static/media/naser_jafari.6be8add12fba5aa08435.jpg",
     "static/media/slick.svg": "/mehrzadco/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/mehrzadco/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/mehrzadco/static/media/slick.c94f7671dcc99dce43e2.ttf",
@@ -29,7 +35,7 @@
     "index.html": "/mehrzadco/index.html"
   },
   "entrypoints": [
-    "static/css/main.52255548.css",
-    "static/js/main.53186e57.js"
+    "static/css/main.08eeb2bf.css",
+    "static/js/main.f7ede500.js"
   ]
 }
