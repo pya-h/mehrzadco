@@ -107,16 +107,16 @@
   border: 1px solid #333; /* creates padding around scroll thumb */
 }
 body.light .custom-modal.dark .box_inner::-webkit-scrollbar-track {
-  background: #fff; /* color of the tracking area */
+  background: #ddd; /* color of the tracking area */
 }
 
 body.light .custom-modal.dark .box_inner::-webkit-scrollbar-thumb {
   background-color: #bbb; /* color of the scroll thumb */
   border-radius: 20px; /* roundness of the scroll thumb */
-  border: 1px solid #fff; /* creates padding around scroll thumb */
+  border: 1px solid #ddd; /* creates padding around scroll thumb */
 }
 .custom-modal.dark.light .box_inner.about {
-  border: 2px solid #fff;
+  border: 2px solid #ddd;
 }
 
 .custom-modal.dark {
@@ -144,7 +144,7 @@ body.dark .custom-modal.dark {
   background: #252525;
 }
 body.light .custom-modal.dark {
-  background: #fff;
+  background: #ddd;
 }
 body.dark .custom-modal.dark.hero,
 body.dark .custom-modal {
@@ -156,7 +156,7 @@ body.light .custom-overlay.dark {
 
 body.light,
 body.light .custom-modal.dark.hero {
-  background: #fff;
+  background: #ddd;
 }
 
 body.light .custom-modal.dark .box_inner.about {

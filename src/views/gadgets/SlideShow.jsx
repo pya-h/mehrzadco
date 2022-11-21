@@ -7,7 +7,7 @@ const SlideShow = ({ children, startIndex = 0, style = {}, className = "", outer
     useEffect(() => {
         const timerID = setInterval(() => {
             setShowAnimation(true);
-            setTimeout(() => setShowAnimation(false), [2000]);
+            setTimeout(() => setShowAnimation(false), [700]);
             setImageIndex((i) => {
                 return (i + 1) % children.length;
             });

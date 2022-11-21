@@ -113,7 +113,7 @@ $mbl-small: 23.75em; //380px / 16px = 23.75em
                 justify-content: center;
                 align-items: center;
                 font-size: 18px;
-                color: #fff;
+                color: #ddd;
                 text-transform: uppercase;
                 border-radius: 0.5rem;
 
@@ -155,7 +155,7 @@ body.light {
         }
     }
     .modal_portfolio .modal__content {
-        background: #fff;
+        background: #ddd;
     }
     .modal_portfolio .modal__outside {
         background: rgba(0, 0, 0, 0.65);
@@ -169,7 +169,7 @@ body.light {
         }
     }
     .modal_portfolio .modal__img {
-        background: #fff;
+        background: #ddd;
     }
 }
 
@@ -266,7 +266,7 @@ body.light {
 .portfolio .grid li figure div span {
     margin: 0;
     text-transform: uppercase;
-    color: #fff;
+    color: #ddd;
     font-size: 18px;
     position: absolute;
     left: 0;
@@ -364,7 +364,7 @@ body.light {
     height: 10px;
     border-radius: 50%;
     margin: 0 7px;
-    background-color: #fff;
+    background-color: #ddd;
     opacity: 1;
 }
 
@@ -376,7 +376,7 @@ body.light {
     text-align: center;
     cursor: pointer;
     padding: 200px 30px;
-    color: #fff;
+    color: #ddd;
 }
 
 .portfolio .slideshow nav span.nav-prev,

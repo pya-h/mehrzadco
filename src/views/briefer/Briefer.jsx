@@ -5,28 +5,36 @@ import DataList from "../gadgets/DataList";
 import SlideShow from "../gadgets/SlideShow";
 import GetContext from "../../context/GetContext";
 
+const HomeTitle = ({ front, behind }) => (
+    <center>
+        <div className="home-title-section text-left text-center">
+            <p>{front}</p>
+            <span className="home-title-bg">{behind}</span>
+        </div>
+    </center>
+);
+
 const Briefer = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { Screen, ServicesData } = GetContext();
+    const { Screen, ServicesData, BriefIntro } = GetContext();
     const slideShowImages = [
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_0.jpg"),
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_1.jpg"),
         require("../../assets/img/portfolio/mehrzad/img_mehrzad_2.jpg"),
     ];
 
-    const brieferContent = {
-        title: "شرکت مهندسی و ساخت مهرزاد",
-        descriptions: `شرکت مهندسی و ساخت مهرزاد از متخصصین رشته های مختلف ساختمانی تشکیل شده است از مهم ترین افراد این تیم حرفه ای می توان به مهندسان معماری، عمران، برق، مکانیک، نقشه بردار و درنهایت مهندس کنترل پروژه اشاره کرد.
-        در این مقاله بخش های مختلف شرکت مهندسی و ساخت مهرزاد را بررسی میکنیم همچنین درباره هر کدام از بخش های این دفتر توضیح مختصری خواهیم داد.`,
-        button: "بیشتر ...",
-    };
-
     function toggleModalBriefServices() {
         setIsOpen(!isOpen);
     }
 
     return (
-        <>
+        <div
+            className="container-fluid main-container container-home"
+            data-aos="fade-up"
+            data-aos-duration="1200"
+        >
+            <div className="color-block d-none d-lg-block"></div>
+
             <div
                 style={Screen.medium ? { height: "90vh" } : {}}
                 className="row home-details-container align-items-center"
@@ -39,9 +47,13 @@ const Briefer = () => {
                 <div
                     className={`${
                         Screen.large ? "col-8 offset-lg-4" : ""
-                    } home-details text-center text-lg-start`}
+                    } home-details text-center text-lg-start pt-5`}
                 >
-                    <h1
+                    <HomeTitle
+                        front={BriefIntro.title[0]}
+                        behind={BriefIntro.title[1]}
+                    />
+                    <div
                         className="col-12 text-center"
                         style={{
                             marginTop: !Screen.large ? "5rem" : "0",
@@ -51,9 +63,7 @@ const Briefer = () => {
                                 ? "44px"
                                 : "55px",
                         }}
-                    >
-                        {brieferContent.title}
-                    </h1>
+                    ></div>
                     <div className="my-5">
                         {!Screen.large && (
                             <SlideShow
@@ -68,17 +78,19 @@ const Briefer = () => {
                                 {slideShowImages}
                             </SlideShow>
                         )}
-                        <p>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            {brieferContent.descriptions}
-                        </p>
+                        <div>
+                            {BriefIntro.descriptions.map((d) => (
+                                <p className="my-0">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    {d}
+                                </p>
+                            ))}
+                        </div>
                         <button
-                            className="button btn-more"
+                            className="button btn-more my-5"
                             onClick={toggleModalBriefServices}
                         >
-                            <span className="button-text">
-                                {brieferContent.button}
-                            </span>
+                            <span className="button-text">بیشتر ...</span>
                             <span className="button-icon fa fa-arrow-right"></span>
                         </button>
                     </div>
@@ -116,7 +128,11 @@ const Briefer = () => {
                             </div>
                             <div className="text-center mt-1">
                                 <div className="resume-box">
-                                    <DataList icon={{theme: "warning"}} listIndicator="-">
+                                    <DataList
+                                        indenting={true}
+                                        icon={{ theme: "warning" }}
+                                        listIndicator="-"
+                                    >
                                         {ServicesData?.fieldExpertise}
                                     </DataList>
                                 </div>
@@ -125,7 +141,7 @@ const Briefer = () => {
                     </div>
                 </div>
             </Modal>
-        </>
+        </div>
     );
 };
 

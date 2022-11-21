@@ -61,7 +61,7 @@
   }
   
   .blog .post-content .entry-header h3 {
-    color: #fff;
+    color: #ddd;
     font-size: 20px;
     font-weight: 600;
     transition: 0.3s;
@@ -81,7 +81,7 @@
   }
   
   .blog .page-link {
-    color: #fff;
+    color: #ddd;
     background-color: #252525;
     border: 1px solid #252525;
     padding: 0;
@@ -100,7 +100,7 @@
   }
   
   .blog .page-link:hover {
-    color: #fff !important;
+    color: #ddd !important;
   }
   
   /* Blog Post */
@@ -165,7 +165,7 @@ body.light .blog-post .meta {
 }
 
 body.light .blog .page-item.active .page-link {
-    color: #fff;
+    color: #ddd;
 }
 
 .blog-post .meta i {

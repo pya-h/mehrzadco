@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import cancelImg from "../../assets/img/cancel.svg";
 import GetContext from "../../context/GetContext";
 import blogQuote from "../../assets/img/blog/quote.svg";
+import CoolTitle from "../gadgets/CoolTitle";
 
 Modal.setAppElement("#root");
 
@@ -16,8 +17,8 @@ const Blog = () => {
             <div className="row">
                 {blogsData.map((item) => (
                     <div 
-                        key={item.id}
-                        className="col-12 col-md-6 col-lg-6 col-xl-4 mb-30"
+                    key={item.id}
+                    className="col-12 col-md-6 col-lg-6 col-xl-4 mb-30"
                     >
                         <article
                             className="post-container"
@@ -69,25 +70,15 @@ const Blog = () => {
 
                                 <div className="box_inner blog-post">
                                     <article >
-                                        <div className="title-section text-left text-sm-center">
-                                            <h1>{blog?.title}</h1>
-                                            <span className="title-bg">
-                                                پست ها
-                                            </span>
-                                        </div>
-
+                                        <CoolTitle front={blog?.title} behind="پست ها" />
                                         <div className="meta open-sans-font">
-                                            <span>
-                                                <i className="fa fa-user"></i>
-                                                {blog.commentor}
-                                            </span>
                                             <span className="date">
                                                 <i className="fa fa-calendar"></i>
-                                                {blog.date}
+                                                &nbsp;{blog.date}
                                             </span>
                                             <span>
                                                 <i className="fa fa-tags"></i>
-                                                {blog.tag}
+                                                &nbsp;{blog.tag}
                                             </span>
                                         </div>
 

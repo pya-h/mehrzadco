@@ -1,69 +1,72 @@
+import avatarJavadMehrzad from '../assets/img/about/javad_mehrzad.jpg';
+import avatarFaridMehrzad from '../assets/img/about/farid_mehrzad.jpg';
+import avatarFatemehfeizollahi from '../assets/img/about/fatemeh_feizollahi.jpg';
+import avatarNaserJafari from '../assets/img/about/naser_jafari.jpg';
+import avatarMojtabaHashtrodi from '../assets/img/about/mojtaba_hashtrodi.jpg';
+import avatarAnounymous from '../assets/img/about/avatar_anonymous.png';
+
 const AboutData = {
     staff: [
-        [
-            { /*label: "نام",*/
-             value: "جواد مهرزاد" },
-            // { /*label: "ایمیل",*/
-            //  value: "javad.m.navi@gmail.com" },
-            { /*label: "رشته",*/
-             value: "کارشناس ارشد سازه" },
-
-        ],
-        [
-            { /*label: "نام",*/
-             value: "فرید مهرزاد" },
+        {
+            fullname: "جواد مهرزاد",
+            avatar: avatarJavadMehrzad,
+            major: "مهندس عمران",
+            profession: "کارشناس ارشد سازه"
+        },
+        {
+            fullname: "فرید مهرزاد",
+            avatar: avatarFaridMehrzad,
             // { /*label: "ایمیل",*/
             //  value: "farid.mehrzad.68@gmail.com" },
-            { /*label: "رشته",*/
-             value: "مهندس عمران" },
-        ],
-        [
-            { /*label: "نام",*/
-             value: "پدرام مکان پرست" },
-            // { /*label: "ایمیل",*/
-            //  value: "p4ya.py@gmail.com" },
-            { /*label: "رشته",*/
-             value: "مهندس برق-کنترل" },
-        ],
-        [
-            { /*label: "نام",*/
-             value: "مهندس مجبتی هشترودی" },
-            // { /*label: "ایمیل",*/
-            //  value: "x@gmail.com" },
-            { /*label: "رشته",*/
-             value: "مهندس عمران" },
-        ],
-        [
-            { /*label: "نام",*/
-             value: "مهندس فاطمه فیض اللهی" },
+            major: "مهندس عمران",
+            profession: "کارشناس ارشد مهندسی و مدیریت ساخت"
+        },
+        {
+            fullname: "پدرام مکان پرست",
+            avatar: avatarAnounymous,
+            major: "مهندس برق-کنترل",
+            profession: "برنامه نویس و طراح سایت"
+        },
+        {
+            fullname: "مهندس مجبتی هشترودی",
+            avatar: avatarMojtabaHashtrodi,
+            profession: "کارشناس ارشد سازه",
+            major: "مهندس عمران"
+        },
+        {
+            fullname: "مهندس فاطمه فیض اللهی",
+            avatar: avatarFatemehfeizollahi,
             // { /*label: "ایمیل",*/
             //  value: "fatemeh.feizollahi3167@gmail.com" },
-            { /*label: "رشته",*/
-             value: "مهندس معمار" },
-        ],
-        [
-            { /*label: "نام",*/
-             value: "ناصر جعفری" },
-            // { /*label: "ایمیل",*/
-            //  value: "x@gmail.com" },
-            { /*label: "رشته",*/
-             value: "مهندس مکانیک" },
-        ],
+            major: "مهندس معمار"
+        },
+        {
+            fullname: "ناصر جعفری",
+            avatar: avatarNaserJafari,
+            major: "مهندس مکانیک",
+            profession: "کارشناسی ارشد تبدیل انرژی"
+        },
     ],
 };
 
+const BriefIntro = {
+    title: ["Mehrzad", "Construction"],
+    descriptions: [`گروه مهندسی و ساخت مهرزاد، مجموعه ای از مجرب ترین و خلاق ترین متخصصین رشته های گوناگون مهندسی می باشند
+     که گرد هم آمده اند تا با بهره گیری از تکنیک های خلاقانه ی معماری و دانش و فناوری روز دنیا، اقدام به ساخت سازه های خاص و ماندگار عمرانی کنند. `,
+    `هدف این گروه این است که با کنار زدن طرحواره ها و سلیقه های قدیمی، بیش از پیش، زیبایی، خلاقیت و نوآوری را وارد عرصه ساختمان سازی کنند.`]
 
+}
 const Socials = [
     {
         iconName: "fa fa-instagram",
         link: "https://www.instagram.com/mehrzadco",
     },
-    // { iconName: "fa fa-whatsapp", link: "https://wa.me/9112858020" },
     {
         iconName: "fa fa-youtube",
-        link: "https://www.youtube.com/",
+        link: "https://www.youtube.com/@MehrzadCo",
     },
-    { iconName: "fa fa-telegram", link: "https://telegram.me/pya_js" },
+    { iconName: "fa fa-whatsapp", link: "https://wa.me/989112858020" },
+    { iconName: "fa fa-telegram", link: "https://telegram.me/Javad_Mehrzad" },
     { iconName: "fa fa-github", link: "https://github.com/pya-h" },
 
 ];
@@ -76,8 +79,8 @@ const ContactData = [
     },
     {
         label: "ایمیل",
-        value: "mehrzad.construction.co@mail.com",
-        href: "mailto:mehrzad.construction.co@gmail.com",
+        value: "mehrzad.co@yahoo.com",
+        href: "mailto:mehrzad.co@yahoo.com",
         icon: <i className="fa fa-envelope-open position-absolute"></i>,
     },
     {
@@ -112,8 +115,7 @@ const whyus = [
         ],
         icon: (
             <i
-                class="fa fa-opencart text-light mt-2"
-                style={{ fontSize: "25px" }}
+                className="whyus-icon fa fa-line-chart mt-2"
                 aria-hidden="true"
             ></i>
         ),
@@ -127,13 +129,12 @@ const whyus = [
         details: [
             {
                 text:
-                    "شرکت مهندسی و ساخت مهرزاد ، همگام با دانش روز دنیا و به کار گیری گروه متخصصین، سازه‌هایی اصولی خلق می‌کند",
+                    "گروه مهندسی و ساخت مهرزاد، همگام با دانش روز دنیا و به کار گیری گروه متخصصین، سازه‌هایی اصولی خلق می‌کند",
             },
         ],
         icon: (
             <i
-                class="fa fa-rss text-light mt-2"
-                style={{ fontSize: "25px" }}
+                className="whyus-icon fa fa-book mt-2"
                 aria-hidden="true"
             ></i>
         ),
@@ -152,14 +153,13 @@ const whyus = [
         ],
         icon: (
             <i
-                class="fa fa-bolt text-light mt-2"
-                style={{ fontSize: "25px" }}
+                className="whyus-icon fa fa-american-sign-language-interpreting mt-2"
                 aria-hidden="true"
             ></i>
         ),
         positon: "left",
     },
 ];
-const US = { ContactData, AboutData, Socials, whyus };
+const US = { ContactData, AboutData, Socials, whyus, BriefIntro };
 
 export default US;

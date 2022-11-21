@@ -10,7 +10,6 @@ const ContactInfo = () => {
             </h2>
             <hr />
             <b>
-                {" "}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; از این طریق می
                 توانید با ما ارتباط داشته باشید. مشتاق پیشنهادها و نظرات شما
                 عزیزان هستیم.
@@ -29,11 +28,8 @@ const ContactInfo = () => {
                                 field.value
                             )}
                         </p>
-                        {/* End .custom-span-contact */}
                     </div>
                 ))}
-
-            {/* End .custom-span-contact */}
         </>
     );
 };

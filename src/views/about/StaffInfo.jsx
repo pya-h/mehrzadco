@@ -1,23 +1,34 @@
 import React from "react";
-import GetContext from "../../context/GetContext";
 
-const StaffInfo = ({ children }) => {
-    const { Screen } = GetContext();
 
-    return (
-        children instanceof Array &&
-        children.map((field, idx) => (
-            <p className="mt-lg-5 mt-md-4 mt-3 mx-1" style={{ fontSize: Screen.superSmall ? "14px" : "25px" }}>
-                {/* {Boolean(!Screen.superSmall) && <span>{field.label}: </span>} */}
+class InfoField extends React.Component {
+    render() {
+
+        return (
+            <p
+                className="mt-lg-4 mt-md-2 mt-1 mx-1"
+                style={{ color: "black", fontSize: this.props?.small ? "12px" : "18px" }}
+            >
                 <span
                     dir="ltr"
                     className="value d-block d-sm-inline-block d-lg-block d-xl-inline-block"
                 >
-                    {field.value}
+                    {this.props?.children}
                 </span>
-                {Boolean(idx % 2 === 0) && <hr className="mx-4 text-primary" />}
             </p>
-        ))
+        );
+    }
+}
+
+const StaffInfo = ({ children }) => {
+    return (
+        <div>
+            <InfoField >{children?.fullname}</InfoField>
+            <hr className="mx-4 text-primary" />
+            <InfoField >{children?.major}</InfoField>
+            <InfoField >{children?.profession}</InfoField>
+
+        </div>
     );
 };
 

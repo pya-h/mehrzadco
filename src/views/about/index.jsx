@@ -1,23 +1,26 @@
-import React, { useEffect } from "react";
+import React from "react";
 import GetContext from "../../context/GetContext";
+import CoolTitle from "../gadgets/CoolTitle";
 import StaffInfo from "./StaffInfo";
-import avatar from "./img_avatar.png";
 
 const AboutUs = () => {
     const { AboutData } = GetContext();
 
-    useEffect(() => {}, []);
     return (
-        <section className="main-content">
+        <section className="main-content"  data-aos="fade-up" data-aos-duration="1200">
+            <CoolTitle
+                front="درباره ما"
+                behind="About.Us"
+            />
             <div className="container">
                 <div className="row mx-auto px-5">
                     <div className="row px-2">
                         <h4 className="text-warning text-uppercase custom-title mb-0 ft-wt-600">
-                            شرکت مهندسی و ساخت مهرزاد
+                            گروه مهندسی و ساخت مهرزاد
                         </h4>
                     </div>
                     <div className="container">
-                        <div className="row my-5">
+                        <div className="row mb-5">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; به
                             خود می‌بالیم که با عنایت ایزد منان، تلاش روز افزون و
                             بهره‌گیری از دانش روز دنیا، خود را در عرصه صنعت
@@ -29,29 +32,19 @@ const AboutUs = () => {
                             برداشتن همگام با معماری بین المللی، زمینه‌ساز این
                             مهم باشیم.
                         </div>
-                        <div className="row my-5">
-                            <div className="row">
-                                <h4 className="text-warning text-uppercase custom-title mb-0 ft-wt-600">
-                                    همراه ما باشید...
-                                </h4>
-                            </div>
+                        <hr className="separator"/>
+                        <div className="row mt-5">
+                            <h4 className="text-warning text-uppercase custom-title mb-0 ft-wt-600">
+                                همراه ما باشید...
+                            </h4>
                         </div>
-                        <hr />
-                        <div className="row my-2">
-                            <div className="row">
-                                <h4 className="text-warning text-uppercase custom-title mb-0 ft-wt-600">
-                                    و اما پرسنل این مجموعه:
-                                </h4>
-                            </div>
-                        </div>
-                        
                         <div className="row">
                             {AboutData.staff instanceof Array &&
                                 AboutData.staff.map((staff) => (
-                                    <div className="col-lg-4 col-md-4 col-6 my-3 mx-auto">
+                                    <div className="col-lg-4 col-md-4 col-sm-6 col-12 my-3 mx-auto">
                                         <div className="overlay-container col mx-auto">
                                             <img
-                                                src={avatar}
+                                                src={staff.avatar}
                                                 alt="Avatar"
                                                 className="overlay-image img-fluid"
                                                 />

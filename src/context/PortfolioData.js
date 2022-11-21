@@ -7,13 +7,13 @@ const meterageUnit = { en: "Square Meters", fa: "مترمربع" };
 const PortfolioData = [
   {
     id: 419,
-    title: { fa: "ساختمان مهرزاد", en: "Mehrzad Building" },
+    title: { fa: "ساختمان مهرزاد-تیلار", en: "Mehrzad Tilar" },
     image: [Image1, Image2, Image3],
     tag: ["MehrzadBuilding"],
     delayAnimation: "0",
     details: [
       {
-        project: { fa: "ساختمان مهرزاد", en: "Mehrzad Building" },
+        project: { fa: "ساختمان مهرزاد-تیلار", en: "Mehrzad Tilar" },
         address: "گیلان، تالش، خیابان تیلار",
         endDate: 1400,
         meterage: {
@@ -23,24 +23,7 @@ const PortfolioData = [
       },
     ],
   },
-  {
-    id: 420,
-    title: { fa: "دیگران", en: "Others" },
-    image: [Image1, Image2, Image3],
-    tag: ["OthersProject"],
-    delayAnimation: "0",
-    details: [
-      {
-        project: { fa: "دیگران", en: "Others" },
-        address: "گیلان، تالش، خیابان تیلار",
-        endDate: 1400,
-        meterage: {
-          value: 235,
-          unit: meterageUnit
-        }
-      },
-    ],
-  },
+
 ];
 
 export default PortfolioData;

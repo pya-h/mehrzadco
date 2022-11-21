@@ -3,14 +3,13 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Briefer from "../views/briefer/Briefer";
 import AboutUs from "../views/about";
 import OurServices from "../views/services";
-import ContactInfo from "../views/contact/ContactInfo";
 import Portfolio from "../views/portfolio/Portfolio";
-import Blog from "../views/blog/Blog";
-import ContactForm from "../views/contact/ContactForm";
 import SwitchDark from "./SwitchDark";
 import Logo from "./Logo";
 import GetContext from "../context/GetContext";
 import SocialLinks from "./SocialLinks";
+import ContactUs from "../views/contact";
+import BlogsSection from "../views/blog";
 
 const menuItem = [
     { icon: "fa-home", menuName: "خانه" },
@@ -22,23 +21,21 @@ const menuItem = [
 ];
 
 const Home = () => {
-    const { tabIndex, setTabIndex, Screen } = GetContext();
+    const { tabIndex, changeTab, Screen } = GetContext();
 
     return (
         <div className="yellow">
             <SwitchDark />
             <Logo />
             {Boolean(tabIndex >= 0) && (
-                <Tabs defaultIndex={tabIndex}>
+                <Tabs
+                    onSelect={(index) => changeTab(index)}
+                    defaultIndex={tabIndex}
+                >
                     <div className="header">
                         <TabList className=" icon-menu revealator-slideup revealator-once revealator-delay1">
                             {menuItem.map((item, i) => (
-                                <Tab
-                                    className="icon-box"
-                                    key={i}
-                                    // onClick={() => sessionStorage.setItem("tabIndex", i) }
-                                    onClick={() => setTabIndex(i)}
-                                >
+                                <Tab className="icon-box" key={i}>
                                     <i className={`fa ${item.icon}`}></i>
                                     <h2
                                         style={{ fontWeight: "bold" }}
@@ -53,102 +50,34 @@ const Home = () => {
 
                     <div className="tab-panel_list">
                         <TabPanel className="home">
-                            <div
-                                className="container-fluid main-container container-home"
-                                data-aos="fade-up"
-                                data-aos-duration="1200"
-                            >
-                                <div className="color-block d-none d-lg-block"></div>
+
                                 <Briefer />
-                            </div>
+
                         </TabPanel>
 
                         <TabPanel className="about">
-                            <div data-aos="fade-up" data-aos-duration="1200">
-                                <center>
-                                    <div className="title-section text-left text-sm-center">
-                                        <h1>
-                                            خدمات <span>ما</span>
-                                        </h1>
-                                        <span className="title-bg">
-                                            About Us
-                                        </span>
-                                    </div>
-                                </center>
-                                <OurServices />
-                            </div>
+                            <OurServices />
                         </TabPanel>
 
-                        <TabPanel className="portfolio">
+                        <TabPanel
+                            className="portfolio"
+                            data-aos="fade-up"
+                            data-aos-duration="1200"
+                        >
                             <Portfolio />
                         </TabPanel>
 
                         <TabPanel className="blog">
-                            <center
-                                className="title-section text-left text-sm-center "
-                                data-aos="fade-up"
-                                data-aos-duration="1200"
-                            >
-                                <h1>بلاگ</h1>
-                                <span className="title-bg">Blog</span>
-                            </center>
-                            <div
-                                className="container"
-                                data-aos="fade-up"
-                                data-aos-duration="1200"
-                            >
-                                <div className="row pb-50">
-                                    <Blog />
-                                </div>
-                            </div>
+                            <BlogsSection />
                         </TabPanel>
                         <TabPanel className="about">
-                            <div data-aos="fade-up" data-aos-duration="1200">
-                                <center>
-                                    <div className="title-section text-left text-sm-center">
-                                        <h1>
-                                            درباره <span>ما</span>
-                                        </h1>
-                                        <span className="title-bg">
-                                            About Us
-                                        </span>
-                                    </div>
-                                </center>
-                                <AboutUs />
-                            </div>
+                            <AboutUs />
                         </TabPanel>
 
                         <TabPanel
                             className={`contact ${!Screen.large ? "pb-4" : ""}`}
                         >
-                            <div
-                                className="title-section text-left text-sm-center"
-                                data-aos="fade-up"
-                                data-aos-duration="1200"
-                            >
-                                <center>
-                                    <h1>
-                                        تماس <span>با ما</span>
-                                    </h1>
-                                    <span className="title-bg">Contact Us</span>
-                                </center>
-                            </div>
-                            <div
-                                className="container"
-                                data-aos="fade-up"
-                                data-aos-duration="1200"
-                            >
-                                <div className="row">
-                                    <div className="col-1"></div>
-                                    <div className="col-11 col-lg-4 my-3">
-                                        <ContactInfo />
-                                    </div>
-
-                                    <div className="col-11 col-lg-7">
-                                        <ContactForm />
-                                    </div>
-                                </div>
-                            </div>
+                            <ContactUs />
                         </TabPanel>
                     </div>
                 </Tabs>

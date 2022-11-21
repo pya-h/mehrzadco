@@ -1,31 +1,35 @@
 import React from "react";
-import Achievements from "./Achievements";
+import ImplementationProcess from "./ImplementationProcess";
 import RoadMap from "../roadmap";
 import GetContext from "../../context/GetContext";
 import VideoPlayer from "../gadgets/VideoPlayer";
 import DataList from "../gadgets/DataList";
+import CoolTitle from "../gadgets/CoolTitle";
 
 const OurServices = () => {
-    const { ServicesData, whyus } = GetContext();
+    const { ServicesData, whyus, isDark } = GetContext();
 
     return (
-        <section className="main-content ">
+        <section className="main-content"  data-aos="fade-up" data-aos-duration="1200">
+            <CoolTitle front="خدمات ما" behind="Services" />
             <div className="container">
                 <div className="row">
-                    <hr className="separator" />
                     <RoadMap title="خدمات">
                         {ServicesData?.generalServices}
                     </RoadMap>
                 </div>
 
                 <hr className="separator" />
-                <div
-                    className="row my-5 mx-auto"
-                    // style={{ maxWidth: "50rem", maxHeight: "30rem" }}
-                >
+                <h2 className="title text-warning text-center mb-4">
+                    چرا گروه مهندسی و ساخت مهرزاد؟
+                </h2>
+                <div className="row my-5 mx-auto">
                     <div className="col-md-6">
-                        <h2 className="title text-warning mb-4">چرا گروه مهندسی و ساخت مهرزاد؟</h2>
-                        <DataList textSize="small" icon={{ inline: true }}>
+                        <DataList
+                            textSize="small"
+                            lineBreaks={true}
+                            icon={{ inline: true, drawColor: isDark ? "light" : "dark" }}
+                        >
                             {whyus}
                         </DataList>
                     </div>
@@ -36,7 +40,12 @@ const OurServices = () => {
                 <hr className="separator" />
 
                 <div className="row">
-                    <Achievements />
+                    <h2 className="title text-warning text-center mb-5">
+                        روند انجام پروژه ها
+                    </h2>
+                    <ImplementationProcess>
+                        {ServicesData?.implementationProcess}
+                    </ImplementationProcess>
                 </div>
             </div>
         </section>

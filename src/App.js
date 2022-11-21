@@ -3,9 +3,9 @@ import ScrollToTop from "./common/ScrollToTop";
 import AllRoutes from "./common/MainRoutes";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import AnimatedCursor from "react-animated-cursor";
 import { ToastContainer } from "react-toastify";
 import ContextProvider from "./context/ContextProvider";
+import AnimatedCursor from "react-animated-cursor";
 
 const App = () => {
     // this for animation
@@ -24,7 +24,7 @@ const App = () => {
                 color="255, 160, 1"
                 outerAlpha={0.3}
                 innerScale={0.7}
-                outerScale={1.2}
+                outerScale={0.8}
             />
             <ScrollToTop />
             <AllRoutes />

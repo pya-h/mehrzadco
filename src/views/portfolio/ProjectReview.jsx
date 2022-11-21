@@ -2,6 +2,7 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CountUp from "react-countup";
+import CoolTitle from "../gadgets/CoolTitle";
 
 const ProjectReview = ({ children, imageIndex = 0, onBtnBackClick }) => {
     return (
@@ -13,14 +14,7 @@ const ProjectReview = ({ children, imageIndex = 0, onBtnBackClick }) => {
             {children && (
                 <div className="mx-auto" key={children.id}>
                     {/* <h1 className="mb-5 text-center">{children.title.fa}</h1> */}
-                    <div
-                        className="title-section text-center mx-auto"
-                        data-aos="fade-up"
-                        data-aos-duration="1200"
-                    >
-                        <h1 className="text-warning">{children.title?.fa}</h1>
-                        <span className="title-bg">{children.title?.en}</span>
-                    </div>
+                    <CoolTitle front={children.title?.fa} behind={children.title?.en} />
                     <div className="row mb-5">
                         <div className="col-2">
                             <button

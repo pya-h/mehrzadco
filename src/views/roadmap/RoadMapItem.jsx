@@ -17,8 +17,8 @@ function RoadMapItem(props) {
                 <hr />
                 <div className="row">
                     {
-                        item.details?.map((li,idx) => (
-                            <p key={idx} className="px-5 pt-0 text-light">&nbsp;&nbsp;&nbsp;&nbsp; {li.text}</p>
+                        item.details?.map((line,idx) => (
+                            <p key={idx} className="px-1 px-lg-5 px-md-4 px-sm-2 pt-0 text-light">{line}</p>
                         ))
                     }
                 </div>

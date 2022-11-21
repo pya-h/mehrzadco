@@ -10,6 +10,8 @@ export const MyContext = createContext();
 const ContextProvider = ({ children }) => {
     const [isDark, setIsDark] = useState(false);
     const [tabIndex, setTabIndex] = useState(-1);
+    const [selectedProjectID, setSelectedProjectID] = useState(-1);
+
     const screenSuperSmall = useMediaQuery({ query: "(max-width: 600px)" });
     const screenSmall = useMediaQuery({ query: "(max-width: 768px)" });
 
@@ -28,11 +30,17 @@ const ContextProvider = ({ children }) => {
         sessionStorage.setItem("tabIndex", tabIndex);
     }
 
-
+    const changeTab = index => {
+        setTabIndex(index);
+        setSelectedProjectID(-1);
+    }
+    
     return <MyContext.Provider value={{
         ...AllBlogData(), isDark, setIsDark,
         tabIndex, setTabIndex,
         PortfolioData, ServicesData,
+        selectedProjectID, setSelectedProjectID,
+        changeTab,
         ...US,
         Screen: {
             superSmall: screenSuperSmall,

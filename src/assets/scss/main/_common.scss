@@ -101,6 +101,8 @@
     transform: translateY(-30%);
     &:hover {
         background-color: #656565;
+        box-shadow: 0 0 50px white;
+        transform: translateY(1px);
     }
 
     @media (max-width: 1199px) {
@@ -152,5 +154,13 @@
     }
     input {
         cursor: pointer;
+    }
+}
+
+body.light .theme-switcher-label {
+    &:hover {
+        background-color: #656565;
+        box-shadow: 0 0 50px black;
+        transform: translateY(1px);
     }
 }
