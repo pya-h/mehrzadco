@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mehrzadco/static/css/main.08eeb2bf.css",
-    "main.js": "/mehrzadco/static/js/main.f7ede500.js",
-    "static/js/27.9ea1a6ac.chunk.js": "/mehrzadco/static/js/27.9ea1a6ac.chunk.js",
+    "main.js": "/mehrzadco/static/js/main.59e37cd1.js",
+    "static/js/27.df763461.chunk.js": "/mehrzadco/static/js/27.df763461.chunk.js",
     "static/media/img_mehrzad_0.jpg": "/mehrzadco/static/media/img_mehrzad_0.96f3ebbb4e82f3c087d7.jpg",
     "static/media/img_mehrzad_1.jpg": "/mehrzadco/static/media/img_mehrzad_1.27022ceb61f9162b440b.jpg",
     "static/media/img_mehrzad_2.jpg": "/mehrzadco/static/media/img_mehrzad_2.8b737a13de71c2288f8d.jpg",
@@ -36,6 +36,6 @@
   },
   "entrypoints": [
     "static/css/main.08eeb2bf.css",
-    "static/js/main.f7ede500.js"
+    "static/js/main.59e37cd1.js"
   ]
 }
