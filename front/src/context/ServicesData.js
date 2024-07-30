@@ -2,7 +2,7 @@ import iconSupevision from '../assets/img/about/civil.png';
 import iconArchitects from '../assets/img/about/architect.png';
 import iconPeymankari from '../assets/img/about/peymankari.png';
 
-// import AboutVideo from '../assets/vids/about.mp4';
+import AboutVideo from '../assets/vids/about.mp4';
 
 import iconBazdidProzheh from '../assets/img/services/bazdid-prozheh.png';
 import iconBarrasiNiaz from '../assets/img/services/barrasi-niaz.png';
@@ -143,7 +143,7 @@ const generalServices = [
         id: 3,
         title: 'پیمانکاری و ساخت',
         details: [
-            `ما در گروه مهندسی و ساخت مهرزاد با تشکیل شبکه گسترده ای از حرفه ای ترین پیمانکاران خدمات گسترده ای را در زمینه اجرای طراحی
+            `ما در گروه مهندسی و ساخت مهرزاد با تشکیل شبکه گسترده ای از حرفه ای ترین پیمانکاران خدمات گسترده ای را در زمینه اجرای طراحی 
             و معماری های مختلف ارائه میدهیم که این خدمات شامل اجرای صفر تا صد پروژه های ساختمانی و
              اجرای پروژه های بازسازی و داخلی  و نیز تهیه مدارک اجرایی مورد نیاز در مراحل مختلف هر پروژه میباشد.`,
         ],
@@ -169,7 +169,7 @@ const generalServices = [
 ];
 
 const implementationProcess = [{
-        title: "بازدید پروژه و مشاوره",
+        title: "بازدید پروژه و مشاوره", 
         icon: <img
             src={iconBazdidProzheh}
             width="64"
@@ -181,7 +181,7 @@ const implementationProcess = [{
         به خوبی و با دقت بالا به شما در رابطه با هزینه و نکات مثبت و منفی طراحی و معماری آن پروژه مشاوره لازم را بدهیم.`
     },
     {
-        title: "بررسی نیازهای موجود",
+        title: "بررسی نیازهای موجود", 
         icon: <img
             src={iconBarrasiNiaz}
             width="64"
@@ -193,7 +193,7 @@ const implementationProcess = [{
          تحلیل دسترسی و ارتباطات ، تحلیل اقلیمی  و تاریخی پروژه کار را دست میگیرد تا با تحلیل تمامی موارد اطلاعات  و خوراک مناسب را در قالب یک دفترچه برای تیم طراحی و معماری آماده کند.`
     },
     {
-        title: "طراحی و ارائه اولیه",
+        title: "طراحی و ارائه اولیه", 
         icon: <img
             src={iconTarrahivaEraeAvvalieh}
             width="64"
@@ -205,7 +205,7 @@ const implementationProcess = [{
          و پس از حل شدن روابط فضایی و ترکیب حجمی پروژه طرح را به تیم پرزانته دفتر گروه مهندسی مهرزاد بسپارد  تا متخصصین
           ما در این بخش طرح ها را به صورت سه بعدی و انیمیشن برای ارایه آماده کنند.`
     },{
-        title: "عقد قرارداد",
+        title: "عقد قرارداد", 
         icon: <img
             src={iconAghdehGharadad}
             width="64"
@@ -213,11 +213,11 @@ const implementationProcess = [{
             className="p-1 text-white"
             alt="!"
         />,
-        topic: `این حق شما است که بدانید هزینه طراحی معماری، اجرا و نظارت پروژه تان با توجه به طراحی چه میزان است و شرایط آسان پرداخت آن به چه گونه میباشد.
+        topic: `این حق شما است که بدانید هزینه طراحی معماری، اجرا و نظارت پروژه تان با توجه به طراحی چه میزان است و شرایط آسان پرداخت آن به چه گونه میباشد. 
         پس از تایید کلی طرح توسط کارفرما جهت پیش برد و توسعه طراحی زمان آن میرسد که ما این اطلاعات را در قالب یک قرارداد دو طرفه به اطلاع شما برسانیم
          و با این کار تعهد خود به هزینه و زمان را بیش از هر زمان تایید کنیم.`
     },{
-        title: "توسعه و تکامل طرح",
+        title: "توسعه و تکامل طرح", 
         icon: <img
             src={iconTose_eTakamol}
             width="64"
@@ -228,7 +228,7 @@ const implementationProcess = [{
         topic: `طبیعی است که هر پروژه برای آنکه به کمال خود برسد نیاز به بازنگری و توسعه دارد که این فرآیند در چند رفت و برگشت میان طراحان ما در دفتر گروه مهندسی مهرزاد و کارفرما انجام میشود.
          در این بخش ضمن توسعه و تکامل طرح ، طراحی و معماری تمامی جزییات و ریز فضا ها نیز کامل شده و به اتمام میرسد تا آنکه طرح ها برای اجرای هر چه بهتر و سریعتر به دست متخصصین فاز دو دفتر برسد.`
     },{
-        title: "ارائه نقشه‌های اجرایی",
+        title: "ارائه نقشه‌های اجرایی", 
         icon: <img
             src={iconEraeNaghshehEjarei}
             width="64"
@@ -240,7 +240,7 @@ const implementationProcess = [{
          و جزییات اجرایی ساختمان را برای اجرای هر چه بهتر با هزینه کمتر در قالب یک دفترچه به بخش اجرایی تحویل میدهد . اما کار بخش فنی و فاز دو دفتر تا زمان اتمام پروژه همگام و همراه با
           تیم اجرایی ادامه میابد تا بتواند در روند ساخت پاسخگوی تغیرات و مشکلات اجرایی باشد.`
     },{
-        title: "نظارت و اجرا",
+        title: "نظارت و اجرا", 
         icon: <img
             src={iconNezaratEjra}
             width="64"
@@ -255,6 +255,6 @@ const implementationProcess = [{
 
 ];
 
-const ServicesData = { fieldExpertise, generalServices, implementationProcess, videos: [] };
+const ServicesData = { fieldExpertise, generalServices, implementationProcess, videos: [AboutVideo, ] };
 
 export default ServicesData;

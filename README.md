@@ -1,6 +1,9 @@
-# Mehrzad Construction Website By pya-h
+# Mehrzad Construction Website 
+# Django + REACT
+# By pya-h + pydea-rs [Both are the same actually]
 
-A simple business website for Civil Engineering group named Mehzad Construction
+A fullstack business [landing] website for Civil Engineering group named Mehzad Construction
 Based On # Tunis Personal Portfolio React Template
 
-Demo in: https://pya-h.github.io/mehrzadco
+Demo: https://pya-h.github.io/mehrzadco
+Actual site: https://mehrzadco.com

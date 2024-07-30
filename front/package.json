@@ -2,7 +2,7 @@
   "name": "mehrzadco",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://pya-h.github.io/mehrzadco",
+  "homepage": "http://mehrzadco.com",
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "@testing-library/jest-dom": "^5.11.4",
