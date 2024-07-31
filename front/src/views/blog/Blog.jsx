@@ -93,11 +93,11 @@ const Blog = () => {
                                             <div className="icon">
                                                 <img
                                                     src={blogQuote}
-                                                    alt="blog quote"
+                                                    alt="blogs quote"
                                                 />
                                             </div>
                                             <p>
-                                                {blog?.description2}
+                                                {blogs?.description2}
                                             </p>
                                         </div> */}
                                         <div className="blog-excerpt pb-5">
