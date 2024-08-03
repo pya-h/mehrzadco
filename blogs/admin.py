@@ -15,7 +15,7 @@ class BlogAdminPanel(admin.ModelAdmin):
     list_filter = ('author', 'custom_author_name',)
     search_fields = ('author_username', 'author_fullname', 'custom_author_name',)
     inlines = (BlogParagraphInlinePanel, )
-    readonly_fields = ('created_at', 'modified_at',)
+    readonly_fields = ('created_at', 'modified_at', 'deleted_at')
 
     def save_model(self, request, obj, form, change):
         if not change:
@@ -28,7 +28,7 @@ class ParagraphAdminPanel(admin.ModelAdmin):
     list_display_links = ('blog_title', 'header',)
     list_filter = ('blog__title', 'blog__author', 'blog__custom_author_name',)
     search_fields = ('header', 'blog_title', 'body')
-    readonly_fields = ('created_at', 'modified_at', 'created_by',)
+    readonly_fields = ('created_at', 'modified_at', 'created_by', 'deleted_at')
 
     def save_model(self, request, obj, form, change):
         obj.created_by = request.user

@@ -10,7 +10,8 @@ DEBUG = bool(config('DEBUG'))
 HOST_URL = config('HOST')
 SUBDOMAIN_PREFIX = config('SUBDOMAIN_PREFIX', None)
 
-ALLOWED_HOSTS = ([f"https://{HOST_URL}", f"https://{SUBDOMAIN_PREFIX}.{HOST_URL}"] if SUBDOMAIN_PREFIX else [f"https://{HOST_URL}",]) if not DEBUG else []
+ALLOWED_HOSTS = ([f"https://{HOST_URL}", f"https://{SUBDOMAIN_PREFIX}.{HOST_URL}"] if SUBDOMAIN_PREFIX else
+                 [f"https://{HOST_URL}", ]) if not DEBUG else []
 
 # Application definition
 INSTALLED_APPS = [
@@ -60,7 +61,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [

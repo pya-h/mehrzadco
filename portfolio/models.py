@@ -1,6 +1,7 @@
 from mehrzadco.model import BaseModel, models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.handlers.wsgi import WSGIRequest
 
 
 class ProjectBase(BaseModel):
@@ -15,7 +16,7 @@ class ProjectBase(BaseModel):
     ])
 
     def __str__(self):
-        return self.name
+        return f'Project: {self.name}'
 
     @property
     def owner_username(self):
@@ -32,16 +33,36 @@ class ConstructionProject(ProjectBase):
         verbose_name = 'Construction Project'
         verbose_name_plural = 'Construction Projects'
 
+    @property
+    def brief_data(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "description": self.description,
+            "started_at": self.start_date,
+            "finished_at": self.finish_date,
+            "progress": self.progress,
+            "location": self.location,
+            "area": self.area,
+            "for_sale": self.for_sale,
+        }
+
 
 class PortfolioGallery(BaseModel):
     image = models.ImageField(upload_to='portfolio')
     project = models.ForeignKey(ProjectBase, on_delete=models.CASCADE)
 
-    uploaded_by = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    uploaded_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
+
+    def brief_data(self, request: WSGIRequest):
+        return {'url': request.build_absolute_uri(self.image.url), 'project': self.project_name}
 
     class Meta:
         verbose_name = 'Gallery'
         verbose_name_plural = 'Gallery'
+
+    def __str__(self):
+        return f'{self.project_name} Gallery Image#{self.id}'
 
     @property
     def project_name(self):

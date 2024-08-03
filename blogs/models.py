@@ -20,8 +20,12 @@ class Blog(BaseModel):
 
     @property
     def author_fullname(self):
-        fullname = f"{self.author.first_name} {self.author.last_name or ''}"
+        fullname = f"{self.author.first_name} {self.author.last_name or ''}" if self.author is not None \
+                                                            and not self.custom_author_name else self.custom_author_name
         return fullname.strip()
+
+    def __str__(self):
+        return f'Blog: {self.title} By {self.author_fullname}'
 
 
 class BlogParagraph(BaseModel):
@@ -61,3 +65,6 @@ class BlogParagraph(BaseModel):
     @property
     def custom_author_name(self):
         return self.blog.custom_author_name
+
+    def __str__(self):
+        return f'Paragraph: {self.header}, Blog: {self.blog_title}'
