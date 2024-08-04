@@ -2,6 +2,7 @@ from mehrzadco.model import BaseModel, models
 from django.contrib.auth.models import User
 import blogs.pen as pen
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.handlers.wsgi import WSGIRequest
 
 
 class Blog(BaseModel):
@@ -27,6 +28,14 @@ class Blog(BaseModel):
     def __str__(self):
         return f'Blog: {self.title} By {self.author_fullname}'
 
+    def brief(self, request: WSGIRequest):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "image": request.build_absolute_uri(self.image.url),
+            "author": self.author_fullname,
+        }
+
 
 class BlogParagraph(BaseModel):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
@@ -42,8 +51,28 @@ class BlogParagraph(BaseModel):
         MaxValueValidator(60)
     ])
     extra_styles = models.TextField(blank=True, null=True, verbose_name='Extra CSS Style')
-
     created_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
+
+    def brief(self, request: WSGIRequest | None = None):
+        data = {
+            "blogId": self.blog_id,
+            "header": self.header,
+            "body": self.body,
+        }
+        if self.image:
+            data['image'] = request.build_absolute_uri(self.image.url) if request else self.image.url
+        return data
+
+    def dict(self, request: WSGIRequest | None = None):
+        brief_data = self.brief(request)
+        return dict(brief_data, **{
+            'color': self.color,
+            'isBold': self.is_bold,
+            'isUnderlined': self.is_underlined,
+            'font': self.font,
+            'fontsize': self.fontsize,
+            'extraCssStyles': self.extra_styles
+        })
 
     class Meta:
         verbose_name = 'Paragraph'

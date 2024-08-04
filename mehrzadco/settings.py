@@ -6,7 +6,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SERVER_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(config('DEBUG'))
+DEBUG = bool(int(config('DEBUG')))
+
 HOST_URL = config('HOST')
 SUBDOMAIN_PREFIX = config('SUBDOMAIN_PREFIX', None)
 

@@ -2,6 +2,7 @@ from mehrzadco.model import BaseModel, models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.core.handlers.wsgi import WSGIRequest
+from typing import Dict
 
 
 class ProjectBase(BaseModel):
@@ -34,17 +35,17 @@ class ConstructionProject(ProjectBase):
         verbose_name_plural = 'Construction Projects'
 
     @property
-    def brief_data(self):
+    def brief(self) -> Dict[str, str | int | float]:
         return {
             "id": self.id,
             "name": self.name,
             "description": self.description,
-            "started_at": self.start_date,
-            "finished_at": self.finish_date,
+            "startedAt": self.start_date,
+            "finishedAt": self.finish_date,
             "progress": self.progress,
             "location": self.location,
             "area": self.area,
-            "for_sale": self.for_sale,
+            "forSale": self.for_sale,
         }
 
 
@@ -54,7 +55,7 @@ class PortfolioGallery(BaseModel):
 
     uploaded_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
 
-    def brief_data(self, request: WSGIRequest):
+    def brief(self, request: WSGIRequest):
         return {'url': request.build_absolute_uri(self.image.url), 'project': self.project_name}
 
     class Meta:
