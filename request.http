@@ -1,0 +1,28 @@
+### variables
+@host = http://localhost:8000
+
+### Get Construction Project List:
+GET {{host}}/portfolio/constructions
+
+### Get Single Construction Project:
+GET {{host}}/portfolio/constructions/1
+
+### Get All project gallery images
+GET {{host}}/gallery
+
+### Get Blogs list and their first paragraph
+GET {{host}}/blogs
+
+### Get single blog and its paragraphs and their full data 
+GET {{host}}/blogs/2
+
+### Send contact us message
+POST {{host}}/contact-us
+Content-Type: application/json
+
+{
+    "senderName": "Farid",
+    "senderEmail": "faridfmn@gmail.com",
+    "subject": "Whatever",
+    "text": "this is the message text"
+}
