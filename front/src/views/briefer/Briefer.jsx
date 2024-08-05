@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../assets/img/cancel.svg";
 import DataList from "../gadgets/DataList";
 import SlideShow from "../gadgets/SlideShow";
 import GetContext from "../../context/GetContext";
+import ApiService from "../../services/api";
+import { HttpStatusCode } from "axios";
 
 const HomeTitle = ({ front, behind }) => (
     <center>
@@ -16,17 +18,20 @@ const HomeTitle = ({ front, behind }) => (
 
 const Briefer = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [slideShowImages, setSlideShowImages] = useState([]);
     const { Screen, ServicesData, BriefIntro } = GetContext();
-    const slideShowImages = [
-        require("../../assets/img/portfolio/mehrzad/img_mehrzad_0.jpg"),
-        require("../../assets/img/portfolio/mehrzad/img_mehrzad_1.jpg"),
-        require("../../assets/img/portfolio/mehrzad/img_mehrzad_2.jpg"),
-    ];
 
     function toggleModalBriefServices() {
         setIsOpen(!isOpen);
     }
 
+    useEffect(() => {
+        (async () => {
+            const responseData = await ApiService.get("/gallery");
+            const { data, status } = responseData;
+            if (+status === HttpStatusCode.Ok) setSlideShowImages(data);
+        })();
+    }, []);
     return (
         <div
             className="container-fluid main-container container-home"
@@ -39,7 +44,7 @@ const Briefer = () => {
                 style={Screen.medium ? { height: "90vh" } : {}}
                 className="row home-details-container align-items-center"
             >
-                {Screen.large && (
+                {Screen.large && Boolean(slideShowImages?.length) && (
                     <SlideShow startIndex={2} outerClass="position-fixed">
                         {slideShowImages}
                     </SlideShow>
@@ -65,7 +70,7 @@ const Briefer = () => {
                         }}
                     ></div>
                     <div className="my-5">
-                        {!Screen.large && (
+                        {!Screen.large && Boolean(slideShowImages?.length) && (
                             <SlideShow
                                 className="img-fluid main-img-mobile d-block"
                                 startIndex={2}

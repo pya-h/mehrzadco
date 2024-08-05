@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Briefer from "../views/briefer/Briefer";
 import AboutUs from "../views/about";
-import OurServices from "../views/services";
+import OurServices from "../views/our-services";
 import Portfolio from "../views/portfolio/Portfolio";
 import SwitchDark from "./SwitchDark";
 import Logo from "./Logo";
@@ -10,6 +10,7 @@ import GetContext from "../context/GetContext";
 import SocialLinks from "./SocialLinks";
 import ContactUs from "../views/contact";
 import BlogsSection from "../views/blog";
+import ApiService from "../services/api";
 
 const menuItem = [
     { icon: "fa-home", menuName: "خانه" },
@@ -20,9 +21,16 @@ const menuItem = [
     { icon: "fa-envelope-open", menuName: "تماس" },
 ];
 
+const testApiService = async () => {
+    const res = await ApiService.get('/gallery/');
+    console.log(res);
+}
 const Home = () => {
     const { tabIndex, changeTab, Screen } = GetContext();
 
+    useEffect(() => {
+        testApiService().then(res => console.log(res)).then(err => console.log(err))
+    }, []);
     return (
         <div className="yellow">
             <SwitchDark />

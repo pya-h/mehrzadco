@@ -9,7 +9,7 @@ SECRET_KEY = config('SERVER_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(config('DEBUG')))
 
-HOST_URL = config('HOST')
+HOST_URL = config('HOST_URL')
 SUBDOMAIN_PREFIX = config('SUBDOMAIN_PREFIX', None)
 
 ALLOWED_HOSTS = ([f"https://{HOST_URL}", f"https://{SUBDOMAIN_PREFIX}.{HOST_URL}"] if SUBDOMAIN_PREFIX else
@@ -90,7 +90,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = config('STATIC_PATH', '/static/')
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'public'
 
 # Media
 MEDIA_URL = config('MEDIA_PATH', '/media/')

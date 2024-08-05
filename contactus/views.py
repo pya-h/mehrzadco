@@ -26,15 +26,15 @@ def send_contact_message(request: WSGIRequest):
 
         if empty_fields:
             return JsonResponse({
+                'status': 400,
                 'error': 'Please provide these data to submit your message: ' + ', '.join(empty_fields)
-            }, status=400)
+            })
 
         if not is_standard_email(sender_email):
-            return JsonResponse({'error': 'Invalid Email. Please provide a valid email.'}, status=400)
+            return JsonResponse({'status': 400, 'error': 'Invalid Email. Please provide a valid email.'})
         message = ContactUsMessages(sender_name=sender_name, sender_email=sender_email, subject=subject, text=text)
         message.save()
     except:
-        return JsonResponse({'error': 'Can not send your message. Please check everything is correct and retry later.'},
-                            status=400)
+        return JsonResponse({'status': 400, 'error': 'Can not send your message. Please check everything is correct and retry later.'})
 
-    return JsonResponse({'msg': 'Message sent successfully.'}, status=201)
+    return JsonResponse({'status': 201, 'msg': 'Message sent successfully.'})

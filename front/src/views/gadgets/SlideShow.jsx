@@ -21,7 +21,7 @@ const SlideShow = ({ children, startIndex = 0, style = {}, className = "", outer
         <div
             className={`col-lg-4 bg d-block p-0 mx-auto ${outerClass} ${className}`}
             style={{ ...style,
-                backgroundImage: `url(${children[imageIndex]})`,
+                backgroundImage: `url(${children[imageIndex]['url']})`,
             }}
         >
             {showAnimation && (
@@ -33,7 +33,7 @@ const SlideShow = ({ children, startIndex = 0, style = {}, className = "", outer
                                 imageIndex > 0
                                     ? imageIndex - 1
                                     : children.length - 1
-                            ]
+                            ]['url']
                         })`,
                     }}
                 />

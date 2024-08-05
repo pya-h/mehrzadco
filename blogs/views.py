@@ -18,7 +18,7 @@ def list_blogs(request: WSGIRequest):
         except BlogParagraph.DoesNotExist:
             data['firstParagraph'] = None
         blogs_list[i] = data
-    return JsonResponse(blogs_list, safe=False)
+    return JsonResponse({'status': 200, 'data': blogs_list})
 
 
 @require_http_methods(["GET"])
@@ -33,4 +33,4 @@ def get_blog(request: WSGIRequest, id: int):
         pass
     except Blog.DoesNotExist:
         return JsonResponse({'error': "Blog Not Found", 'status': 404})
-    return JsonResponse(blog_data)
+    return JsonResponse({'status': 200, 'data': blog_data})

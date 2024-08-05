@@ -8,9 +8,10 @@ from typing import Dict
 class ProjectBase(BaseModel):
     owner = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
     name = models.CharField(max_length=256)
+    name_en = models.CharField(max_length=256, blank=True, null=True, default=None)
     description = models.TextField(blank=True, null=True)
     start_date = models.DateField(verbose_name='Start Date')
-    finish_date = models.DateField(verbose_name='Finish Date', auto_now_add=True)
+    finish_date = models.DateField(verbose_name='Finish Date')
     progress = models.FloatField(verbose_name='Progress (%)', default=100.0, validators=[
             MinValueValidator(0),
             MaxValueValidator(100)
@@ -39,6 +40,7 @@ class ConstructionProject(ProjectBase):
         return {
             "id": self.id,
             "name": self.name,
+            "nameEn": self.name_en,
             "description": self.description,
             "startedAt": self.start_date,
             "finishedAt": self.finish_date,

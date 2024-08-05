@@ -20,7 +20,7 @@ def list_construction_projects(request: WSGIRequest):
             data['image'] = None
         project_list[i] = data
 
-    return JsonResponse(project_list, safe=False)
+    return JsonResponse({'status': 200, 'data': project_list})
 
 
 @require_http_methods(["GET"])
@@ -36,4 +36,4 @@ def get_construction_project(request: WSGIRequest, id: int):
     except ConstructionProject.DoesNotExist:
         return JsonResponse({'error': "Project Not Found", 'status': 404})
 
-    return JsonResponse(project_data)
+    return JsonResponse({'status': 200, 'data': project_data})
