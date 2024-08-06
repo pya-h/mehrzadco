@@ -58,17 +58,7 @@ const Briefer = () => {
                         front={BriefIntro.title[0]}
                         behind={BriefIntro.title[1]}
                     />
-                    <div
-                        className="col-12 text-center"
-                        style={{
-                            marginTop: !Screen.large ? "5rem" : "0",
-                            fontSize: Screen.small
-                                ? "36px"
-                                : Screen.medium
-                                ? "44px"
-                                : "55px",
-                        }}
-                    ></div>
+                   
                     <div className="my-5">
                         {!Screen.large && Boolean(slideShowImages?.length) && (
                             <SlideShow
@@ -83,21 +73,15 @@ const Briefer = () => {
                                 {slideShowImages}
                             </SlideShow>
                         )}
-                        <div>
-                            {BriefIntro.descriptions.map((d) => (
-                                <p className="my-0">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    {d}
-                                </p>
-                            ))}
+                        <div style={!Screen.medium ? {position: "absolute", bottom: "10vh", ...(Screen.small ? {right: "30%"} : {})} : {position: "absolute", bottom: "5vh", right: "40%"}}>
+                            <button
+                                className="button btn-more mx-auto"
+                                onClick={toggleModalBriefServices}
+                            >
+                                <span className="button-text mx-auto">بیشتر ...</span>
+                                <span className="button-icon fa fa-arrow-right"></span>
+                            </button>
                         </div>
-                        <button
-                            className="button btn-more my-5"
-                            onClick={toggleModalBriefServices}
-                        >
-                            <span className="button-text">بیشتر ...</span>
-                            <span className="button-icon fa fa-arrow-right"></span>
-                        </button>
                     </div>
                 </div>
             </div>

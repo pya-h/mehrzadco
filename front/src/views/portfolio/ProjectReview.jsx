@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CountUp from "react-countup";
 import CoolTitle from "../gadgets/CoolTitle";
+import ApiService from "../../services/api";
+import { HttpStatusCode } from "axios";
+import GalleryCarousel from "../gadgets/GalleryCarousel";
 
 const ProjectReview = ({ children, onBtnBackClick }) => {
-    console.log(children)
+    const [projectDetails, setProjectDetails] = useState(null);
+
+    useEffect(() => {
+        (async () => {
+            const responseData = await ApiService.get(
+                `/portfolio/constructions/${children.id}`
+            );
+            const { data, status } = responseData;
+            console.log(responseData);
+            if (+status === HttpStatusCode.Ok) setProjectDetails(data);
+        })();
+    }, []);
+
     return (
         <div
             className="container w-100"
@@ -14,10 +29,7 @@ const ProjectReview = ({ children, onBtnBackClick }) => {
         >
             {children && (
                 <div className="mx-auto" key={children.id}>
-                    <CoolTitle
-                        front={children.name}
-                        behind={children.nameEn}
-                    />
+                    <CoolTitle front={children.name} behind={children.nameEn} />
                     <div className="row mb-5">
                         <div className="col-2">
                             <button
@@ -49,7 +61,9 @@ const ProjectReview = ({ children, onBtnBackClick }) => {
                                         className="ft-wt-600 uppercase"
                                     >
                                         <CountUp
-                                            end={new Date(children.finishedAt).getFullYear()}
+                                            end={new Date(
+                                                children.finishedAt
+                                            ).getFullYear()}
                                             duration={2}
                                             // separator=" "
                                             decimals={0}
@@ -91,13 +105,21 @@ const ProjectReview = ({ children, onBtnBackClick }) => {
                     <div className="row">
                         <figure style={{ borderRadius: "15px" }}>
                             <a href={children.image} download>
-                                <img
+                                {/* <img
                                     width="100%"
                                     style={{ borderRadius: "15px" }}
                                     height="100%"
                                     src={children.image}
                                     alt="portfolio project demo"
-                                />
+                                /> */}
+                                {Boolean(
+                                    projectDetails &&
+                                        projectDetails.gallery?.length
+                                ) && (
+                                    <GalleryCarousel>
+                                        {projectDetails.gallery}
+                                    </GalleryCarousel>
+                                )}
                             </a>
                         </figure>
                     </div>

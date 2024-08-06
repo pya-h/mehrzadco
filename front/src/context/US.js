@@ -1,9 +1,9 @@
-import avatarJavadMehrzad from '../assets/img/about/javad_mehrzad.jpg';
-import avatarFaridMehrzad from '../assets/img/about/farid_mehrzad.jpg';
-import avatarFatemehfeizollahi from '../assets/img/about/fatemeh_feizollahi.jpg';
-import avatarNaserJafari from '../assets/img/about/naser_jafari.jpg';
-import avatarMojtabaHashtrodi from '../assets/img/about/mojtaba_hashtrodi.jpg';
-import avatarAnounymous from '../assets/img/about/avatar_anonymous.png';
+import avatarJavadMehrzad from "../assets/img/about/javad_mehrzad.jpg";
+import avatarFaridMehrzad from "../assets/img/about/farid_mehrzad.jpg";
+import avatarFatemehfeizollahi from "../assets/img/about/fatemeh_feizollahi.jpg";
+import avatarNaserJafari from "../assets/img/about/naser_jafari.jpg";
+import avatarMojtabaHashtrodi from "../assets/img/about/mojtaba_hashtrodi.jpg";
+import avatarAnounymous from "../assets/img/about/avatar_anonymous.png";
 
 const AboutData = {
     staff: [
@@ -11,7 +11,7 @@ const AboutData = {
             fullname: "جواد مهرزاد",
             avatar: avatarJavadMehrzad,
             major: "مهندس عمران",
-            profession: "کارشناس ارشد سازه"
+            profession: "کارشناس ارشد سازه",
         },
         {
             fullname: "فرید مهرزاد",
@@ -19,43 +19,40 @@ const AboutData = {
             // { /*label: "ایمیل",*/
             //  value: "farid.mehrzad.68@gmail.com" },
             major: "مهندس عمران",
-            profession: "کارشناس ارشد مهندسی و مدیریت ساخت"
+            profession: "کارشناس ارشد مهندسی و مدیریت ساخت",
         },
         {
             fullname: "پدرام مکان پرست",
             avatar: avatarAnounymous,
             major: "مهندس برق-کنترل",
-            profession: "برنامه نویس و طراح سایت"
+            profession: "برنامه نویس و طراح سایت",
         },
         {
             fullname: "مهندس مجبتی هشترودی",
             avatar: avatarMojtabaHashtrodi,
             profession: "کارشناس ارشد سازه",
-            major: "مهندس عمران"
+            major: "مهندس عمران",
         },
         {
             fullname: "مهندس فاطمه فیض اللهی",
             avatar: avatarFatemehfeizollahi,
             // { /*label: "ایمیل",*/
             //  value: "fatemeh.feizollahi3167@gmail.com" },
-            major: "مهندس معمار"
+            major: "مهندس معمار",
         },
         {
             fullname: "ناصر جعفری",
             avatar: avatarNaserJafari,
             major: "مهندس مکانیک",
-            profession: "کارشناسی ارشد تبدیل انرژی"
+            profession: "کارشناسی ارشد تبدیل انرژی",
         },
     ],
 };
 
 const BriefIntro = {
     title: ["Mehrzad", "Construction"],
-    descriptions: [`گروه مهندسی و ساخت مهرزاد، مجموعه ای از مجرب ترین و خلاق ترین متخصصین رشته های گوناگون مهندسی می باشند
-     که گرد هم آمده اند تا با بهره گیری از تکنیک های خلاقانه ی معماری و دانش و فناوری روز دنیا، اقدام به ساخت سازه های خاص و ماندگار عمرانی کنند. `,
-    `هدف این گروه این است که با کنار زدن طرحواره ها و سلیقه های قدیمی، بیش از پیش، زیبایی، خلاقیت و نوآوری را وارد عرصه ساختمان سازی کنند.`]
-
-}
+    descriptions: null,
+};
 const Socials = [
     {
         iconName: "fa fa-instagram",
@@ -68,7 +65,6 @@ const Socials = [
     { iconName: "fa fa-whatsapp", link: "https://wa.me/989112858020" },
     { iconName: "fa fa-telegram", link: "https://telegram.me/Javad_Mehrzad" },
     { iconName: "fa fa-github", link: "https://github.com/pya-h" },
-
 ];
 
 const ContactData = [
@@ -109,8 +105,7 @@ const whyus = [
         title: "بی حد و مرز",
         details: [
             {
-                text:
-                    "در سازه‌های مهندسی ما، هیچ حد و مرزی برای متریال به کار رفته و استحکام بنا، وجود ندارد.",
+                text: "در سازه‌های مهندسی ما، هیچ حد و مرزی برای متریال به کار رفته و استحکام بنا، وجود ندارد.",
             },
         ],
         icon: (
@@ -128,16 +123,10 @@ const whyus = [
         title: "دانش روز دنیا",
         details: [
             {
-                text:
-                    "گروه مهندسی و ساخت مهرزاد، همگام با دانش روز دنیا و به کار گیری گروه متخصصین، سازه‌هایی اصولی خلق می‌کند",
+                text: "گروه مهندسی و ساخت مهرزاد، همگام با دانش روز دنیا و به کار گیری گروه متخصصین، سازه‌هایی اصولی خلق می‌کند",
             },
         ],
-        icon: (
-            <i
-                className="whyus-icon fa fa-book mt-2"
-                aria-hidden="true"
-            ></i>
-        ),
+        icon: <i className="whyus-icon fa fa-book mt-2" aria-hidden="true"></i>,
 
         positon: "right",
         style: "normal",
@@ -147,8 +136,7 @@ const whyus = [
         title: "تلفیق هنر و معماری",
         details: [
             {
-                text:
-                    "جلوه‌های بصری و هنر بکار گرفته شده در سازه‌های اجرایی، چشمان هر بیننده‌ای را مسحور خود می‌کند و ما این توانایی را داریم که مرزهای زیبایی را جابجا کنیم.",
+                text: "جلوه‌های بصری و هنر بکار گرفته شده در سازه‌های اجرایی، چشمان هر بیننده‌ای را مسحور خود می‌کند و ما این توانایی را داریم که مرزهای زیبایی را جابجا کنیم.",
             },
         ],
         icon: (

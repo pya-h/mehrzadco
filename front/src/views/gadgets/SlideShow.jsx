@@ -1,10 +1,22 @@
 import { useEffect, useState } from "react";
 
-const SlideShow = ({ children, startIndex = 0, style = {}, className = "", outerClass = "", innerClass = "", delay = 10000 }) => {
+const SlideShow = ({
+    children,
+    startIndex = 0,
+    style = {},
+    className = "",
+    outerClass = "",
+    innerClass = "",
+    delay = 10000,
+}) => {
     const [imageIndex, setImageIndex] = useState(startIndex);
     const [showAnimation, setShowAnimation] = useState(false);
 
     useEffect(() => {
+        if (+children?.length <= 1) {
+            setImageIndex(0);
+            return;
+        }
         const timerID = setInterval(() => {
             setShowAnimation(true);
             setTimeout(() => setShowAnimation(false), [700]);
@@ -20,20 +32,22 @@ const SlideShow = ({ children, startIndex = 0, style = {}, className = "", outer
     return (
         <div
             className={`col-lg-4 bg d-block p-0 mx-auto ${outerClass} ${className}`}
-            style={{ ...style,
-                backgroundImage: `url(${children[imageIndex]['url']})`,
+            style={{
+                ...style,
+                backgroundImage: `url(${children[imageIndex]?.url})`,
             }}
         >
             {showAnimation && (
                 <div
                     className={`sliding-background bg m-0 p-0 ${innerClass} ${className}`}
-                    style={{ ...style,
+                    style={{
+                        ...style,
                         backgroundImage: `url(${
                             children[
                                 imageIndex > 0
                                     ? imageIndex - 1
                                     : children.length - 1
-                            ]['url']
+                            ]?.url
                         })`,
                     }}
                 />

@@ -4,6 +4,21 @@ import blogs.pen as pen
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.core.handlers.wsgi import WSGIRequest
 
+class BlogCategory(BaseModel):
+    title = models.CharField(max_length=256, blank=False)    
+    created_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
+
+    @property
+    def creator_username(self):
+        return self.created_by.username
+
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+
+    def __str__(self) -> str:
+        return self.title
+    
 
 class Blog(BaseModel):
     title = models.CharField(max_length=256, blank=False)
@@ -11,7 +26,7 @@ class Blog(BaseModel):
     author = models.ForeignKey(User, blank=True, null=True, on_delete=models.DO_NOTHING)
     # categories = ManyToOne(Category, ...)
     custom_author_name = models.CharField(max_length=128, blank=True, null=True, verbose_name='Custom Author Name')
-
+    categories = models.ManyToManyField(BlogCategory, blank=True, default=None)    
     # used if the actual author is not
     # a website user
 

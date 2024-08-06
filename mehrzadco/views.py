@@ -6,7 +6,7 @@ from django.core.handlers.wsgi import WSGIRequest
 
 @require_http_methods(["GET"])
 def get_gallery(request: WSGIRequest):
-    gallery = PortfolioGallery.objects.filter(deleted_at=None)
+    gallery = PortfolioGallery.objects.filter(deleted_at=None, use_in_slideshow=True)
     images = list(map(lambda img: img.brief(request), gallery))
     return JsonResponse({'data': images, 'status': 200})
 

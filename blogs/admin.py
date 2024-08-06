@@ -1,6 +1,18 @@
 from django.contrib import admin
-from .models import Blog, BlogParagraph
-from datetime import datetime
+from .models import Blog, BlogParagraph, BlogCategory
+
+
+class BlogCategoryAdminPanel(admin.ModelAdmin):
+    list_display = ('title', 'creator_username')
+    list_display_links = ('title', )
+    list_filter = ('created_by__username', 'created_at', )
+    search_fields = ('title',)
+    readonly_fields = ('created_at', 'created_by', 'modified_at', 'deleted_at')
+
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.created_by = request.user
+        obj.save()
 
 
 class BlogParagraphInlinePanel(admin.TabularInline):
@@ -35,5 +47,6 @@ class ParagraphAdminPanel(admin.ModelAdmin):
         obj.save()
 
 
+admin.site.register(BlogCategory, BlogCategoryAdminPanel)
 admin.site.register(Blog, BlogAdminPanel)
 admin.site.register(BlogParagraph, ParagraphAdminPanel)

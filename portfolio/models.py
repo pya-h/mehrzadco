@@ -57,6 +57,7 @@ class PortfolioGallery(BaseModel):
 
     uploaded_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
 
+    use_in_slideshow = models.BooleanField(default=False)
     def brief(self, request: WSGIRequest):
         return {'url': request.build_absolute_uri(self.image.url), 'project': self.project_name}
 

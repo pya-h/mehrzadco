@@ -1,0 +1,51 @@
+.carousel-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: transparent;
+    margin-bottom: 10%;
+  }
+  
+  .carousel-item {
+    text-align: center;
+    overflow: hidden;
+
+  }
+  
+  .carousel-item img {
+    max-width: 100%;
+    max-height: 80vh; /* Ensure the image doesn't exceed the viewport height */
+    height: auto;
+    margin: 0 auto;
+    display: block; /* Ensure the image is treated as a block element */
+    object-fit: contain;
+
+  }
+
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: #fff;
+    opacity: 0.8;
+
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #fff
+  }
+  
+  .slick-dots {
+    bottom: 10px;
+    background: transparent;
+
+  }
+  
+  .slick-dots li {
+    margin: 0;
+    padding: 0;
+
+  }
+  
+  .slick-dots li button {
+    border: none;
+  }
+  
