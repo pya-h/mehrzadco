@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from "react";
-import AllBlogData from "./AllBlogData";
 import ServicesData from "./ServicesData";
 import { useMediaQuery } from "react-responsive";
 import US from "./US";
@@ -35,7 +34,7 @@ const ContextProvider = ({ children }) => {
     }
     
     return <MyContext.Provider value={{
-        ...AllBlogData(), isDark, setIsDark,
+        isDark, setIsDark,
         tabIndex, setTabIndex,
         ServicesData,
         selectedProjectID, setSelectedProjectID,

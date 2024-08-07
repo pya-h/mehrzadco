@@ -13,7 +13,7 @@ const ProjectReview = ({ children, onBtnBackClick }) => {
     useEffect(() => {
         (async () => {
             const responseData = await ApiService.get(
-                `/portfolio/constructions/${children.id}`
+                `/api/portfolio/constructions/${children.id}`
             );
             const { data, status } = responseData;
             console.log(responseData);

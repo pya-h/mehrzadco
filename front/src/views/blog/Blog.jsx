@@ -1,51 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import cancelImg from "../../assets/img/cancel.svg";
-import GetContext from "../../context/GetContext";
-import blogQuote from "../../assets/img/blog/quote.svg";
 import CoolTitle from "../gadgets/CoolTitle";
+import ApiService from "../../services/api";
+import { HttpStatusCode } from "axios";
 
 Modal.setAppElement("#root");
 
-const Blog = () => {
-    const { blog, isOpen, setIsOpen, blogsData, openBlog } = GetContext();
+const stringifyCategory = categories => categories?.map(cat => cat.title).join(", ");
+
+const Blog = ({ children }) => {
+    const [openedBlog, setOpenedBlog] = useState(null);
+    const [isOpen, setIsOpen] = useState(false);
+
+
+    const openBlog = (blogId) => {
+        ApiService.get(`/api/blogs/${blogId}`)
+            .then((res) => {
+                const { status, data } = res;
+                if (+status === HttpStatusCode.Ok) {
+                    setOpenedBlog(data);
+                    setIsOpen(true);
+                }
+            })
+            .catch((ex) => {
+                setOpenedBlog(null);
+                setIsOpen(false);
+                console.log(ex);
+                // TODO: toast error
+            });
+    };
+
     const handleModle = (id) => {
         openBlog(id);
     };
+
     return (
         <div className="container">
             <div className="row">
-                {blogsData.map((item) => (
-                    <div 
-                    key={item.id}
-                    className="col-12 col-md-6 col-lg-6 col-xl-4 mb-30"
+                {children instanceof Array && children.map((blogItem) => (
+                    <div
+                        key={blogItem.id}
+                        className="col-12 col-md-6 col-lg-6 col-xl-4 mb-30"
                     >
                         <article
                             className="post-container"
-                            onClick={() => handleModle(item?.id)}
+                            onClick={() => handleModle(blogItem?.id)}
                         >
                             <div className="post-thumb">
                                 <div className="d-block position-relative overflow-hidden">
                                     <img
-                                        src={item?.img}
+                                        src={blogItem?.image}
                                         className="img-fluid"
-                                        alt="item.title"
+                                        alt={blogItem?.title}
                                         width="100%"
-                                        style={{maxHeight: "14rem"}}
+                                        style={{ maxHeight: "14rem" }}
                                     />
                                 </div>
                             </div>
                             <div className="post-content">
                                 <div className="entry-header">
-                                    <h3>{item?.title}</h3>
+                                    <h3>{blogItem?.title}</h3>
                                 </div>
                                 <div className="entry-content open-sans-font">
-                                    {item?.descriptions instanceof Array && (
+                                    {blogItem?.firstParagraph?.body && (
                                         <p>
-                                            {item?.descriptions[0].slice(
+                                            {blogItem.firstParagraph.body.slice(
                                                 0,
                                                 120
-                                            )}...
+                                            )}
+                                            ...
                                         </p>
                                     )}
                                 </div>
@@ -69,22 +93,29 @@ const Blog = () => {
                                 </button>
 
                                 <div className="box_inner blog-post">
-                                    <article >
-                                        <CoolTitle front={blog?.title} behind="پست ها" />
+                                    <article>
+                                        <CoolTitle
+                                            front={openedBlog?.title}
+                                            behind="پست ها"
+                                        />
                                         <div className="meta open-sans-font">
                                             <span className="date">
                                                 <i className="fa fa-calendar"></i>
-                                                &nbsp;{blog.date}
+                                                &nbsp;{new Date(openedBlog?.date).toDateString()}
                                             </span>
                                             <span>
                                                 <i className="fa fa-tags"></i>
-                                                &nbsp;{blog.tag}
+                                                &nbsp;{stringifyCategory(openedBlog?.categories)}
+                                            </span>
+                                            <span>
+                                                <i className="fa fa-tags"></i>
+                                                &nbsp;{openedBlog?.author}
                                             </span>
                                         </div>
 
                                         <div className="mx-auto text-center my-5">
                                             <img
-                                                src={blog?.img}
+                                                src={openedBlog?.image}
                                                 className="img-fluid mx-auto"
                                                 alt="Blog"
                                             />
@@ -101,14 +132,16 @@ const Blog = () => {
                                             </p>
                                         </div> */}
                                         <div className="blog-excerpt pb-5">
-                                            {blog.descriptions instanceof
+                                            {openedBlog?.paragraphs instanceof
                                                 Array &&
-                                                blog.descriptions.map((d) => (
-                                                    <p>
-                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        {d}
-                                                    </p>
-                                                ))}
+                                                openedBlog.paragraphs.map(
+                                                    (para) => (
+                                                        <p>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            {para.body}
+                                                        </p>
+                                                    )
+                                                )}
                                         </div>
                                     </article>
                                 </div>

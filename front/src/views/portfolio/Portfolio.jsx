@@ -12,9 +12,7 @@ const Portfolio = () => {
 
     useEffect(() => {
         (async () => {
-            const responseData = await ApiService.get(
-                "/portfolio/constructions"
-            );
+            const responseData = await ApiService.get("/api/portfolio/constructions");
             const { data, status } = responseData;
             if (+status === HttpStatusCode.Ok) setProjects(data);
         })();

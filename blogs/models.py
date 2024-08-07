@@ -18,7 +18,11 @@ class BlogCategory(BaseModel):
 
     def __str__(self) -> str:
         return self.title
-    
+
+    @property
+    def brief(self):
+        return {"id": self.id, "title": self.title}
+
 
 class Blog(BaseModel):
     title = models.CharField(max_length=256, blank=False)
@@ -49,6 +53,8 @@ class Blog(BaseModel):
             "title": self.title,
             "image": request.build_absolute_uri(self.image.url),
             "author": self.author_fullname,
+            "categories": list(map(lambda cat: cat.brief, self.categories.iterator())),
+            "date": self.created_at,
         }
 
 

@@ -27,7 +27,7 @@ const Briefer = () => {
 
     useEffect(() => {
         (async () => {
-            const responseData = await ApiService.get("/gallery");
+            const responseData = await ApiService.get("/api/gallery");
             const { data, status } = responseData;
             if (+status === HttpStatusCode.Ok) setSlideShowImages(data);
         })();

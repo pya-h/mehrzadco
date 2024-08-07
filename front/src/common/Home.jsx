@@ -10,7 +10,6 @@ import GetContext from "../context/GetContext";
 import SocialLinks from "./SocialLinks";
 import ContactUs from "../views/contact";
 import BlogsSection from "../views/blog";
-import ApiService from "../services/api";
 
 const menuItem = [
     { icon: "fa-home", menuName: "خانه" },
@@ -21,16 +20,9 @@ const menuItem = [
     { icon: "fa-envelope-open", menuName: "تماس" },
 ];
 
-const testApiService = async () => {
-    const res = await ApiService.get('/gallery/');
-    console.log(res);
-}
 const Home = () => {
     const { tabIndex, changeTab, Screen } = GetContext();
 
-    useEffect(() => {
-        testApiService().then(res => console.log(res)).then(err => console.log(err))
-    }, []);
     return (
         <div className="yellow">
             <SwitchDark />
