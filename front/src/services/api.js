@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Toaster from '../views/gadgets/toast';
 
 const axiosInstance = axios.create();
 
@@ -19,13 +20,19 @@ axiosInstance.interceptors.response.use(
         const { response } = error;
         if (response) {
             if (response.status >= 400 && response.status < 500) {
-                console.error('Client error:', response.data);
+                Toaster.warn(
+                    "ورودی ارسال شده معتبر نیست. لطفا از صحت اطلاعات ورودی خد اطمینان حاصل نمایید."
+                );
             }
             if (response.status >= 500) {
-                console.error('Server error:', response.data);
+                Toaster.error(
+                    "خطایی حین عملیات رخ داد. لطفا از اتصال اینترنت خود اطمینان حاصل کرده و دوباره تلاش کنید."
+                );
             }
         } else {
-            console.error('Network error:', error.message);
+            Toaster.error(
+                "خطایی حین عملیات رخ داد. لطفا از اتصال اینترنت خود اطمینان حاصل کرده و دوباره تلاش کنید."
+            );
         }
         return Promise.reject(error);
     }
@@ -36,7 +43,6 @@ const ApiService = {
         const { params, headers } = options;
         try {
             const response = await axiosInstance.get(path, { params, headers });
-            // console.log("response = ", response)
             return response.data;
         } catch (error) {
             throw error.response ? error.response.data : error;

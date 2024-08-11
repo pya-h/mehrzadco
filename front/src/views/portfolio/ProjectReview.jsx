@@ -16,10 +16,9 @@ const ProjectReview = ({ children, onBtnBackClick }) => {
                 `/api/portfolio/constructions/${children.id}`
             );
             const { data, status } = responseData;
-            console.log(responseData);
             if (+status === HttpStatusCode.Ok) setProjectDetails(data);
         })();
-    }, []);
+    }, [children]);
 
     return (
         <div
