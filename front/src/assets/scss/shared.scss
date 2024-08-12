@@ -1,8 +1,69 @@
 @font-face {
-    font-family: "Vazir-Bold";
-    src: url("../fonts/vazir/Vazir-Bold.eot") format("eot"), url("../fonts/vazir/Vazir-Bold.ttf") format("truetype"), url("../fonts/vazir/Vazir-Bold.woff") format("woff"), url("../fonts/vazir/Vazir-Bold.woff2") format("woff2");
+    font-family: "Vazir";
+    src: url("../fonts/vazir/Vazir-Bold.eot") format("eot"),
+        url("../fonts/vazir/Vazir-Bold.ttf") format("truetype"),
+        url("../fonts/vazir/Vazir-Bold.woff") format("woff"),
+        url("../fonts/vazir/Vazir-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Vazir";
+    src: url("../fonts/vazir/Vazir-Regular.eot") format("eot"),
+        url("../fonts/vazir/Vazir-Regular.ttf") format("truetype"),
+        url("../fonts/vazir/Vazir-Regular.woff") format("woff"),
+        url("../fonts/vazir/Vazir-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: "BYekan";
+    src: url("../fonts/B1/BYekan-webfont.eot") format("eot"),
+        url("../fonts/B1/BYekan-webfont.ttf") format("truetype"),
+        url("../fonts/B1/BYekan-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto/Roboto-Regular.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto/Roboto-Bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "BNazanin";
+    src: url("../fonts/BNazanin.ttf");
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: "BNazanin";
+    src: url("../fonts/BNaznnBd.ttf");
+    font-weight: bold;
+}
+
+
+@font-face {
+    font-family: "BLotus";
+    src: url("../fonts/BLotus.ttf");
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: "BLotus";
+    src: url("../fonts/BLotusBd.ttf");
+    font-weight: bold;
 }
 
 html {
@@ -16,7 +77,8 @@ html {
 }
 
 body {
-    font-family: "Vazir-Bold", sans-serif;
+    font-family: "Vazir", sans-serif;
+    font-weight: bold;
     font-size: 16px;
     color: #fff;
     line-height: 1.6;
@@ -63,7 +125,6 @@ button {
     padding-bottom: 22px;
     font-size: 26px;
 }
-
 
 /*** Light Body ***/
 
@@ -113,7 +174,7 @@ body.light .portfolio .slideshow figure {
     background-color: #fff;
 }
 
-body.light .portfolio .slideshow ul>li:after {
+body.light .portfolio .slideshow ul > li:after {
     background: rgba(255, 255, 255, 0.77);
 }
 
@@ -157,8 +218,8 @@ body.light .header ul.icon-menu li.icon-box:hover i {
     body.light #menu {
         background: #eee;
     }
-    body.light #menuToggle>span,
-    body.light #menuToggle input:checked~span {
+    body.light #menuToggle > span,
+    body.light #menuToggle input:checked ~ span {
         background: #666;
     }
     body.light #menu li a {
@@ -246,7 +307,6 @@ body.light .header ul.icon-menu li.icon-box:hover i {
         top: 31px;
     }
 }
-
 
 /*** Buttons ***/
 
@@ -354,7 +414,6 @@ body.light .header ul.icon-menu li.icon-box:hover i {
     color: #ffffff;
     border-radius: 50%;
 }
-
 
 /*** Page Title ***/
 
@@ -572,12 +631,9 @@ body.light .home-title-bg {
     border-radius: 30px 0 0 30px;
 }
 
-
 /* [ Pages ] */
 
-
 /*================================================== */
-
 
 /*** Homepage ***/
 
@@ -625,7 +681,7 @@ body.light .home-title-bg {
     }
 }
 
-.home .home-details>div {
+.home .home-details > div {
     max-width: 550px;
     margin: 0 auto;
 }
@@ -666,13 +722,11 @@ body.light .home-title-bg {
     line-height: 35px;
 }
 
-
 /*** About ***/
 
 .about .main-content {
     padding-bottom: 20px;
 }
-
 
 /* Personal Info List */
 
@@ -688,7 +742,6 @@ body.light .home-title-bg {
 .about .about-list .value {
     font-weight: 600;
 }
-
 
 /* Box Stats */
 
@@ -731,7 +784,6 @@ body.light .home-title-bg {
     height: 1px;
     background: #777;
 }
-
 
 /* Resume */
 
@@ -812,7 +864,6 @@ body.light .home-title-bg {
     opacity: 0.8;
 }
 
-
 /* Skills */
 
 .about .c100 {
@@ -821,7 +872,7 @@ body.light .home-title-bg {
     background-color: #252525;
 }
 
-.about .c100>span {
+.about .c100 > span {
     color: #fff;
 }
 
@@ -846,13 +897,13 @@ body.light .home-title-bg {
 }
 
 @media (max-width: 1100px) and (min-width: 992px) {
-    .home .home-details>div {
+    .home .home-details > div {
         max-width: 450px;
     }
 }
 
 @media (min-width: 1600px) {
-    .home .home-details>div {
+    .home .home-details > div {
         max-width: 600px;
     }
 }
@@ -866,7 +917,6 @@ body.light .home-title-bg {
         overflow: auto;
     }
 }
-
 
 /* Mobile  Navigation */
 
@@ -925,7 +975,7 @@ body.light .home-title-bg {
         top: 0;
         left: 0;
     }
-    #menuToggle>span {
+    #menuToggle > span {
         display: flex;
         width: 23px;
         height: 2px;
@@ -935,24 +985,25 @@ body.light .home-title-bg {
         border-radius: 3px;
         z-index: 1;
         transform-origin: 5px 0;
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
     }
-    #menuToggle>span:first-child {
+    #menuToggle > span:first-child {
         transform-origin: 0 0;
     }
-    #menuToggle>span:nth-last-child(2) {
+    #menuToggle > span:nth-last-child(2) {
         transform-origin: 0 100%;
     }
-    #menuToggle input:checked~span {
+    #menuToggle input:checked ~ span {
         opacity: 1;
         transform: rotate(45deg) translate(4px, 0);
         background: #fff;
     }
-    #menuToggle input:checked~span:nth-last-child(3) {
+    #menuToggle input:checked ~ span:nth-last-child(3) {
         opacity: 0;
         transform: rotate(0deg) scale(0.2, 0.2);
     }
-    #menuToggle input:checked~span:nth-last-child(2) {
+    #menuToggle input:checked ~ span:nth-last-child(2) {
         transform: rotate(-45deg) translate(2px, 4px);
     }
     #menu {
@@ -969,7 +1020,7 @@ body.light .home-title-bg {
         transform: translate(-100%, 0);
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
     }
-    #menuToggle input:checked~ul {
+    #menuToggle input:checked ~ ul {
         transform: none;
     }
     #menu li {
@@ -1014,7 +1065,7 @@ body.light .home-title-bg {
     .portfolio .slideshow nav span {
         padding: 0;
     }
-    .portfolio .slideshow ul>li:after {
+    .portfolio .slideshow ul > li:after {
         display: none;
     }
     .portfolio .slideshow figure {
@@ -1164,7 +1215,7 @@ body.light .home-title-bg {
     .portfolio .grid li {
         width: 100%;
     }
-    .portfolio .main-content>.container {
+    .portfolio .main-content > .container {
         padding: 0 10px;
     }
     .portfolio .slideshow figure {
@@ -1225,7 +1276,7 @@ body.light .home-title-bg {
     }
 }
 
-.tab-panel_list>div {
+.tab-panel_list > div {
     position: relative;
     &.home {
         @media screen and (max-width: 991px) {
@@ -1242,13 +1293,13 @@ body.light .home-title-bg {
     }
 }
 
-body.light .tab-panel_list>div {
+body.light .tab-panel_list > div {
     &::after {
         background-color: #eee;
     }
 }
 
-.tab-panel_list>div.react-tabs__tab-panel--selected:after {
+.tab-panel_list > div.react-tabs__tab-panel--selected:after {
     animation: anim 0.9s cubic-bezier(0.77, 0, 0.175, 1) both;
     right: 0px;
     bottom: 0px;
@@ -1305,7 +1356,7 @@ button:focus {
     max-width: 1200px;
 }
 
-.row>* {
+.row > * {
     padding-left: 15px;
     padding-right: 15px;
 }

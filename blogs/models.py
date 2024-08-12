@@ -61,10 +61,11 @@ class Blog(BaseModel):
 class BlogParagraph(BaseModel):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     header = models.CharField(max_length=256, blank=True, null=True)
+    header_color = models.CharField(max_length=16, choices=pen.get_color_choices(), blank=True, null=True, default=None, verbose_name='Header Color')
     body = models.TextField(blank=True)
     image = models.ImageField(upload_to='blogs', blank=True, null=True)
     color = models.CharField(max_length=16, choices=pen.get_color_choices(), blank=True, null=True, default=None)
-    is_bold = models.BooleanField(default=False, verbose_name='Is Bold')
+    is_bold = models.BooleanField(default=True, verbose_name='Is Bold')
     is_underlined = models.BooleanField(default=False, verbose_name='Is Underlined')
     font = models.CharField(max_length=16, choices=pen.get_fonts(), blank=True, null=True, default=None)
     fontsize = models.IntegerField(default=None, null=True, blank=True, verbose_name='Font Size', validators=[
@@ -87,6 +88,7 @@ class BlogParagraph(BaseModel):
     def dict(self, request: WSGIRequest | None = None):
         brief_data = self.brief(request)
         return dict(brief_data, **{
+            'headerColor': self.header_color,
             'color': self.color,
             'isBold': self.is_bold,
             'isUnderlined': self.is_underlined,

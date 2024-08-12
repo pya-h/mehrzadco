@@ -2,6 +2,7 @@ from django.views.decorators.http import require_http_methods
 from portfolio.models import PortfolioGallery
 from django.http import JsonResponse
 from django.core.handlers.wsgi import WSGIRequest
+from django.shortcuts import render
 
 
 @require_http_methods(["GET"])
@@ -17,3 +18,8 @@ def handler_404(request, exception):
         'error': 'Not Found',
         'msg': 'The requested resource was not found on this server.'
     })
+
+@require_http_methods(["GET"])
+def index(request: WSGIRequest):
+    return render(request, 'index.html')
+

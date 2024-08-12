@@ -11,8 +11,8 @@ def get_color_choices():
 
 
 fonts = (
-    FONT_ARIAL, FONT_VAZIR, FONT_VAZIR_BOLD, FONT_BYEKAN, FONT_ROBOTO, FONT_BLOTUS, FONT_BNAZANIN
-) = ('Arial', 'Vazir', 'VazirBold', 'BYekan', 'Roboto', 'B Lotus', 'B Nazanin')
+    FONT_ARIAL, FONT_VAZIR, FONT_BYEKAN, FONT_ROBOTO, FONT_BLOTUS, FONT_BNAZANIN
+) = ('Arial', 'Vazir', 'BYekan', 'Roboto', 'BLotus', 'BNazanin')
 
 
 def get_fonts():
