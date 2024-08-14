@@ -4,8 +4,9 @@ import blogs.pen as pen
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.core.handlers.wsgi import WSGIRequest
 
+
 class BlogCategory(BaseModel):
-    title = models.CharField(max_length=256, blank=False)    
+    title = models.CharField(max_length=256, blank=False, verbose_name='Title (*)')
     created_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True)
 
     @property
@@ -25,14 +26,11 @@ class BlogCategory(BaseModel):
 
 
 class Blog(BaseModel):
-    title = models.CharField(max_length=256, blank=False)
+    title = models.CharField(max_length=256, blank=False, verbose_name='Title (*)')
     image = models.ImageField(upload_to='blogs', blank=True, null=True)
     author = models.ForeignKey(User, blank=True, null=True, on_delete=models.DO_NOTHING)
-    # categories = ManyToOne(Category, ...)
     custom_author_name = models.CharField(max_length=128, blank=True, null=True, verbose_name='Custom Author Name')
-    categories = models.ManyToManyField(BlogCategory, blank=True, default=None)    
-    # used if the actual author is not
-    # a website user
+    categories = models.ManyToManyField(BlogCategory, blank=True, default=None)
 
     @property
     def author_username(self):
@@ -59,9 +57,10 @@ class Blog(BaseModel):
 
 
 class BlogParagraph(BaseModel):
-    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, verbose_name='Blog (*)')
     header = models.CharField(max_length=256, blank=True, null=True)
-    header_color = models.CharField(max_length=16, choices=pen.get_color_choices(), blank=True, null=True, default=None, verbose_name='Header Color')
+    header_color = models.CharField(max_length=16, choices=pen.get_color_choices(), blank=True, null=True, default=None,
+                                    verbose_name='Header Color')
     body = models.TextField(blank=True)
     image = models.ImageField(upload_to='blogs', blank=True, null=True)
     color = models.CharField(max_length=16, choices=pen.get_color_choices(), blank=True, null=True, default=None)

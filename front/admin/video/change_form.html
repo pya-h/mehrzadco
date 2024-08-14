@@ -1,0 +1,76 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+{{ block.super }}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+    #progress-bar-container {
+        width: 100%;
+        background-color: coral !important;
+        border-radius: 5px;
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        height: 60px;
+        display: none;
+    }
+    #progress-bar {
+        width: 0;
+        height: 100%;
+        background-color: coral !important;
+        text-align: center;
+        line-height: 30px;
+        color: darkmagenta !important;
+        font-size: 200%;
+        border-radius: 5px;
+        transition: width 0.4s ease;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+<div id="progress-bar-container">
+    <div id="progress-bar">0%</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{{ block.super }}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("form").on("submit", function(event){
+            event.preventDefault(); // Prevent the form from submitting the normal way
+
+            var form = $(this);
+            var formData = new FormData(this);
+
+            $.ajax({
+                xhr: function() {
+                    var xhr = new window.XMLHttpRequest();
+                    xhr.upload.addEventListener("progress", function(evt) {
+                        if (evt.lengthComputable) {
+                            var percentComplete = Math.round(evt.loaded / evt.total * 100);
+                            $("#progress-bar-container").show();
+                            $("#progress-bar").css("width", percentComplete + "%");
+                            $("#progress-bar").text(percentComplete + "%");
+                        }
+                    }, false);
+                    return xhr;
+                },
+                type: "POST",
+                url: form.attr("action"),
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    window.location.reload();
+                },
+                error: function(response) {
+                    alert("An error occurred while uploading the video.");
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

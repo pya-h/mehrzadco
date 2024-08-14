@@ -6,7 +6,6 @@ function cssStringToReactStyleObject(cssString) {
         .replace(/[{}\n\r]/g, "")
         .trim()
         .split(";");
-    console.info(cssProperties);
     cssProperties.forEach((property) => {
         let [key, value] = property.split(":");
         if (key && value) {

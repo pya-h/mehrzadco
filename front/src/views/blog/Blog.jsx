@@ -5,6 +5,7 @@ import CoolTitle from "../gadgets/CoolTitle";
 import ApiService from "../../services/api";
 import { HttpStatusCode } from "axios";
 import BlogParagraph from "./BlogParagraph";
+import Toaster from "../gadgets/toast";
 
 Modal.setAppElement("#root");
 
@@ -22,13 +23,14 @@ const Blog = ({ children }) => {
                 if (+status === HttpStatusCode.Ok) {
                     setOpenedBlog(data);
                     setIsOpen(true);
-                }
+                } else throw new Error("Get Failure");
             })
             .catch((ex) => {
                 setOpenedBlog(null);
                 setIsOpen(false);
-                console.log(ex);
-                // TODO: toast error
+                Toaster.error(
+                    "متاسفانه دریافت محتوای این بلاگ با خطا مواجه شد. لطفا لحظاتی دیگر، پس از بررسی اتصال اینترنت خود، دوباره تلاش کنید ..."
+                );
             });
     };
 

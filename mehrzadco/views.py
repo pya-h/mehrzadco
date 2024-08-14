@@ -19,7 +19,8 @@ def handler_404(request, exception):
         'msg': 'The requested resource was not found on this server.'
     })
 
+
 @require_http_methods(["GET"])
 def index(request: WSGIRequest):
-    return render(request, 'index.html')
+    return render(request, 'build/index.html')
 

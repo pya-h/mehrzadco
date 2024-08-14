@@ -44,7 +44,7 @@ ROOT_URLCONF = 'mehrzadco.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'front/build'],
+        'DIRS': [BASE_DIR / 'front'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

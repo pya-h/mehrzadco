@@ -1,9 +1,6 @@
 import iconSupevision from '../assets/img/about/civil.png';
 import iconArchitects from '../assets/img/about/architect.png';
 import iconPeymankari from '../assets/img/about/peymankari.png';
-
-import AboutVideo from '../assets/vids/about.mp4';
-
 import iconBazdidProzheh from '../assets/img/services/bazdid-prozheh.png';
 import iconBarrasiNiaz from '../assets/img/services/barrasi-niaz.png';
 import iconTarrahivaEraeAvvalieh from '../assets/img/services/tarrahi_avvalieh.png';
@@ -255,6 +252,6 @@ const implementationProcess = [{
 
 ];
 
-const ServicesData = { fieldExpertise, generalServices, implementationProcess, videos: [AboutVideo, ] };
+const ServicesData = { fieldExpertise, generalServices, implementationProcess, };
 
 export default ServicesData;

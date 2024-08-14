@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from django.core.handlers.wsgi import WSGIRequest
-from .models import ConstructionProject, PortfolioGallery
+from .models import ConstructionProject, PortfolioGallery, VideoGallery
 from typing import List, Dict
 
 
@@ -37,3 +37,14 @@ def get_construction_project(request: WSGIRequest, id: int):
         return JsonResponse({'error': "Project Not Found", 'status': 404})
 
     return JsonResponse({'status': 200, 'data': project_data})
+
+
+@require_http_methods(["GET"])
+def get_videos(request: WSGIRequest):
+    try:
+        videos = VideoGallery.objects.filter(deleted_at=None)
+        result = list(map(lambda video: video.brief(request), videos))
+        return JsonResponse({'status': 200, 'data': result})
+    except:
+        pass
+    return JsonResponse({'error': "Getting videos failed!", 'status': 400})

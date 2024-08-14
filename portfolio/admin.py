@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PortfolioGallery, ConstructionProject
+from .models import PortfolioGallery, ConstructionProject, VideoGallery
 from datetime import datetime
 
 
@@ -41,5 +41,20 @@ class PortfolioGalleryAdminPanel(admin.ModelAdmin):
         obj.save()
 
 
+class VideoGalleryAdminPanel(admin.ModelAdmin):
+    list_display = ('title', 'project_name')
+    list_display_links = ('title', 'project_name', )
+    list_filter = ('project__name', 'uploaded_by__username')
+    search_fields = ('project_name', 'owner_username')
+    readonly_fields = ('created_at', 'modified_at', 'uploaded_by', 'deleted_at')
+    change_form_template = 'admin/video/change_form.html'
+
+    def save_model(self, request, obj, form, change):
+        if not change or not obj.uploaded_by:
+            obj.uploaded_by = request.user
+        obj.save()
+
+
 admin.site.register(ConstructionProject, ConstructionProjectAdminPanel)
 admin.site.register(PortfolioGallery, PortfolioGalleryAdminPanel)
+admin.site.register(VideoGallery, VideoGalleryAdminPanel)

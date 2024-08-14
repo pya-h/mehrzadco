@@ -6,17 +6,26 @@ import CoolTitle from "../gadgets/CoolTitle";
 import ApiService from "../../services/api";
 import { HttpStatusCode } from "axios";
 import GalleryCarousel from "../gadgets/GalleryCarousel";
+import Toaster from "../gadgets/toast";
 
 const ProjectReview = ({ children, onBtnBackClick }) => {
     const [projectDetails, setProjectDetails] = useState(null);
 
     useEffect(() => {
         (async () => {
-            const responseData = await ApiService.get(
-                `/api/portfolio/constructions/${children.id}`
-            );
-            const { data, status } = responseData;
-            if (+status === HttpStatusCode.Ok) setProjectDetails(data);
+            try {
+
+                const responseData = await ApiService.get(
+                    `/api/portfolio/constructions/${children.id}`
+                );
+                const { data, status } = responseData;
+                if (+status === HttpStatusCode.Ok) setProjectDetails(data);
+                else throw new Error("Get Failure")
+            } catch(ex) {
+                Toaster.error(
+                    "متاسفانه دریافت اطلاعات این پروژه ناموفق بود. لطفا لحظاتی دیگر، پس از بررسی اتصال اینترنت خود، دوباره تلاش کنید ..."
+                );
+            }
         })();
     }, [children]);
 
