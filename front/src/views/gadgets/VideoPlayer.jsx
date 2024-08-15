@@ -1,20 +1,40 @@
 import { useEffect, useState } from "react";
-import "./video-player.css"; // Ensure to import your CSS file
+import "./video-player.css";
 
-const VideoPlayer = ({ children, controls = true }) => {
+const VideoPlayer = ({ children }) => {
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [quality, setQuality] = useState("original");
+    const [showDropdown, setShowDropdown] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0); // State to track current video index
+    const [showNavButtons, setShowNavButtons] = useState(false); // State to toggle nav buttons visibility
 
     useEffect(() => {
-        if (children?.length) setSelectedVideo(children[0]);
+        if (children?.length) {
+            setSelectedVideo(children[0]);
+            setCurrentIndex(0); // Initialize currentIndex
+        }
     }, [children]);
 
     const handleQualityChange = (selectedQuality) => {
         setQuality(selectedQuality);
+        setShowDropdown(false); // Hide dropdown after selection
     };
 
-    const handleVideoSelect = (video) => {
-        setSelectedVideo(video);
+    const handleNextVideo = () => {
+        if (children.length > 1) {
+            const nextIndex = (currentIndex + 1) % children.length;
+            setSelectedVideo(children[nextIndex]);
+            setCurrentIndex(nextIndex);
+        }
+    };
+
+    const handlePreviousVideo = () => {
+        if (children.length > 1) {
+            const prevIndex =
+                (currentIndex - 1 + children.length) % children.length;
+            setSelectedVideo(children[prevIndex]);
+            setCurrentIndex(prevIndex);
+        }
     };
 
     // Get available qualities based on the selected video
@@ -24,45 +44,79 @@ const VideoPlayer = ({ children, controls = true }) => {
 
     return (
         <div className="video-player-container">
-            {children?.length > 1 && (
-                <div className="video-selection">
-                    {children.map((video) => (
-                        <div
-                            key={video.id}
-                            className={`video-item ${
-                                selectedVideo?.id === video.id ? "active" : ""
-                            }`}
-                            onClick={() => handleVideoSelect(video)}
-                        >
-                            <h2 className="video-title">
-                                {video.title || "Untitled"}
-                            </h2>
-                        </div>
-                    ))}
-                </div>
-            )}
             {selectedVideo && (
                 <div className="video-player-wrapper">
-                    <div className="video-player">
+                    <div
+                        className="video-player"
+                        onMouseEnter={() => setShowNavButtons(true)}
+                        onMouseLeave={() => setShowNavButtons(false)}
+                    >
                         <video
                             className="video-about"
                             src={selectedVideo.urls[quality]}
-                            controls={controls}
+                            controls
                             width="100%"
                         ></video>
-                        <div className="quality-controls">
-                            {availableQualities.map((q) => (
+                        {availableQualities?.length > 1 && (
+                            <div className="custom-controls">
+                                <div className="quality-dropdown">
+                                    <button
+                                        className="quality-button"
+                                        onClick={() =>
+                                            setShowDropdown(!showDropdown)
+                                        }
+                                    >
+                                        <i className="fa fa-cog"></i>
+                                    </button>
+                                    {showDropdown && (
+                                        <div className="dropdown-content">
+                                            {availableQualities.map((q) => (
+                                                <div
+                                                    key={q}
+                                                    className={`dropdown-item ${
+                                                        quality === q
+                                                            ? "active"
+                                                            : ""
+                                                    }`}
+                                                    onClick={() =>
+                                                        handleQualityChange(q)
+                                                    }
+                                                >
+                                                    <span
+                                                        className={`quality-text ${
+                                                            quality === q
+                                                                ? "selected"
+                                                                : ""
+                                                        }`}
+                                                    >
+                                                        {q
+                                                            .charAt(0)
+                                                            .toUpperCase() +
+                                                            q.slice(1)}
+                                                    </span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        )}
+                        {children.length > 1 && showNavButtons && (
+                            <div className={`navigation-controls`}>
                                 <button
-                                    key={q}
-                                    className={`quality-button ${
-                                        quality === q ? "active" : ""
-                                    } ${q}`}
-                                    onClick={() => handleQualityChange(q)}
+                                    className="nav-button next-button"
+                                    onClick={handleNextVideo}
                                 >
-                                    {q.charAt(0).toUpperCase() + q.slice(1)}
+                                    <i className="fa fa-chevron-right"></i>
                                 </button>
-                            ))}
-                        </div>
+                                <button
+                                    className="nav-button prev-button"
+                                    onClick={handlePreviousVideo}
+                                >
+                                    <i className="fa fa-chevron-left"></i>
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </div>
             )}

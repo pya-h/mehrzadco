@@ -107,7 +107,7 @@ class VideoGallery(BaseModel):
 
     @property
     def project_name(self):
-        return self.project.name
+        return self.project.name if self.project else None
 
     @property
     def uploader_username(self):
