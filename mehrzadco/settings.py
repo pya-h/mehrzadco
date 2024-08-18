@@ -12,8 +12,7 @@ DEBUG = bool(int(config('DEBUG')))
 HOST_URL = config('HOST_URL')
 SUBDOMAIN_PREFIX = config('SUBDOMAIN_PREFIX', None)
 
-ALLOWED_HOSTS = ([f"https://{HOST_URL}", f"https://{SUBDOMAIN_PREFIX}.{HOST_URL}"] if SUBDOMAIN_PREFIX else
-                 [f"https://{HOST_URL}", ]) if not DEBUG else []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
@@ -83,6 +82,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 STATICFILES_DIRS = [
     BASE_DIR / 'front/build/static',
+    BASE_DIR / 'front/admin'
 ]
 
 # Internationalization

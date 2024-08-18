@@ -8,16 +8,16 @@ import CoolTitle from "../gadgets/CoolTitle";
 import ApiService from "../../services/api";
 import Toaster from "../gadgets/toast";
 import { HttpStatusCode } from "axios";
+import { logException } from "../gadgets/logger";
 
 const OurServices = () => {
     const { ServicesData, whyus, isDark } = GetContext();
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
-        ApiService.get("/api/portfolio/videos")
+        ApiService.get("/api/portfolio/videos/")
             .then((responseData) => {
                 const { data, status } = responseData;
-                console.warn(responseData)
                 if (+status === HttpStatusCode.Ok) setVideos(data);
                 else throw new Error("Get Failure");
             })
@@ -25,6 +25,7 @@ const OurServices = () => {
                 Toaster.error(
                     "متاسفانه دریافت ویدیو ها با خطا مواجه شد. لطفا لحظاتی دیگر، پس از بررسی اتصال اینترنت خود، دوباره تلاش کنید ..."
                 );
+                logException(err);
             });
     }, []);
     return (

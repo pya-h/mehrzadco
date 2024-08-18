@@ -3,6 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ApiService from "../../services/api";
 import { HttpStatusCode } from "axios";
 import Toaster from "../gadgets/toast";
+import { logException } from "../gadgets/logger";
 
 class ContactForm extends Component {
     state = {
@@ -50,11 +51,14 @@ class ContactForm extends Component {
                     "ورودی ارسال شده معتبر نیست. لطفا از صحت اطلاعات ورودی خد اطمینان حاصل نمایید."
                 );
             } else {
-                Toaster.error(
-                    "خطایی حین عملیات رخ داد. لطفا از اتصال اینترنت خود اطمینان حاصل کرده و دوباره تلاش کنید."
-                );
+                throw Error('Failed to send message.')
             }
-        });
+        }).catch(err => {
+            Toaster.error(
+                "خطایی حین عملیات رخ داد. لطفا از اتصال اینترنت خود اطمینان حاصل کرده و دوباره تلاش کنید."
+            );
+            logException(err);
+        })
     };
 
     render() {

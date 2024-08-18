@@ -6,6 +6,8 @@ import SlideShow from "../gadgets/SlideShow";
 import GetContext from "../../context/GetContext";
 import ApiService from "../../services/api";
 import { HttpStatusCode } from "axios";
+import Toaster from "../gadgets/toast";
+import { logException } from "../gadgets/logger";
 
 const HomeTitle = ({ front, behind }) => (
     <center>
@@ -27,9 +29,16 @@ const Briefer = () => {
 
     useEffect(() => {
         (async () => {
-            const responseData = await ApiService.get("/api/gallery");
-            const { data, status } = responseData;
-            if (+status === HttpStatusCode.Ok) setSlideShowImages(data);
+            try {
+                const responseData = await ApiService.get("/api/gallery/");
+                const { data, status } = responseData;
+                if (+status === HttpStatusCode.Ok) setSlideShowImages(data);
+            } catch (ex) {
+                Toaster.error(
+                    "دریافت تصاویر اسلاید شو با خطا مواجه شد. لطفا صفحه رو لحظاتی بعد دوباره ریلود کنید."
+                );
+                logException(ex);
+            }
         })();
     }, []);
     return (
@@ -45,7 +54,7 @@ const Briefer = () => {
                 className="row home-details-container align-items-center"
             >
                 {Screen.large && Boolean(slideShowImages?.length) && (
-                    <SlideShow startIndex={2} outerClass="position-fixed">
+                    <SlideShow startIndex={slideShowImages.length - 1} outerClass="position-fixed">
                         {slideShowImages}
                     </SlideShow>
                 )}
@@ -58,7 +67,7 @@ const Briefer = () => {
                         front={BriefIntro.title[0]}
                         behind={BriefIntro.title[1]}
                     />
-                   
+
                     <div className="my-5">
                         {!Screen.large && Boolean(slideShowImages?.length) && (
                             <SlideShow
@@ -73,12 +82,30 @@ const Briefer = () => {
                                 {slideShowImages}
                             </SlideShow>
                         )}
-                        <div style={!Screen.medium ? {position: "absolute", bottom: "10vh", ...(Screen.small ? {right: "30%"} : {})} : {position: "absolute", bottom: "5vh", right: "40%"}}>
+                        <div
+                            style={
+                                !Screen.medium
+                                    ? {
+                                          position: "absolute",
+                                          bottom: "10vh",
+                                          ...(Screen.small
+                                              ? { right: "30%" }
+                                              : {}),
+                                      }
+                                    : {
+                                          position: "absolute",
+                                          bottom: "5vh",
+                                          right: "40%",
+                                      }
+                            }
+                        >
                             <button
                                 className="button btn-more mx-auto"
                                 onClick={toggleModalBriefServices}
                             >
-                                <span className="button-text mx-auto">بیشتر ...</span>
+                                <span className="button-text mx-auto">
+                                    بیشتر ...
+                                </span>
                                 <span className="button-icon fa fa-arrow-right"></span>
                             </button>
                         </div>

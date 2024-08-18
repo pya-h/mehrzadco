@@ -4,6 +4,7 @@ import Blog from "./Blog";
 import ApiService from "../../services/api";
 import { HttpStatusCode } from "axios";
 import Toaster from "../gadgets/toast";
+import { logException } from "../gadgets/logger";
 
 const BlogsSection = () => {
     const [blogs, setBlogs] = useState();
@@ -19,6 +20,7 @@ const BlogsSection = () => {
                 Toaster.error(
                     "متاسفانه دریافت بلاگ ها ناموفق بود. لطفا لحظاتی دیگر، پس از بررسی اتصال اینترنت خود، دوباره تلاش کنید..."
                 );
+                logException(ex);
             });
     }, []);
 

@@ -6,6 +6,7 @@ import ApiService from "../../services/api";
 import { HttpStatusCode } from "axios";
 import BlogParagraph from "./BlogParagraph";
 import Toaster from "../gadgets/toast";
+import { logException } from "../gadgets/logger";
 
 Modal.setAppElement("#root");
 
@@ -17,7 +18,7 @@ const Blog = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const openBlog = (blogId) => {
-        ApiService.get(`/api/blogs/${blogId}`)
+        ApiService.get(`/api/blogs/${blogId}/`)
             .then((res) => {
                 const { status, data } = res;
                 if (+status === HttpStatusCode.Ok) {
@@ -31,6 +32,7 @@ const Blog = ({ children }) => {
                 Toaster.error(
                     "متاسفانه دریافت محتوای این بلاگ با خطا مواجه شد. لطفا لحظاتی دیگر، پس از بررسی اتصال اینترنت خود، دوباره تلاش کنید ..."
                 );
+                logException(ex);
             });
     };
 
