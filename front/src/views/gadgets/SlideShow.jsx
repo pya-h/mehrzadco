@@ -1,58 +1,38 @@
 import { useEffect, useState } from "react";
 
 const SlideShow = ({
-    children,
+    children: images,
     startIndex = 0,
     style = {},
     className = "",
     outerClass = "",
     innerClass = "",
     delay = 10000,
+    interval = 5000,
 }) => {
-    const [imageIndex, setImageIndex] = useState(startIndex);
-    const [showAnimation, setShowAnimation] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
-        if (+children?.length <= 1) {
-            setImageIndex(0);
-            return;
-        }
-        const timerID = setInterval(() => {
-            setShowAnimation(true);
-            setTimeout(() => setShowAnimation(false), [700]);
-            setImageIndex((i) => {
-                return (i + 1) % children.length;
-            });
-        }, [delay]);
+        const changeImage = setInterval(() => {
+            setCurrentImageIndex(
+                (prevIndex) => (prevIndex + 1) % images.length
+            );
+        }, interval);
 
-        return () => {
-            clearInterval(timerID);
-        };
-    }, [children.length, delay]);
+        return () => clearInterval(changeImage);
+    }, [images, interval]);
+
     return (
         <div
             className={`col-lg-4 bg d-block p-0 mx-auto ${outerClass} ${className}`}
             style={{
+                backgroundImage: `url(${images[currentImageIndex].url})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                transition: "background-image 1s ease-in-out",
                 ...style,
-                backgroundImage: `url(${children[imageIndex]?.url})`,
             }}
-        >
-            {showAnimation && (
-                <div
-                    className={`sliding-background bg m-0 p-0 ${innerClass} ${className}`}
-                    style={{
-                        ...style,
-                        backgroundImage: `url(${
-                            children[
-                                imageIndex > 0
-                                    ? imageIndex - 1
-                                    : children.length - 1
-                            ]?.url
-                        })`,
-                    }}
-                />
-            )}
-        </div>
+        />
     );
 };
 

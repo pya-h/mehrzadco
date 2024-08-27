@@ -72,10 +72,10 @@ const Briefer = () => {
                         {!Screen.large && Boolean(slideShowImages?.length) && (
                             <SlideShow
                                 className="img-fluid main-img-mobile d-block"
-                                startIndex={2}
+                                startIndex={slideShowImages.length - 1}
                                 style={{
                                     borderRadius: "15px",
-                                    height: !Screen.small ? "60vh" : "50vh",
+                                    height: "60vh",
                                     width: !Screen.small ? "60vh" : "49vh",
                                 }}
                             >

@@ -79,14 +79,10 @@ const fieldExpertise = [
         id: 5,
         title: 'مهندسی کامپیوتر',
         details: [
-            { text: "طراحی انواع وب سایت ها با به روزترین ابزارها و تکنیک ها" },
-            { text: "طراحی اپلیکیشن و بازی برای انواع پلتفرم ها و دیوایس ها" },
-            { text: "برنامه نویسی میکروکنترلرهای آردوئینو، ARM و AVR" },
-            { text: "طراحی نرم افزارهای مهندسی و محاسباتی شخصی سازی شده برای حوزه های خاص مهندسی" },
-            {
-                text: "برنامه نویسی به اغلب زبان ها و فریمورک های مطرح روز دنیا:",
-                extra: <p dir="ltr" className='mx-5' style={{ textAlign: "right" }}>C/C++, Assembly , Node.js , React.js , Rust , Go <br />  Python , PHP , C# , ASP.NET , Java , JavaScript <br /> HTML/CSS , Visual Basic (.NET) , Fortran</p>
-            },
+            { text: "فول استک دولوپ اپلیکیشن ها و سایت ها" },
+            { text: "دولوپ ابزارهای مبتنی بر بلاک چین" },
+            { text: "برنامه نویسی میکروکنترلرهای مختلف از جمله آردوئینو، ARM و AVR" },
+
 
         ],
         positon: 'right',

@@ -452,7 +452,7 @@ body.light .header ul.icon-menu li.icon-box:hover i {
     margin: 0 auto;
     width: 100%;
     position: relative;
-    padding: 80px 0 80px 0;
+    padding: 80px 0 130px 0;
 }
 
 .home-title-section p {
@@ -460,7 +460,8 @@ body.light .header ul.icon-menu li.icon-box:hover i {
     text-transform: uppercase;
     margin: 0;
     @media (max-width: 767px) {
-        font-size: 50px !important;
+        font-size: 65px !important;
+        padding: 0 0 0 0;
     }
     @media (min-width: 768px) {
         font-size: 90px !important;

@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "homepage": "http://mehrzadco.com",
-    "proxy": "http://127.0.0.1:8000",
+    "proxy": "https://staging.mehrzadco.com",
     "dependencies": {
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.1.0",

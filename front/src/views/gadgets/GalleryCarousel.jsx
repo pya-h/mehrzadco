@@ -1,12 +1,29 @@
 // Carousel.js
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import './carousel.css';
+import "./carousel.css";
 
-const GalleryCarousel = ({ children: items }) => {
+const GalleryCarousel = ({
+    children: items,
+    autoplaySpeed = 4000,
+    speed = 1000,
+    borderRadius = 20,
+    slidesToShow = 1,
+    slidesToScroll = 1,
+}) => {
     const [imageClasses, setImageClasses] = useState([]);
+    const [settings, setSettings] = useState({});
 
     useEffect(() => {
+        setSettings({
+            dots: true,
+            infinite: true,
+            speed,
+            slidesToShow,
+            slidesToScroll,
+            autoplay: Boolean(autoplaySpeed),
+            autoplaySpeed,
+        });
         const imageClasses = items.map((item) => {
             const img = new Image();
             img.src = item;
@@ -17,17 +34,14 @@ const GalleryCarousel = ({ children: items }) => {
             }
         });
         setImageClasses(imageClasses);
-    }, [items]);
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 3000
-    };
+    }, [
+        items,
+        autoplaySpeed,
+        borderRadius,
+        slidesToShow,
+        slidesToScroll,
+        speed,
+    ]);
 
     return (
         <div className="carousel-container">

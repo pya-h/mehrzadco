@@ -85,7 +85,7 @@ const ProjectReview = ({ children, onBtnBackClick }) => {
                                 </div>
                                 <div className="col-12 col-sm-6 mb-2">
                                     <i className="fa fa-user-o px-2"></i>
-                                    &nbsp; متراژ واحد: &nbsp;
+                                    &nbsp; متراژ کل: &nbsp;
                                     <span className="ft-wt-600 col uppercase">
                                         <span
                                             className="col-lg-1 col-sm-2 col-1"
