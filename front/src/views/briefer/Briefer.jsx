@@ -48,7 +48,6 @@ const Briefer = () => {
             data-aos-duration="1200"
         >
             <div className="color-block d-none d-lg-block"></div>
-
             <div
                 style={Screen.medium ? { height: "90vh" } : {}}
                 className="row home-details-container align-items-center"
@@ -63,6 +62,7 @@ const Briefer = () => {
                         Screen.large ? "col-8 offset-lg-4" : ""
                     } home-details text-center text-lg-start pt-5`}
                 >
+
                     <HomeTitle
                         front={BriefIntro.title[0]}
                         behind={BriefIntro.title[1]}

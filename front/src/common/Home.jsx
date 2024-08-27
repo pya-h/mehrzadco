@@ -27,6 +27,7 @@ const Home = () => {
         <div className="yellow">
             <SwitchDark />
             <Logo />
+
             {Boolean(tabIndex >= 0) && (
                 <Tabs
                     onSelect={(index) => changeTab(index)}

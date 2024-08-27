@@ -2,15 +2,12 @@ import { useEffect, useState } from "react";
 
 const SlideShow = ({
     children: images,
-    startIndex = 0,
     style = {},
     className = "",
     outerClass = "",
-    innerClass = "",
-    delay = 10000,
     interval = 5000,
 }) => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [currentImageIndex, setCurrentImageIndex] = useState(images?.length ? +images.length - 1 : 0);
 
     useEffect(() => {
         const changeImage = setInterval(() => {

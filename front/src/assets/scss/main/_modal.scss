@@ -24,6 +24,15 @@
   background: #252525;
   border-radius: 10px;
   outline: none;
+  @media (max-width: 1400px) {
+    width: 70%;
+    margin: auto;
+  }
+
+  @media (max-width: 800px) {
+    width: 90%;
+    margin: auto;
+  }
   .box_inner {
     height: 80vh;
     overflow-y: auto;

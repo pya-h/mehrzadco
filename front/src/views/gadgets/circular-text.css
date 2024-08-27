@@ -1,0 +1,26 @@
+.circular-text-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-90deg);
+  }
+  
+  .circular-text-char {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #3498db;
+    transform-origin: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .circular-text-char:hover {
+    color: #e74c3c;
+    transform: scale(1.2);
+  }
+  

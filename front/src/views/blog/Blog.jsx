@@ -132,17 +132,6 @@ const Blog = ({ children }) => {
                                                     alt="Blog"
                                                 />
                                             </div>
-                                            {/* <div className="quotebox">
-                                            <div className="icon">
-                                                <img
-                                                    src={blogQuote}
-                                                    alt="blogs quote"
-                                                />
-                                            </div>
-                                            <p>
-                                                {blogs?.description2}
-                                            </p>
-                                        </div> */}
                                             <div className="blog-excerpt pb-5">
                                                 {openedBlog?.paragraphs instanceof
                                                     Array &&
