@@ -114,14 +114,7 @@ const ProjectReview = ({ children, onBtnBackClick }) => {
                     </div>
                     <div className="row">
                         <figure style={{ borderRadius: "15px" }}>
-                            <a href={children.image} download>
-                                {/* <img
-                                    width="100%"
-                                    style={{ borderRadius: "15px" }}
-                                    height="100%"
-                                    src={children.image}
-                                    alt="portfolio project demo"
-                                /> */}
+                            <a href={children.image}>
                                 {Boolean(
                                     projectDetails &&
                                         projectDetails.gallery?.length
