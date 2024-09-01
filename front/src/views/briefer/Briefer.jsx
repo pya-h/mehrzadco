@@ -100,7 +100,7 @@ const Briefer = () => {
                             }
                         >
                             <button
-                                className="button btn-more mx-auto"
+                                className="button btn-more mx-auto mt-2"
                                 onClick={toggleModalBriefServices}
                             >
                                 <span className="button-text mx-auto">

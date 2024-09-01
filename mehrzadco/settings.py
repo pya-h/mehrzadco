@@ -93,7 +93,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = config('STATIC_PATH', '/static/')
-STATIC_ROOT = BASE_DIR / 'public'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Media
 MEDIA_URL = config('MEDIA_PATH', '/media/')

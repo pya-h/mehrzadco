@@ -137,7 +137,6 @@ cython_debug/
 front/src/assets/vids/*.mp4
 front/node_modules
 .env
-public/
 .vscode
 */.vscode
 */migrations
