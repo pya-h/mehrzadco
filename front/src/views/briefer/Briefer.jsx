@@ -18,6 +18,10 @@ const HomeTitle = ({ front, behind }) => (
     </center>
 );
 
+const shuffleArray = (items) => {
+    return items.sort(() => Math.random() - 0.5);
+}
+
 const Briefer = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [slideShowImages, setSlideShowImages] = useState([]);
@@ -32,7 +36,7 @@ const Briefer = () => {
             try {
                 const responseData = await ApiService.get("/api/gallery/");
                 const { data, status } = responseData;
-                if (+status === HttpStatusCode.Ok) setSlideShowImages(data);
+                if (+status === HttpStatusCode.Ok) setSlideShowImages(shuffleArray(data));
             } catch (ex) {
                 Toaster.error(
                     "دریافت تصاویر اسلاید شو با خطا مواجه شد. لطفا صفحه رو لحظاتی بعد دوباره ریلود کنید."
@@ -72,7 +76,7 @@ const Briefer = () => {
                         {!Screen.large && Boolean(slideShowImages?.length) && (
                             <SlideShow
                                 className="img-fluid main-img-mobile d-block"
-                                startIndex={slideShowImages.length - 1}
+                                startIndex={0}
                                 style={{
                                     borderRadius: "15px",
                                     height: "60vh",

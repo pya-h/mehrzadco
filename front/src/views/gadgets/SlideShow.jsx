@@ -7,7 +7,7 @@ const SlideShow = ({
     outerClass = "",
     interval = 5000,
 }) => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(images?.length ? +images.length - 1 : 0);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
         const changeImage = setInterval(() => {
@@ -26,7 +26,7 @@ const SlideShow = ({
                 backgroundImage: `url(${images[currentImageIndex].url})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                transition: "background-image 1s ease-in-out",
+                transition: "background-image 700ms ease-in-out",
                 ...style,
             }}
         />
