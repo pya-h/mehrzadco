@@ -51,6 +51,8 @@ const GalleryCarousel = ({
                         <img
                             src={item}
                             alt={item.alt}
+                            onClick={(e) => e.preventDefault()}
+                            style={{ cursor: "default" }}
                             className={imageClasses[index]}
                         />
                     </div>

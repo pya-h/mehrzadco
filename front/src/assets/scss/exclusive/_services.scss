@@ -1,10 +1,10 @@
-
 .topic-circles {
-
     cursor: pointer;
-    border: 2px dotted #ddd;    
+    border: 2px dotted #ddd;
     border-radius: 50%;
     padding: 40px;
+    max-width: 11rem;
+    max-height: 11rem;
     list-style-type: none;
     background: #565660;
     text-align: center;
@@ -13,11 +13,13 @@
 }
 
 .topic-circles:hover {
-    box-shadow: 0 0px 32px 0 #ffb400;
-
+    box-shadow: 0rem 0rem 1rem 1rem #ffb400;
 }
-.topic-circles:focus, .topic-circles:active {
+
+.topic-circles:focus,
+.topic-circles:active {
     border: none;
+    outline: none;
 }
 
 .circles-and-topics-tabs hr {

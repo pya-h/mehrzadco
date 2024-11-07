@@ -1,16 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 
 const ImplementationProcess = ({ children }) => {
     const [selectedTab, selectTab] = useState(-1);
+    const descriptionRef = useRef(null);
+
+    const handleSelectTab = (index) => {
+        selectTab(index);
+
+        if (index >= 0 && descriptionRef.current) {
+            descriptionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
 
     return (
         <>
             <Tabs
                 defaultIndex={selectedTab}
-                onSelect={(index) => selectTab(index)}
+                onSelect={handleSelectTab}
             >
-                <TabList className="row text-center" style={{alignItems: "center", justifyContent: "center"}}>
+                <TabList className="row text-center" style={{ alignItems: "center", justifyContent: "center" }}>
                     {children.map((tab, index) => (
                         <Tab
                             key={index}
@@ -18,7 +27,7 @@ const ImplementationProcess = ({ children }) => {
                                 color: "black",
                                 ...(index === selectedTab
                                     ? {
-                                          boxShadow: "0 30px 48px 0 #ffb422",
+                                          boxShadow: "0rem 0rem 1.5rem 1.5rem #ffb422",
                                       }
                                     : null),
                             }}
@@ -28,19 +37,33 @@ const ImplementationProcess = ({ children }) => {
                         >
                             {tab.icon}
                             <br />
-                            <span style={{ fontSize: "14px" }}>
+                            <span>
                                 {tab.title}
                             </span>
                         </Tab>
                     ))}
                 </TabList>
-                {selectedTab >= 0 ? <div style={{border: "5px dotted black", borderRadius: "15px", marginLeft: "10%", marginRight: "10%"}} className="px-5 circles-and-topics-tabs my-5">
-                    {children.map((tab, index) => (
-                        <div className="my-5">
-                            <TabPanel key={index}>{tab.topic}</TabPanel>
-                        </div>
-                    ))}
-                </div> : <div className="py-5 d-block" style={{marginBottom: "15%"}}></div>}
+
+                {selectedTab >= 0 ? (
+                    <div
+                        ref={descriptionRef}
+                        style={{
+                            border: "5px dotted black",
+                            borderRadius: "15px",
+                            marginLeft: "10%",
+                            marginRight: "10%",
+                        }}
+                        className="px-5 circles-and-topics-tabs my-5"
+                    >
+                        {children.map((tab, index) => (
+                            <div key={index} className="my-5">
+                                <TabPanel>{tab.topic}</TabPanel>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <div className="py-5 d-block" style={{ marginBottom: "15%" }}></div>
+                )}
             </Tabs>
         </>
     );
